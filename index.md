@@ -3,180 +3,217 @@ layout: default
 title: Home
 ---
 
-<div class="content-box">
+<section class="about-section">
 
-# About Me
+  <h1>About Me</h1>
 
-Hello World! Welcome to Lia’s homepage.
+  <div class="about-card">
 
-I am currently pursuing a Master of City Planning at the University of New South Wales (UNSW), Sydney, Australia.
+    <p>
+      Hello World! Welcome to Lia’s homepage.
+    </p>
 
-My interests focus on applying AI and data-driven approaches to solve urban problems, particularly at the intersection of intelligent systems, urban mobility, and spatial analytics.
+    <p>
+      I am currently pursuing a Master of City Planning at the University of New South Wales (UNSW), Sydney, Australia.
+    </p>
 
-I am currently working as a Traffic Engineer at Genesis Traffic, where I work on traffic modelling, swept path analysis, parking compliance, and transport reporting.
+    <p>
+      My interests focus on applying AI and data-driven approaches to solve urban problems, particularly at the intersection of intelligent systems, urban mobility, and spatial analytics.
+    </p>
 
-## Focus Areas
+    <p>
+      I am currently working as a Traffic Engineer at Genesis Traffic, where I work on traffic modelling, swept path analysis, parking compliance, and transport reporting.
+    </p>
 
-- Artificial Intelligence & Machine Learning
-- Transport Modelling
-- GIS & Spatial Analytics
-- Urban Planning
-- Economic & Financial Analysis
+    <h2>Focus Areas</h2>
 
-</div>
+    <ul>
+      <li>Artificial Intelligence & Machine Learning</li>
+      <li>Transport Modelling</li>
+      <li>GIS & Spatial Analytics</li>
+      <li>Urban Planning</li>
+      <li>Economic & Financial Analysis</li>
+    </ul>
 
----
+  </div>
 
-<div class="content-box">
+</section>
 
-# Education
+<section class="about-section">
 
-## University of New South Wales
+  <h1>Education</h1>
 
-**Master of City Planning**  
-Nov 2024 – Aug 2026 (Expected)
+  <div class="about-card">
 
-## Tianjin University
+    <h2>University of New South Wales</h2>
 
-**Bachelor of Finance**  
-Sep 2020 – Jul 2024
+    <p>
+      <strong>Master of City Planning</strong><br>
+      Nov 2024 – Aug 2026 (Expected)
+    </p>
 
-</div>
+    <h2>Tianjin University</h2>
 
----
+    <p>
+      <strong>Bachelor of Finance</strong><br>
+      Sep 2020 – Jul 2024
+    </p>
 
-<div class="content-box">
+  </div>
 
-# Technical Skills
+</section>
 
-## Traffic & Transport
+<section class="about-section">
 
-- SIDRA
-- AutoTURN
-- SUMO
-- AutoCAD
+  <h1>Technical Skills</h1>
 
-## GIS & Spatial
+  <div class="about-card">
 
-- QGIS
-- ArcGIS Pro
-- ArcGIS Online
-- Vectorworks
+    <h2>Traffic & Transport</h2>
 
-## Programming
+    <ul>
+      <li>SIDRA</li>
+      <li>AutoTURN</li>
+      <li>SUMO</li>
+      <li>AutoCAD</li>
+    </ul>
 
-- Python
-- MATLAB
-- C++
+    <h2>GIS & Spatial</h2>
 
-## Data & Analytics
+    <ul>
+      <li>QGIS</li>
+      <li>ArcGIS Pro</li>
+      <li>ArcGIS Online</li>
+      <li>Vectorworks</li>
+    </ul>
 
-- MySQL
-- SPSS
-- EViews
-- NVivo
+    <h2>Programming</h2>
 
-</div>
+    <ul>
+      <li>Python</li>
+      <li>MATLAB</li>
+      <li>C++</li>
+    </ul>
 
----
+    <h2>Data & Analytics</h2>
 
-<div class="content-box">
+    <ul>
+      <li>MySQL</li>
+      <li>SPSS</li>
+      <li>EViews</li>
+      <li>NVivo</li>
+    </ul>
 
-# Featured Projects
+  </div>
 
-## PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity
+</section>
 
-Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimization.
+<section class="about-section">
 
-## GIS Analysis of Amenity Equity in Blacktown, NSW
+  <h1>Featured Projects</h1>
 
-Spatial analysis and interactive GIS storytelling exploring amenity accessibility and social equity.
+  <div class="about-card">
 
-## Urban Analysis and Design Proposal for East Killara, NSW
+    <h2>
+      PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity
+    </h2>
 
-Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations in East Killara.
+    <p>
+      Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimization.
+    </p>
 
-## Macquarie Park: Transport-Oriented Development (TOD) Accelerated Precinct
+    <h2>
+      GIS Analysis of Amenity Equity in Blacktown, NSW
+    </h2>
 
-Master planning proposal focused on mobility integration, accessibility, connectivity, active transport networks, mixed-use development, and public domain integration.
+    <p>
+      Spatial analysis and interactive GIS storytelling exploring amenity accessibility and social equity.
+    </p>
 
-## Urban Heat Island and Sustainable Design: Slave Island Project
+    <h2>
+      Urban Analysis and Design Proposal for East Killara, NSW
+    </h2>
 
-Sustainable urban design project focused on urban heat mitigation and climate-resilient built environments.
+    <p>
+      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations in East Killara.
+    </p>
 
-## Time Series Volatility Modelling using GARCH and TGARCH: The Impact of Stock Index Options on Stock Price Volatility
+    <h2>
+      Macquarie Park: Transport-Oriented Development (TOD) Accelerated Precinct
+    </h2>
 
-Applied GARCH and TGARCH models to analyse volatility dynamics, asymmetry effects, and market risk before and after the introduction of stock index options.
+    <p>
+      Master planning proposal focused on mobility integration, accessibility, connectivity, active transport networks, mixed-use development, and public domain integration.
+    </p>
 
-</div>
+  </div>
 
----
-
-<div class="content-box">
-
-# Contact
-
-- Email
-- LinkedIn
-- GitHub
-
-</div>
+</section>
 
 <style>
 
-.content-box{
+.about-section{
 
-  background:#f0f0f0;
+  width:90%;
 
-  padding:40px 50px;
+  max-width:1250px;
 
-  border-radius:30px;
-
-  margin-bottom:40px;
-
-  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  margin:40px auto;
 }
 
-.content-box h1{
+.about-section h1{
 
-  font-size:52px;
+  font-size:56px;
 
-  color:#000;
-
-  margin-bottom:30px;
-}
-
-.content-box h2{
-
-  margin-top:35px;
+  margin-bottom:25px;
 
   color:#000;
 }
 
-.content-box p,
-.content-box li{
+.about-card{
 
-  font-size:22px;
+  background:#f1f1f1;
+
+  padding:45px 50px;
+
+  border-radius:32px;
+
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.about-card p,
+.about-card li{
+
+  font-size:28px;
 
   line-height:1.8;
 
   color:#222;
 }
 
-.content-box ul{
+.about-card h2{
+
+  margin-top:35px;
+
+  font-size:34px;
+
+  color:#000;
+}
+
+.about-card ul{
 
   padding-left:30px;
 }
 
-body.dark .content-box{
+body.dark .about-card{
 
   background:#1f1f1f;
 }
 
-body.dark .content-box h1,
-body.dark .content-box h2,
-body.dark .content-box p,
-body.dark .content-box li{
+body.dark .about-card p,
+body.dark .about-card li,
+body.dark .about-card h2,
+body.dark .about-section h1{
 
   color:white;
 }
