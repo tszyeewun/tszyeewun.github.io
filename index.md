@@ -208,16 +208,24 @@ title: Home
   color:#000;
 }
 
+/* CARD */
+
 .about-card{
+
+  width:100%;
+
+  box-sizing:border-box;
 
   background:#f3f3f3;
 
-  padding:45px 55px;
+  padding:45px 90px;
 
   border-radius:32px;
 
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
 }
+
+/* PARAGRAPH */
 
 .about-card p{
 
@@ -232,6 +240,8 @@ title: Home
   margin-bottom:28px;
 }
 
+/* H2 */
+
 .about-card h2{
 
   margin-top:40px;
@@ -245,7 +255,9 @@ title: Home
   color:#000;
 }
 
-/* technical skills */
+/* =========================
+   TECHNICAL SKILLS
+========================= */
 
 .skill-category{
 
@@ -271,7 +283,9 @@ title: Home
   color:#333;
 }
 
-/* projects */
+/* =========================
+   PROJECTS
+========================= */
 
 .project-title{
 
@@ -297,7 +311,9 @@ title: Home
   color:#666;
 }
 
-/* dark mode */
+/* =========================
+   DARK MODE
+========================= */
 
 body.dark .about-card{
 
