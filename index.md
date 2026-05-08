@@ -27,13 +27,13 @@ title: Home
 
     <h2>Focus Areas</h2>
 
-    <ul>
-      <li>Artificial Intelligence & Machine Learning</li>
-      <li>Transport Modelling</li>
-      <li>GIS & Spatial Analytics</li>
-      <li>Urban Planning</li>
-      <li>Economic & Financial Analysis</li>
-    </ul>
+    <p>
+      Artificial Intelligence & Machine Learning<br>
+      Transport Modelling<br>
+      GIS & Spatial Analytics<br>
+      Urban Planning<br>
+      Economic & Financial Analysis
+    </p>
 
   </div>
 
@@ -48,14 +48,14 @@ title: Home
     <h2>University of New South Wales</h2>
 
     <p>
-      <strong>Master of City Planning</strong><br>
+      Master of City Planning<br>
       Nov 2024 – Aug 2026 (Expected)
     </p>
 
     <h2>Tianjin University</h2>
 
     <p>
-      <strong>Bachelor of Finance</strong><br>
+      Bachelor of Finance<br>
       Sep 2020 – Jul 2024
     </p>
 
@@ -69,40 +69,37 @@ title: Home
 
   <div class="about-card">
 
-    <h2>Traffic & Transport</h2>
+    <div class="skill-category">
+      Traffic & Transport
+    </div>
 
-    <ul>
-      <li>SIDRA</li>
-      <li>AutoTURN</li>
-      <li>SUMO</li>
-      <li>AutoCAD</li>
-    </ul>
+    <div class="skill-content">
+      SIDRA, AutoTURN, SUMO, AutoCAD
+    </div>
 
-    <h2>GIS & Spatial</h2>
+    <div class="skill-category">
+      GIS & Spatial
+    </div>
 
-    <ul>
-      <li>QGIS</li>
-      <li>ArcGIS Pro</li>
-      <li>ArcGIS Online</li>
-      <li>Vectorworks</li>
-    </ul>
+    <div class="skill-content">
+      QGIS, ArcGIS Pro, ArcGIS Online, Vectorworks
+    </div>
 
-    <h2>Programming</h2>
+    <div class="skill-category">
+      Programming
+    </div>
 
-    <ul>
-      <li>Python</li>
-      <li>MATLAB</li>
-      <li>C++</li>
-    </ul>
+    <div class="skill-content">
+      Python, MATLAB, C++
+    </div>
 
-    <h2>Data & Analytics</h2>
+    <div class="skill-category">
+      Data & Analytics
+    </div>
 
-    <ul>
-      <li>MySQL</li>
-      <li>SPSS</li>
-      <li>EViews</li>
-      <li>NVivo</li>
-    </ul>
+    <div class="skill-content">
+      MySQL, SPSS, EViews, NVivo
+    </div>
 
   </div>
 
@@ -114,36 +111,77 @@ title: Home
 
   <div class="about-card">
 
-    <h2>
+    <div class="project-title">
       PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity
-    </h2>
+    </div>
 
-    <p>
+    <div class="project-description">
       Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimization.
-    </p>
+    </div>
 
-    <h2>
+    <div class="project-title">
       GIS Analysis of Amenity Equity in Blacktown, NSW
-    </h2>
+    </div>
 
-    <p>
+    <div class="project-description">
       Spatial analysis and interactive GIS storytelling exploring amenity accessibility and social equity.
-    </p>
+    </div>
 
-    <h2>
+    <div class="project-title">
       Urban Analysis and Design Proposal for East Killara, NSW
-    </h2>
+    </div>
+
+    <div class="project-description">
+      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations in East Killara.
+    </div>
+
+    <div class="project-title">
+      Macquarie Park: Transport-Oriented Development (TOD) Accelerated Precinct
+    </div>
+
+    <div class="project-description">
+      Master planning proposal focused on mobility integration, accessibility, connectivity, active transport networks, mixed-use development, and public domain integration.
+    </div>
+
+    <div class="project-title">
+      Urban Heat Island and Sustainable Design: Slave Island Project
+    </div>
+
+    <div class="project-description">
+      Sustainable urban design project focused on urban heat mitigation and climate-resilient built environments.
+    </div>
+
+    <div class="project-title">
+      Time Series Volatility Modelling using GARCH and TGARCH: The Impact of Stock Index Options on Stock Price Volatility
+    </div>
+
+    <div class="project-description">
+      Applied GARCH and TGARCH models to analyse volatility dynamics, asymmetry effects, and market risk before and after the introduction of stock index options.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <h1>Contact</h1>
+
+  <div class="about-card">
 
     <p>
-      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations in East Killara.
+      Email<br>
+      tszyeewun_au@outlook.com
     </p>
 
-    <h2>
-      Macquarie Park: Transport-Oriented Development (TOD) Accelerated Precinct
-    </h2>
+    <p>
+      LinkedIn<br>
+      linkedin.com/in/tszyeewun
+    </p>
 
     <p>
-      Master planning proposal focused on mobility integration, accessibility, connectivity, active transport networks, mixed-use development, and public domain integration.
+      GitHub<br>
+      github.com/liawun
     </p>
 
   </div>
@@ -156,14 +194,16 @@ title: Home
 
   width:90%;
 
-  max-width:1250px;
+  max-width:1850px;
 
-  margin:40px auto;
+  margin:50px auto;
 }
 
 .about-section h1{
 
-  font-size:56px;
+  font-size:72px;
+
+  font-weight:800;
 
   margin-bottom:25px;
 
@@ -172,50 +212,113 @@ title: Home
 
 .about-card{
 
-  background:#f1f1f1;
+  background:#f3f3f3;
 
-  padding:45px 50px;
+  padding:45px 55px;
 
   border-radius:32px;
 
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
 }
 
-.about-card p,
-.about-card li{
+.about-card p{
 
   font-size:28px;
 
+  font-weight:700;
+
   line-height:1.8;
 
-  color:#222;
+  color:#111;
+
+  margin-bottom:28px;
 }
 
 .about-card h2{
 
-  margin-top:35px;
+  margin-top:40px;
+
+  margin-bottom:18px;
 
   font-size:34px;
+
+  font-weight:800;
 
   color:#000;
 }
 
-.about-card ul{
+/* technical skills */
 
-  padding-left:30px;
+.skill-category{
+
+  font-size:30px;
+
+  font-weight:800;
+
+  margin-top:32px;
+
+  margin-bottom:10px;
+
+  color:#000;
 }
+
+.skill-content{
+
+  font-size:26px;
+
+  font-weight:700;
+
+  line-height:1.8;
+
+  color:#333;
+}
+
+/* projects */
+
+.project-title{
+
+  font-size:34px;
+
+  font-weight:800;
+
+  margin-top:38px;
+
+  margin-bottom:12px;
+
+  color:#000;
+}
+
+.project-description{
+
+  font-size:26px;
+
+  font-weight:700;
+
+  line-height:1.8;
+
+  color:#666;
+}
+
+/* dark mode */
 
 body.dark .about-card{
 
   background:#1f1f1f;
 }
 
-body.dark .about-card p,
-body.dark .about-card li,
+body.dark .about-section h1,
 body.dark .about-card h2,
-body.dark .about-section h1{
+body.dark .about-card p,
+body.dark .skill-category,
+body.dark .skill-content,
+body.dark .project-title{
 
   color:white;
+}
+
+body.dark .project-description{
+
+  color:#bdbdbd;
 }
 
 </style>
