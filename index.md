@@ -192,11 +192,9 @@ title: Home
 
 .about-section{
 
-  width:90%;
+  width:100%;
 
-  max-width:1850px;
-
-  margin:50px auto;
+  margin:50px 0;
 }
 
 .about-section h1{
