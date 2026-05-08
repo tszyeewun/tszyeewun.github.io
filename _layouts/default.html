@@ -30,20 +30,19 @@
       background:#f5f5f5;
     }
 
-    /* ===== NAVBAR ===== */
+    /* =========================
+       NAVBAR
+    ========================= */
 
     .navbar{
       position:fixed;
-
       top:20px;
       left:50%;
-
       transform:translateX(-50%);
 
       width:90%;
       max-width:1250px;
 
-      /* UNSW Yellow */
       background:#FFCC00;
 
       border-radius:999px;
@@ -60,10 +59,8 @@
     }
 
     .navbar a{
-
       text-decoration:none;
 
-      /* 永远黑色 */
       color:#000 !important;
 
       font-size:20px;
@@ -77,51 +74,137 @@
     }
 
     .navbar a:hover{
-
       background:white;
-
-      /* hover也保持黑字 */
       color:#000 !important;
 
       transform:translateY(-2px);
     }
 
-    /* ===== ACTIVE PAGE ===== */
-
     .navbar a.active{
-
       background:white;
-
-      /* active也保持黑字 */
       color:#000 !important;
     }
 
-    /* ===== PAGE HEADER ===== */
+    /* =========================
+       HERO SECTION
+    ========================= */
 
-    .page-header{
-      padding-top:160px !important;
+    .hero-section{
+
+      margin:130px auto 40px auto;
+
+      width:90%;
+      max-width:1850px;
+
+      background:#FFCC00;
+
+      border-radius:40px;
+
+      padding:70px 90px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:60px;
+
+      box-sizing:border-box;
     }
 
-    /* ===== DARK BUTTON ===== */
-
-    .dark-btn{
-      cursor:pointer;
+    .hero-left{
+      flex:1;
     }
 
-    /* ===== DARK MODE ===== */
+    .hero-title{
+      font-size:96px;
+      font-weight:800;
+      color:#000;
+      margin:0 0 30px 0;
+      line-height:1;
+    }
+
+    .hero-contact{
+      font-size:32px;
+      color:#000;
+      font-weight:600;
+      margin-bottom:14px;
+    }
+
+    .hero-buttons{
+      margin-top:40px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .hero-btn{
+      display:inline-block;
+
+      text-decoration:none;
+
+      background:white;
+      color:#000 !important;
+
+      font-size:24px;
+      font-weight:700;
+
+      padding:18px 34px;
+
+      border-radius:18px;
+
+      transition:0.3s ease;
+
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .hero-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* =========================
+       HEADSHOT
+    ========================= */
+
+    .hero-right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .headshot{
+
+      width:360px;
+      height:360px;
+
+      object-fit:cover;
+
+      border-radius:50%;
+
+      border:10px solid white;
+
+      box-shadow:0 8px 25px rgba(0,0,0,0.18);
+    }
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    .main-content{
+      width:90%;
+      margin:auto;
+    }
+
+    /* =========================
+       DARK MODE
+    ========================= */
 
     body.dark{
       background:#111;
       color:white;
     }
 
-    /* dark mode导航栏也保持UNSW黄 */
-
     body.dark .navbar{
       background:#FFCC00;
     }
-
-    /* dark mode文字永远黑色 */
 
     body.dark .navbar a{
       color:#000 !important;
@@ -137,8 +220,57 @@
       color:#000 !important;
     }
 
+    body.dark .hero-section{
+      background:#FFCC00;
+    }
+
+    body.dark .hero-title,
+    body.dark .hero-contact{
+      color:#000 !important;
+    }
+
+    body.dark .hero-btn{
+      background:white;
+      color:#000 !important;
+    }
+
     body.dark .main-content{
       color:white;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 1100px){
+
+      .hero-section{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:50px 40px;
+      }
+
+      .hero-title{
+        font-size:64px;
+      }
+
+      .hero-contact{
+        font-size:24px;
+      }
+
+      .headshot{
+        width:260px;
+        height:260px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .navbar{
+        flex-wrap:wrap;
+        gap:10px;
+      }
     }
 
   </style>
@@ -147,7 +279,9 @@
 
 <body>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- =========================
+       NAVBAR
+  ========================== -->
 
   <nav class="navbar">
 
@@ -182,31 +316,69 @@
 
   </nav>
 
-  <!-- ===== ORIGINAL PAGE ===== -->
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
 
-  <header class="page-header" role="banner">
+  <section class="hero-section">
 
-    <h1 class="project-name">
-      {{ page.title | default: site.title | default: site.github.repository_name }}
-    </h1>
+    <!-- LEFT -->
 
-    <h2 class="project-tagline">
-      {{ page.description | default: site.description | default: site.github.project_tagline }}
-    </h2>
+    <div class="hero-left">
 
-    {% if site.show_downloads %}
+      <h1 class="hero-title">
+        Lia Wun
+      </h1>
 
-      <a href="./Resume.pdf" class="btn">
-        Resume.pdf
-      </a>
+      <div class="hero-contact">
+        tszyeewun_au@outlook.com
+      </div>
 
-      <a href="https://www.linkedin.com/in/tszyeewun" class="btn">
-        LinkedIn Profile
-      </a>
+      <div class="hero-contact">
+        +61 0431 538 052
+      </div>
 
-    {% endif %}
+      <div class="hero-buttons">
 
-  </header>
+        <!-- 保留你原来的 Resume 链接 -->
+
+        <a href="./Resume.pdf" class="hero-btn">
+          Resume.pdf
+        </a>
+
+        <!-- 保留你原来的 LinkedIn 链接 -->
+
+        <a href="https://www.linkedin.com/in/tszyeewun"
+           class="hero-btn">
+           LinkedIn Profile
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="hero-right">
+
+      <!--
+      把你的头像文件放进 repo
+      然后改名字即可
+      例如：
+      /assets/headshot.jpg
+      -->
+
+      <img src="./assets/headshot.jpg"
+           alt="Headshot"
+           class="headshot">
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
 
   <main id="content" class="main-content" role="main">
 
@@ -222,7 +394,9 @@
 
   </main>
 
-  <!-- ===== DARK MODE SCRIPT ===== -->
+  <!-- =========================
+       DARK MODE SCRIPT
+  ========================== -->
 
   <script>
 
