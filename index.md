@@ -199,7 +199,7 @@ title: Home
 
 .about-section h1{
 
-  font-size:72px;
+  font-size:28px;
 
   font-weight:800;
 
@@ -216,7 +216,7 @@ title: Home
 
   box-sizing:border-box;
 
-  background:#f3f3f3;
+  background:#F0F0F2;
 
   padding:45px 90px;
 
@@ -229,7 +229,7 @@ title: Home
 
 .about-card p{
 
-  font-size:28px;
+  font-size:18px;
 
   font-weight:700;
 
