@@ -1,123 +1,184 @@
 ---
 layout: default
+title: Home
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+<div class="content-box">
 
-[Link to another page](./another-page.html).
+# About Me
 
-There should be whitespace between paragraphs.
+Hello World! Welcome to Lia’s homepage.
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+I am currently pursuing a Master of City Planning at the University of New South Wales (UNSW), Sydney, Australia.
 
-# Header 1
+My interests focus on applying AI and data-driven approaches to solve urban problems, particularly at the intersection of intelligent systems, urban mobility, and spatial analytics.
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+I am currently working as a Traffic Engineer at Genesis Traffic, where I work on traffic modelling, swept path analysis, parking compliance, and transport reporting.
 
-## Header 2
+## Focus Areas
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+- Artificial Intelligence & Machine Learning
+- Transport Modelling
+- GIS & Spatial Analytics
+- Urban Planning
+- Economic & Financial Analysis
 
-### Header 3
+</div>
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
+---
+
+<div class="content-box">
+
+# Education
+
+## University of New South Wales
+
+**Master of City Planning**  
+Nov 2024 – Aug 2026 (Expected)
+
+## Tianjin University
+
+**Bachelor of Finance**  
+Sep 2020 – Jul 2024
+
+</div>
+
+---
+
+<div class="content-box">
+
+# Technical Skills
+
+## Traffic & Transport
+
+- SIDRA
+- AutoTURN
+- SUMO
+- AutoCAD
+
+## GIS & Spatial
+
+- QGIS
+- ArcGIS Pro
+- ArcGIS Online
+- Vectorworks
+
+## Programming
+
+- Python
+- MATLAB
+- C++
+
+## Data & Analytics
+
+- MySQL
+- SPSS
+- EViews
+- NVivo
+
+</div>
+
+---
+
+<div class="content-box">
+
+# Featured Projects
+
+## PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity
+
+Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimization.
+
+## GIS Analysis of Amenity Equity in Blacktown, NSW
+
+Spatial analysis and interactive GIS storytelling exploring amenity accessibility and social equity.
+
+## Urban Analysis and Design Proposal for East Killara, NSW
+
+Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations in East Killara.
+
+## Macquarie Park: Transport-Oriented Development (TOD) Accelerated Precinct
+
+Master planning proposal focused on mobility integration, accessibility, connectivity, active transport networks, mixed-use development, and public domain integration.
+
+## Urban Heat Island and Sustainable Design: Slave Island Project
+
+Sustainable urban design project focused on urban heat mitigation and climate-resilient built environments.
+
+## Time Series Volatility Modelling using GARCH and TGARCH: The Impact of Stock Index Options on Stock Price Volatility
+
+Applied GARCH and TGARCH models to analyse volatility dynamics, asymmetry effects, and market risk before and after the introduction of stock index options.
+
+</div>
+
+---
+
+<div class="content-box">
+
+# Contact
+
+- Email
+- LinkedIn
+- GitHub
+
+</div>
+
+<style>
+
+.content-box{
+
+  background:#f0f0f0;
+
+  padding:40px 50px;
+
+  border-radius:30px;
+
+  margin-bottom:40px;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
 }
-```
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+.content-box h1{
 
-#### Header 4
+  font-size:52px;
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+  color:#000;
 
-##### Header 5
+  margin-bottom:30px;
+}
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+.content-box h2{
 
-###### Header 6
+  margin-top:35px;
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+  color:#000;
+}
 
-### There's a horizontal rule below this.
+.content-box p,
+.content-box li{
 
-* * *
+  font-size:22px;
 
-### Here is an unordered list:
+  line-height:1.8;
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+  color:#222;
+}
 
-### And an ordered list:
+.content-box ul{
 
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
+  padding-left:30px;
+}
 
-### And a nested list:
+body.dark .content-box{
 
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
+  background:#1f1f1f;
+}
 
-### Small image
+body.dark .content-box h1,
+body.dark .content-box h2,
+body.dark .content-box p,
+body.dark .content-box li{
 
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+  color:white;
+}
 
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+</style>
