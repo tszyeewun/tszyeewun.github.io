@@ -7,7 +7,7 @@
   {% seo %}
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#157878">
+  <meta name="theme-color" content="#FFCC00">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
@@ -43,7 +43,8 @@
       width:90%;
       max-width:1250px;
 
-      background:white;
+      /* UNSW Yellow */
+      background:#FFCC00;
 
       border-radius:999px;
 
@@ -62,7 +63,8 @@
 
       text-decoration:none;
 
-      color:#222;
+      /* 永远黑色 */
+      color:#000 !important;
 
       font-size:20px;
       font-weight:700;
@@ -75,8 +77,11 @@
     }
 
     .navbar a:hover{
-      background:#FFCC00;
-      color:white;
+
+      background:white;
+
+      /* hover也保持黑字 */
+      color:#000 !important;
 
       transform:translateY(-2px);
     }
@@ -84,8 +89,11 @@
     /* ===== ACTIVE PAGE ===== */
 
     .navbar a.active{
-      background:#FFCC00;
-      color:white;
+
+      background:white;
+
+      /* active也保持黑字 */
+      color:#000 !important;
     }
 
     /* ===== PAGE HEADER ===== */
@@ -107,20 +115,26 @@
       color:white;
     }
 
+    /* dark mode导航栏也保持UNSW黄 */
+
     body.dark .navbar{
-      background:#1f1f1f;
+      background:#FFCC00;
     }
 
+    /* dark mode文字永远黑色 */
+
     body.dark .navbar a{
-      color:white;
+      color:#000 !important;
     }
 
     body.dark .navbar a:hover{
-      background:#a00000;
+      background:white;
+      color:#000 !important;
     }
 
     body.dark .navbar a.active{
-      background:#a00000;
+      background:white;
+      color:#000 !important;
     }
 
     body.dark .main-content{
