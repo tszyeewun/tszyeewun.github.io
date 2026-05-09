@@ -120,7 +120,7 @@ title: Home
     </div>
 
     <div class="project-description">
-      Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimization.
+      Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimisation.
     </div>
 
     <div class="project-title">
@@ -136,7 +136,7 @@ title: Home
     </div>
 
     <div class="project-description">
-      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations in East Killara.
+      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations.
     </div>
 
     <div class="project-title">
@@ -329,24 +329,24 @@ title: Home
 
 .project-title{
 
-  font-size:34px;
+  font-size:28px;
 
-  font-weight:800;
+  font-weight:700;
 
   margin-top:38px;
 
   margin-bottom:12px;
 
-  color:#000;
+  color:#111;
 }
 
 .project-description{
 
-  font-size:26px;
+  font-size:24px;
 
-  font-weight:700;
+  font-weight:400;
 
-  line-height:1.8;
+  line-height:1.5;
 
   color:#666;
 }
