@@ -349,9 +349,11 @@ title: Home
 
   display:flex;
 
-  gap:24px;
+  flex-direction:column;
 
-  flex-wrap:wrap;
+  align-items:flex-start;
+
+  gap:24px;
 }
 
 .hero-btn{
