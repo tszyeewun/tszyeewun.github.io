@@ -103,7 +103,9 @@ title: Experience
 .experience-subheader{
   display:flex;
   justify-content:space-between;
-  font-weight:700;
+  font-size:28px;         /* 和正文灰色文字一样大小 */
+  font-weight:600;        /* 和正文一致 */
+  color:#000;             /* 黑色 */
   margin-bottom:8px;
 }
 
@@ -121,7 +123,7 @@ title: Experience
   font-size:22px;
   font-weight:600;
   line-height:1.5;
-  color:#666;
+  color:#666; /* 描述保持灰色 */
   margin-top:12px;
 }
 
@@ -146,6 +148,7 @@ title: Experience
     flex-direction:column;
     align-items:flex-start;
     margin-bottom:4px;
+    font-size:14px;      /* 手机端前两行字体也调整 */
   }
 
   .experience-header .location,
@@ -172,7 +175,7 @@ body.dark .experience-header .position,
 body.dark .experience-subheader .company,
 body.dark .experience-header .location,
 body.dark .experience-subheader .time{
-  color:white;
+  color:#000;  /* 暗模式前两行仍黑色 */
 }
 
 body.dark .experience-card p{
