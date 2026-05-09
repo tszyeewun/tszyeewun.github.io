@@ -140,22 +140,6 @@ title: Home
     </div>
 
     <div class="project-title">
-      Macquarie Park: Transport-Oriented Development (TOD) Accelerated Precinct
-    </div>
-
-    <div class="project-description">
-      Master planning proposal focused on mobility integration, accessibility, connectivity, active transport networks, mixed-use development, and public domain integration.
-    </div>
-
-    <div class="project-title">
-      Urban Heat Island and Sustainable Design: Slave Island Project
-    </div>
-
-    <div class="project-description">
-      Sustainable urban design project focused on urban heat mitigation and climate-resilient built environments.
-    </div>
-
-    <div class="project-title">
       Time Series Volatility Modelling using GARCH and TGARCH: The Impact of Stock Index Options on Stock Price Volatility
     </div>
 
@@ -342,9 +326,9 @@ title: Home
 
 .project-description{
 
-  font-size:24px;
+  font-size:22px;
 
-  font-weight:400;
+  font-weight:600;
 
   line-height:1.5;
 
