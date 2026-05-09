@@ -14,25 +14,15 @@ title: Home
     </p>
 
     <p>
-      I am currently pursuing a Master of City Planning at the University of New South Wales (UNSW), Sydney, Australia.
+      I am a Master of City Planning student at the University of New South Wales (UNSW), Sydney, Australia.
     </p>
 
     <p>
-      My interests focus on applying AI and data-driven approaches to solve urban problems, particularly at the intersection of intelligent systems, urban mobility, and spatial analytics.
+      My interests focus on applying AI and data-driven approaches to urban problems across transport modelling, GIS and spatial analytics, urban planning, and economic analysis.
     </p>
 
     <p>
-      I am currently working as a Traffic Engineer at Genesis Traffic, where I work on traffic modelling, swept path analysis, parking compliance, and transport reporting.
-    </p>
-
-    <h2>Focus Areas</h2>
-
-    <p>
-      Artificial Intelligence & Machine Learning<br>
-      Transport Modelling<br>
-      GIS & Spatial Analytics<br>
-      Urban Planning<br>
-      Economic & Financial Analysis
+      Alongside my studies, I work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.
     </p>
 
   </div>
@@ -199,7 +189,7 @@ title: Home
 
 .about-section h1{
 
-  font-size:28px;
+  font-size:36px;
 
   font-weight:800;
 
@@ -229,7 +219,7 @@ title: Home
 
 .about-card p{
 
-  font-size:18px;
+  font-size:28px;
 
   font-weight:700;
 
