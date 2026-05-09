@@ -61,16 +61,13 @@ title: Home
     </p>
 
     <p>
-      I am a Master of City Planning student at the University of New South Wales.
+      I am a Master of City Planning student at the University of New South Wales. I am dedicated to applying AI and data-driven approaches to urban challenges, across transport modeling, GIS and spatial analysis, urban planning, and economic analysis.
     </p>
 
     <p>
-      Alongside my studies, I also work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.
+      Alongside my studies, I also work as a Traffic Engineer at Genesis Traffic. My work includes traffic modeling, swept path analysis, parking compliance, and transport reporting.
     </p>
 
-    <p>
-      My interests focus on applying AI and data-driven approaches to urban problems across transport modelling, GIS and spatial analytics, urban planning, and economic analysis.
-    </p>
 
   </div>
 
