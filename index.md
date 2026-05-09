@@ -65,7 +65,7 @@ title: Home
     </p>
 
     <p>
-      Alongside my studies, I work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.
+      Alongside my studies, I also work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.
     </p>
 
     <p>
