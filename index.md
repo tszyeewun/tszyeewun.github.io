@@ -78,7 +78,7 @@ title: Home
     </div>
 
     <div class="skill-content">
-      SIDRA, AutoTURN, SUMO, AutoCAD
+      <em>SIDRA, AutoTURN, SUMO, AutoCAD</em>
     </div>
 
     <div class="skill-category">
@@ -86,7 +86,7 @@ title: Home
     </div>
 
     <div class="skill-content">
-      QGIS, ArcGIS Pro, ArcGIS Online, Vectorworks
+      <em>QGIS, ArcGIS Pro, ArcGIS Online, Vectorworks</em>
     </div>
 
     <div class="skill-category">
@@ -94,7 +94,7 @@ title: Home
     </div>
 
     <div class="skill-content">
-      Python, MATLAB, C++
+      <em>Python, MATLAB, C++</em>
     </div>
 
     <div class="skill-category">
@@ -102,7 +102,7 @@ title: Home
     </div>
 
     <div class="skill-content">
-      MySQL, SPSS, EViews, NVivo
+      <em>MySQL, SPSS, EViews, NVivo</em>
     </div>
 
   </div>
@@ -315,7 +315,12 @@ title: Home
 
   line-height:1.8;
 
-  color:#333;
+  color:#000;
+}
+
+.skill-content em{
+
+  font-style:italic;
 }
 
 /* =========================
