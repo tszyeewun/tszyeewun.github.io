@@ -239,7 +239,7 @@ title: Home
 
   margin:120px auto 0 auto;
 
-  width:80%;
+  width:100%;
   max-width:1250px;
 
   background:#FFCC00;
@@ -263,7 +263,7 @@ title: Home
 .hero-title{
   font-size:96px;
   font-weight:800;
-  color:#000;
+  color:#000 !important;
   margin:0 0 30px 0;
   line-height:1;
 }
@@ -287,7 +287,36 @@ title: Home
   justify-content:center;
   align-items:center;
 }
+.hero-btn{
+  display:inline-block;
 
+  text-decoration:none;
+
+  background:#ECECEF;
+  color:#000 !important;
+
+  font-size:25px;
+  font-weight:700;
+
+  padding:6px 30px;
+
+  border-radius:18px;
+
+  transition:0.3s ease;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+.hero-btn:hover{
+  transform:translateY(-3px);
+}
+
+.hero-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+     
 .headshot{
 
   width:360px;
