@@ -2,47 +2,155 @@
 layout: default
 title: Home
 ---
+      <!-- =========================
+       HERO SECTION
+  ========================== -->
 
-<section class="hero-section">
+  <section class="hero-section">
 
-  <div class="hero-left">
+    <!-- LEFT -->
 
-    <h1 class="hero-title">
-      Lia Wun
-    </h1>
+    <div class="hero-left">
 
-    <div class="hero-contact">
-      tszyeewun_au@outlook.com
+      <h1 class="hero-title">
+        Lia Wun
+      </h1>
+
+      <div class="hero-contact">
+        tszyeewun_au@outlook.com
+      </div>
+
+      <div class="hero-contact">
+        Sydney, New South Wales, Australia
+      </div>
+
+      <div class="hero-buttons">
+
+        <!-- 保留你原来的 Resume 链接 -->
+
+        <a href="./Resume.pdf" class="hero-btn">
+          Resume.pdf
+        </a>
+
+        <!-- 保留你原来的 LinkedIn 链接 -->
+
+        <a href="https://www.linkedin.com/in/tszyeewun"
+           class="hero-btn">
+           LinkedIn Profile
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="hero-contact">
-      Sydney, New South Wales, Australia
-    </div>
+    <div class="hero-right">
 
-    <div class="hero-buttons">
-
-      <a href="./Resume.pdf" class="hero-btn">
-        Resume.pdf
-      </a>
-
-      <a href="https://www.linkedin.com/in/tszyeewun"
-         class="hero-btn">
-         LinkedIn Profile
-      </a>
+      <img src="./assets/headshot.jpg"
+           alt="Headshot"
+           class="headshot">
 
     </div>
 
-  </div>
+  </section>
 
-  <div class="hero-right">
+    /* =========================
+       HERO SECTION
+    ========================= */
 
-    <img src="./assets/headshot.jpg"
-         alt="Headshot"
-         class="headshot">
+    .hero-section{
 
-  </div>
+      margin:120px auto 0 auto;
 
-</section>
+      width:80%;
+      max-width:1250px;
+
+      background:#FFCC00;
+
+      border-radius:40px;
+
+      padding:125px 90px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:60px;
+
+      box-sizing:border-box;
+    }
+
+    .hero-left{
+      flex:1;
+    }
+
+    .hero-title{
+      font-size:96px;
+      font-weight:800;
+      color:#000;
+      margin:0 0 30px 0;
+      line-height:1;
+    }
+
+    .hero-contact{
+      font-size:30px;
+      color:#000;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .hero-buttons{
+      margin-top:40px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .hero-btn{
+      display:inline-block;
+
+      text-decoration:none;
+
+      background:#ECECEF;
+      color:#000 !important;
+
+      font-size:25px;
+      font-weight:700;
+
+      padding:6px 30px;
+
+      border-radius:18px;
+
+      transition:0.3s ease;
+
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .hero-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* =========================
+       HEADSHOT
+    ========================= */
+
+    .hero-right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .headshot{
+
+      width:360px;
+      height:360px;
+
+      object-fit:cover;
+
+      border-radius:50%;
+
+      border:10px solid white;
+
+      box-shadow:0 8px 25px rgba(0,0,0,0.18);
+    }
 
 <section class="about-section">
 
@@ -74,7 +182,7 @@ title: Home
 
   <h1>Education</h1>
 
-  <div class="about-card">
+  <div class="about-card education-card">
 
     <div class="education-item">
 
@@ -122,107 +230,108 @@ title: Home
       Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimisation.
     </div>
 
+    <div class="project-title">
+      GIS Analysis of Amenity Equity in Blacktown, NSW
+    </div>
+
+    <div class="project-description">
+      Spatial analysis and interactive GIS storytelling exploring amenity accessibility and social equity.
+    </div>
+
+    <div class="project-title">
+      Urban Analysis and Design Proposal for East Killara, NSW
+    </div>
+
+    <div class="project-description">
+      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations.
+    </div>
+
+    <div class="project-title">
+      Time Series Volatility Modelling using GARCH and TGARCH: The Impact of Stock Index Options on Stock Price Volatility
+    </div>
+
+    <div class="project-description">
+      Applied GARCH and TGARCH models to analyse volatility dynamics, asymmetry effects, and market risk before and after the introduction of stock index options.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <h1>Skills</h1>
+
+  <div class="about-card">
+
+    <div class="skill-category">
+      Traffic & Transport
+    </div>
+
+    <div class="skill-content">
+      <em>SIDRA, AutoTURN, SUMO, AutoCAD</em>
+    </div>
+
+    <div class="skill-category">
+      GIS & Spatial
+    </div>
+
+    <div class="skill-content">
+      <em>QGIS, ArcGIS Pro, ArcGIS Online, Vectorworks</em>
+    </div>
+
+    <div class="skill-category">
+      Programming
+    </div>
+
+    <div class="skill-content">
+      <em>Python, MATLAB, C++</em>
+    </div>
+
+    <div class="skill-category">
+      Data & Analytics
+    </div>
+
+    <div class="skill-content">
+      <em>MySQL, SPSS, EViews, NVivo</em>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <h1>Contact</h1>
+
+  <div class="contact-buttons">
+
+    <a href="./Resume.pdf" class="hero-btn">
+      Resume
+    </a>
+
+    <a href="mailto:tszyeewun_au@outlook.com"
+       class="hero-btn">
+       Email
+    </a>
+
+    <a href="https://www.linkedin.com/in/tszyeewun"
+       class="hero-btn"
+       target="_blank">
+       LinkedIn
+    </a>
+
+    <a href="https://github.com/tszyeewun"
+       class="hero-btn"
+       target="_blank">
+       GitHub
+    </a>
+
   </div>
 
 </section>
 
 <style>
-
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero-section{
-
-  width:100%;
-
-  background:#FFCC00;
-
-  border-radius:40px;
-
-  padding:125px 90px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:60px;
-
-  box-sizing:border-box;
-}
-
-.hero-left{
-  flex:1;
-}
-
-.hero-title{
-  font-size:96px;
-  font-weight:800;
-  color:#000;
-  margin:0 0 30px 0;
-  line-height:1;
-}
-
-.hero-contact{
-  font-size:30px;
-  color:#000;
-  font-weight:600;
-  margin-bottom:10px;
-}
-
-.hero-buttons{
-  margin-top:40px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.hero-btn{
-  display:inline-block;
-
-  text-decoration:none;
-
-  background:#ECECEF;
-  color:#000 !important;
-
-  font-size:25px;
-  font-weight:700;
-
-  padding:6px 30px;
-
-  border-radius:18px;
-
-  transition:0.3s ease;
-
-  box-shadow:0 4px 12px rgba(0,0,0,0.12);
-}
-
-.hero-btn:hover{
-  transform:translateY(-3px);
-}
-
-.hero-right{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.headshot{
-
-  width:360px;
-  height:360px;
-
-  object-fit:cover;
-
-  border-radius:50%;
-
-  border:10px solid white;
-
-  box-shadow:0 8px 25px rgba(0,0,0,0.18);
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
 
 .about-section{
 
@@ -242,6 +351,8 @@ title: Home
   color:#000;
 }
 
+/* CARD */
+
 .about-card{
 
   width:100%;
@@ -256,6 +367,8 @@ title: Home
 
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
 }
+
+/* PARAGRAPH */
 
 .about-card p{
 
@@ -280,13 +393,19 @@ title: Home
 
   justify-content:space-between;
 
+  align-items:flex-start;
+
   gap:40px;
 
   margin-bottom:50px;
 }
 
-.education-left,
-.education-right{
+.education-item:last-child{
+
+  margin-bottom:0;
+}
+
+.education-left{
 
   font-size:28px;
 
@@ -298,7 +417,49 @@ title: Home
 }
 
 .education-right{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#111;
+
   text-align:right;
+}
+
+/* =========================
+   TECHNICAL SKILLS
+========================= */
+
+.skill-category{
+
+  font-size:28px;
+
+  font-weight:800;
+
+  margin-top:32px;
+
+  margin-bottom:10px;
+
+  color:#111;
+}
+
+.skill-content{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#666;
+}
+
+.skill-content em{
+
+  font-style:italic;
 }
 
 /* =========================
@@ -310,6 +471,8 @@ title: Home
   font-size:28px;
 
   font-weight:700;
+
+  margin-top:38px;
 
   margin-bottom:12px;
 
@@ -328,84 +491,227 @@ title: Home
 }
 
 /* =========================
+   CONTACT BUTTONS
+========================= */
+
+.contact-buttons{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:24px;
+}
+
+.hero-btn{
+
+  display:inline-block;
+
+  text-decoration:none;
+
+  background:white;
+
+  color:#000 !important;
+
+  font-size:28px;
+
+  font-weight:700;
+
+  padding:6px 30px;
+
+  border-radius:18px;
+
+  transition:0.3s ease;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+.hero-btn:hover{
+
+  transform:translateY(-3px);
+}
+  
+
+/* =========================
    MOBILE
 ========================= */
 
 @media (max-width:1100px){
-
   .hero-section{
 
-    flex-direction:column-reverse;
+        margin:90px auto 0 auto;
+        
+        width:95%;
 
-    text-align:center;
+        flex-direction:column-reverse;
 
-    padding:40px 20px;
+        text-align:center;
 
-    gap:30px;
+        padding:40px 20px;
 
-    border-radius:28px;
-  }
+        gap:30px;
 
-  .hero-title{
+        border-radius:28px;
+      }
 
-    font-size:48px;
-  }
+      .hero-title{
 
-  .hero-contact{
+        font-size:48px;
 
-    font-size:16px;
-  }
+        line-height:1.1;
+      }
 
-  .hero-buttons{
+      .hero-contact{
 
-    justify-content:center;
-  }
+        font-size:16px;
+      }
 
-  .hero-btn{
+      .hero-buttons{
 
-    font-size:14px;
+        justify-content:center;
 
-    padding:8px 16px;
-  }
+        gap:12px;
 
-  .headshot{
+        margin-top:25px;
+      }
 
-    width:180px;
-    height:180px;
+      .hero-btn{
 
-    border:6px solid white;
+        font-size:14px;
+
+        padding:8px 16px;
+
+        border-radius:14px;
+      }
+
+      .headshot{
+
+        width:180px;
+        height:180px;
+
+        border:6px solid white;
+      }
+  /* SECTION */
+
+  .about-section{
+
+    margin:35px 0;
   }
 
   .about-section h1{
 
     font-size:32px;
+
+    margin-bottom:18px;
   }
+
+  /* CARD */
 
   .about-card{
 
     padding:28px 22px;
+
+    border-radius:24px;
   }
 
-  .about-card p,
-  .education-left,
-  .education-right{
+  /* ABOUT TEXT */
+
+  .about-card p{
 
     font-size:16px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
   }
+
+  /* EDUCATION */
 
   .education-item{
 
     flex-direction:column;
 
     gap:10px;
+
+    margin-bottom:30px;
+  }
+
+  .education-left{
+
+    font-size:16px;
+
+    line-height:1.6;
   }
 
   .education-right{
 
+    font-size:15px;
+
+    line-height:1.6;
+
     text-align:left;
+
+    color:#666;
+  }
+
+  /* SKILLS */
+
+  .skill-category{
+
+    font-size:18px;
+
+    margin-top:22px;
+
+    margin-bottom:8px;
+  }
+
+  .skill-content{
+
+    font-size:15px;
+
+    line-height:1.6;
+  }
+
+  /* PROJECTS */
+
+  .project-title{
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    margin-top:24px;
+
+    margin-bottom:8px;
+  }
+
+  .project-description{
+
+    font-size:14px;
+
+    line-height:1.7;
+  }
+
+  /* CONTACT */
+
+  .contact-buttons{
+
+    gap:14px;
+  }
+
+  .hero-btn{
+
+    font-size:14px;
+
+    padding:8px 18px;
+
+    border-radius:14px;
   }
 
 }
+  
 
 /* =========================
    DARK MODE
@@ -416,10 +722,25 @@ body.dark .about-card{
   background:#1f1f1f;
 }
 
+body.dark .hero-section{
+  background:#FFCC00;
+}
+
+body.dark .hero-title,
+body.dark .hero-contact{
+  color:#000 !important;
+}
+
+body.dark .hero-btn{
+  background:white;
+  color:#000 !important;
+}
 body.dark .about-section h1,
 body.dark .about-card p,
 body.dark .education-left,
 body.dark .education-right,
+body.dark .skill-category,
+body.dark .skill-content,
 body.dark .project-title{
 
   color:white;
