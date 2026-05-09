@@ -305,7 +305,7 @@ title: Home
 
   line-height:1.5;
 
-  color:#111;
+  color:#666;
 }
 
 .skill-content em{
