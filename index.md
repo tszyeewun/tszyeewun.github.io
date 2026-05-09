@@ -2,155 +2,53 @@
 layout: default
 title: Home
 ---
-      <!-- =========================
-       HERO SECTION
-  ========================== -->
 
-  <section class="hero-section">
+<!-- =========================
+     HERO SECTION
+========================== -->
 
-    <!-- LEFT -->
+<section class="hero-section">
 
-    <div class="hero-left">
+  <!-- LEFT -->
 
-      <h1 class="hero-title">
-        Lia Wun
-      </h1>
+  <div class="hero-left">
 
-      <div class="hero-contact">
-        tszyeewun_au@outlook.com
-      </div>
+    <h1 class="hero-title">
+      Lia Wun
+    </h1>
 
-      <div class="hero-contact">
-        Sydney, New South Wales, Australia
-      </div>
+    <div class="hero-contact">
+      tszyeewun_au@outlook.com
+    </div>
 
-      <div class="hero-buttons">
+    <div class="hero-contact">
+      Sydney, New South Wales, Australia
+    </div>
 
-        <!-- 保留你原来的 Resume 链接 -->
+    <div class="hero-buttons">
 
-        <a href="./Resume.pdf" class="hero-btn">
-          Resume.pdf
-        </a>
+      <a href="./Resume.pdf" class="hero-btn">
+        Resume.pdf
+      </a>
 
-        <!-- 保留你原来的 LinkedIn 链接 -->
-
-        <a href="https://www.linkedin.com/in/tszyeewun"
-           class="hero-btn">
-           LinkedIn Profile
-        </a>
-
-      </div>
+      <a href="https://www.linkedin.com/in/tszyeewun"
+         class="hero-btn">
+         LinkedIn Profile
+      </a>
 
     </div>
 
-    <div class="hero-right">
+  </div>
 
-      <img src="./assets/headshot.jpg"
-           alt="Headshot"
-           class="headshot">
+  <div class="hero-right">
 
-    </div>
+    <img src="./assets/headshot.jpg"
+         alt="Headshot"
+         class="headshot">
 
-  </section>
+  </div>
 
-    /* =========================
-       HERO SECTION
-    ========================= */
-
-    .hero-section{
-
-      margin:120px auto 0 auto;
-
-      width:80%;
-      max-width:1250px;
-
-      background:#FFCC00;
-
-      border-radius:40px;
-
-      padding:125px 90px;
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:60px;
-
-      box-sizing:border-box;
-    }
-
-    .hero-left{
-      flex:1;
-    }
-
-    .hero-title{
-      font-size:96px;
-      font-weight:800;
-      color:#000;
-      margin:0 0 30px 0;
-      line-height:1;
-    }
-
-    .hero-contact{
-      font-size:30px;
-      color:#000;
-      font-weight:600;
-      margin-bottom:10px;
-    }
-
-    .hero-buttons{
-      margin-top:40px;
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .hero-btn{
-      display:inline-block;
-
-      text-decoration:none;
-
-      background:#ECECEF;
-      color:#000 !important;
-
-      font-size:25px;
-      font-weight:700;
-
-      padding:6px 30px;
-
-      border-radius:18px;
-
-      transition:0.3s ease;
-
-      box-shadow:0 4px 12px rgba(0,0,0,0.12);
-    }
-
-    .hero-btn:hover{
-      transform:translateY(-3px);
-    }
-
-    /* =========================
-       HEADSHOT
-    ========================= */
-
-    .hero-right{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .headshot{
-
-      width:360px;
-      height:360px;
-
-      object-fit:cover;
-
-      border-radius:50%;
-
-      border:10px solid white;
-
-      box-shadow:0 8px 25px rgba(0,0,0,0.18);
-    }
+</section>
 
 <section class="about-section">
 
@@ -333,6 +231,77 @@ title: Home
 
 <style>
 
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+
+  margin:120px auto 0 auto;
+
+  width:80%;
+  max-width:1250px;
+
+  background:#FFCC00;
+
+  border-radius:40px;
+
+  padding:125px 90px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:60px;
+
+  box-sizing:border-box;
+}
+
+.hero-left{
+  flex:1;
+}
+
+.hero-title{
+  font-size:96px;
+  font-weight:800;
+  color:#000;
+  margin:0 0 30px 0;
+  line-height:1;
+}
+
+.hero-contact{
+  font-size:30px;
+  color:#000;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.hero-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.hero-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.headshot{
+
+  width:360px;
+  height:360px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  border:10px solid white;
+
+  box-shadow:0 8px 25px rgba(0,0,0,0.18);
+}
+
 .about-section{
 
   width:100%;
@@ -505,6 +474,10 @@ title: Home
   gap:24px;
 }
 
+/* =========================
+   BUTTONS
+========================= */
+
 .hero-btn{
 
   display:inline-block;
@@ -532,67 +505,68 @@ title: Home
 
   transform:translateY(-3px);
 }
-  
 
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width:1100px){
+
   .hero-section{
 
-        margin:90px auto 0 auto;
-        
-        width:95%;
+    margin:90px auto 0 auto;
 
-        flex-direction:column-reverse;
+    width:95%;
 
-        text-align:center;
+    flex-direction:column-reverse;
 
-        padding:40px 20px;
+    text-align:center;
 
-        gap:30px;
+    padding:40px 20px;
 
-        border-radius:28px;
-      }
+    gap:30px;
 
-      .hero-title{
+    border-radius:28px;
+  }
 
-        font-size:48px;
+  .hero-title{
 
-        line-height:1.1;
-      }
+    font-size:48px;
 
-      .hero-contact{
+    line-height:1.1;
+  }
 
-        font-size:16px;
-      }
+  .hero-contact{
 
-      .hero-buttons{
+    font-size:16px;
+  }
 
-        justify-content:center;
+  .hero-buttons{
 
-        gap:12px;
+    justify-content:center;
 
-        margin-top:25px;
-      }
+    gap:12px;
 
-      .hero-btn{
+    margin-top:25px;
+  }
 
-        font-size:14px;
+  .hero-btn{
 
-        padding:8px 16px;
+    font-size:14px;
 
-        border-radius:14px;
-      }
+    padding:8px 16px;
 
-      .headshot{
+    border-radius:14px;
+  }
 
-        width:180px;
-        height:180px;
+  .headshot{
 
-        border:6px solid white;
-      }
+    width:180px;
+    height:180px;
+
+    border:6px solid white;
+  }
+
   /* SECTION */
 
   .about-section{
@@ -711,7 +685,6 @@ title: Home
   }
 
 }
-  
 
 /* =========================
    DARK MODE
@@ -735,6 +708,7 @@ body.dark .hero-btn{
   background:white;
   color:#000 !important;
 }
+
 body.dark .about-section h1,
 body.dark .about-card p,
 body.dark .education-left,
