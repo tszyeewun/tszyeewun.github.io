@@ -155,7 +155,7 @@ title: Home
 
   <h1>Contact</h1>
 
-  <div class="about-card contact-buttons">
+  <div class="contact-buttons">
 
     <a href="./Resume.pdf" class="hero-btn">
       Resume
