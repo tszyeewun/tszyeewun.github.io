@@ -1,11 +1,153 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Projects</title>
-</head>
+---
+layout: default
+title: Projects
+---
 
-<body>
+<section class="about-section">
+
   <h1>Projects</h1>
-  <p>Hello this is my projects page.</p>
-</body>
-</html>
+
+  <!-- Project 1 -->
+  <div class="about-card project-card">
+
+    <div class="project-title">
+      PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity
+    </div>
+
+    <div class="project-description">
+      Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimisation.
+    </div>
+
+  </div>
+
+  <!-- Project 2 -->
+  <div class="about-card project-card">
+
+    <div class="project-title">
+      GIS Analysis of Amenity Equity in Blacktown, NSW
+    </div>
+
+    <div class="project-description">
+      Spatial analysis and interactive GIS storytelling exploring amenity accessibility and social equity.
+    </div>
+
+  </div>
+
+  <!-- Project 3 -->
+  <div class="about-card project-card">
+
+    <div class="project-title">
+      Urban Analysis and Design Proposal for East Killara, NSW
+    </div>
+
+    <div class="project-description">
+      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations.
+    </div>
+
+  </div>
+
+  <!-- Project 4 -->
+  <div class="about-card project-card">
+
+    <div class="project-title">
+      Time Series Volatility Modelling using GARCH and TGARCH: The Impact of Stock Index Options on Stock Price Volatility
+    </div>
+
+    <div class="project-description">
+      Applied GARCH and TGARCH models to analyse volatility dynamics, asymmetry effects, and market risk before and after the introduction of stock index options.
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.about-section{
+  width:100%;
+  margin:50px 0;
+}
+
+.about-section h1{
+  font-size:48px;
+  font-weight:800;
+  margin-bottom:25px;
+  color:#000;
+}
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card{
+  background:#F0F0F2;
+  padding:35px 50px;
+  border-radius:32px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  margin-bottom:30px;
+}
+
+.project-title{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:#111;
+}
+
+.project-description{
+  font-size:22px;
+  font-weight:600;
+  line-height:1.5;
+  color:#666;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:1100px){
+
+  .about-section h1{
+    font-size:32px;
+    margin-bottom:18px;
+  }
+
+  .project-card{
+    padding:28px 22px;
+    border-radius:24px;
+  }
+
+  .project-title{
+    font-size:17px;
+    line-height:1.6;
+    margin-bottom:8px;
+  }
+
+  .project-description{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark .project-card{
+  background:#1f1f1f;
+}
+
+body.dark .project-title{
+  color:white;
+}
+
+body.dark .project-description{
+  color:#bdbdbd;
+}
+
+</style>
