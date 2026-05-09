@@ -260,20 +260,18 @@
        DARK MODE SCRIPT
   ========================== -->
 
-  <!-- =========================
-     DARK MODE SCRIPT
-========================= -->
-
   <script>
-    // 页面加载时检查 localStorage，决定是否启用暗模式
+    // 页面加载时检查 localStorage
     if (localStorage.getItem("darkMode") === "on") {
-      document.body.classList.add("dark");
+    document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
     }
 
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
 
-      // 保存状态到 localStorage
+      // 更新 localStorage
       if (document.body.classList.contains("dark")) {
         localStorage.setItem("darkMode", "on");
       } else {
