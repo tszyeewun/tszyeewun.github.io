@@ -2,6 +2,46 @@
 layout: default
 title: Home
 ---
+<section class="hero-section">
+
+  <div class="hero-left">
+
+    <h1 class="hero-title">
+      Lia Wun
+    </h1>
+
+    <div class="hero-contact">
+      tszyeewun_au@outlook.com
+    </div>
+
+    <div class="hero-contact">
+      Sydney, New South Wales, Australia
+    </div>
+
+    <div class="hero-buttons">
+
+      <a href="./Resume.pdf" class="hero-btn">
+        Resume.pdf
+      </a>
+
+      <a href="https://www.linkedin.com/in/tszyeewun"
+         class="hero-btn">
+         LinkedIn Profile
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+
+    <img src="./assets/headshot.jpg"
+         alt="Headshot"
+         class="headshot">
+
+  </div>
+
+</section>
 
 <section class="about-section">
 
@@ -183,6 +223,104 @@ title: Home
 </section>
 
 <style>
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+
+  margin:120px auto 0 auto;
+
+  width:100%;
+
+  background:#FFCC00;
+
+  border-radius:40px;
+
+  padding:125px 90px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:60px;
+
+  box-sizing:border-box;
+}
+
+.hero-left{
+  flex:1;
+}
+
+.hero-title{
+  font-size:96px;
+  font-weight:800;
+  color:#000;
+  margin:0 0 30px 0;
+  line-height:1;
+}
+
+.hero-contact{
+  font-size:30px;
+  color:#000;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.hero-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  display:inline-block;
+
+  text-decoration:none;
+
+  background:#ECECEF;
+  color:#000 !important;
+
+  font-size:25px;
+  font-weight:700;
+
+  padding:6px 30px;
+
+  border-radius:18px;
+
+  transition:0.3s ease;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+.hero-btn:hover{
+  transform:translateY(-3px);
+}
+
+.hero-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.headshot{
+
+  width:360px;
+  height:360px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  border:10px solid white;
+
+  box-shadow:0 8px 25px rgba(0,0,0,0.18);
+}
+
+
+
+  
 
 .about-section{
 
