@@ -1,11 +1,371 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>About Me</title>
-</head>
+---
+layout: default
+title: About Me
+---
 
-<body>
+<section class="about-section">
+
   <h1>About Me</h1>
-  <p>Hello this is my about page.</p>
-</body>
-</html>
+
+  <div class="about-card">
+
+    <p>
+      Hello World! Welcome to Lia’s homepage.
+    </p>
+
+    <p>
+      I am a Master of City Planning student at the University of New South Wales.
+    </p>
+
+    <p>
+      Alongside my studies, I work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.
+    </p>
+
+    <p>
+      My interests focus on applying AI and data-driven approaches to urban problems across transport modelling, GIS and spatial analytics, urban planning, and economic analysis.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <h1>Education</h1>
+
+  <div class="about-card">
+
+    <div class="education-item">
+
+      <div class="education-left">
+        Master of City Planning<br>
+        University of New South Wales
+      </div>
+
+      <div class="education-right">
+        Sydney, Australia<br>
+        Nov 2024 – Aug 2026 (Expected)
+      </div>
+
+    </div>
+
+    <div class="education-item">
+
+      <div class="education-left">
+        Bachelor of Finance<br>
+        Tianjin University
+      </div>
+
+      <div class="education-right">
+        Tianjin, China<br>
+        Sep 2020 – Jul 2024
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <h1>Skills</h1>
+
+  <div class="about-card">
+
+    <div class="skill-category">
+      Traffic & Transport
+    </div>
+
+    <div class="skill-content">
+      <em>SIDRA, AutoTURN, SUMO, AutoCAD</em>
+    </div>
+
+    <div class="skill-category">
+      GIS & Spatial
+    </div>
+
+    <div class="skill-content">
+      <em>QGIS, ArcGIS Pro, ArcGIS Online, Vectorworks</em>
+    </div>
+
+    <div class="skill-category">
+      Programming
+    </div>
+
+    <div class="skill-content">
+      <em>Python, MATLAB, C++</em>
+    </div>
+
+    <div class="skill-category">
+      Data & Analytics
+    </div>
+
+    <div class="skill-content">
+      <em>MySQL, SPSS, EViews, NVivo</em>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <h1>Interests</h1>
+
+  <div class="about-card">
+
+    <p>
+      Outside of academics and work, I enjoy photography, travelling, urban exploration, and writing.
+    </p>
+
+    <p>
+      I am particularly interested in cities, transport systems, architecture, and the relationship between technology and everyday urban life.
+    </p>
+
+    <p>
+      I also enjoy learning about AI applications, economics, and digital creativity.
+    </p>
+
+  </div>
+
+</section>
+
+<style>
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section{
+
+  width:100%;
+
+  margin:50px 0;
+}
+
+.about-section h1{
+
+  font-size:48px;
+
+  font-weight:800;
+
+  margin-bottom:25px;
+
+  color:#000;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.about-card{
+
+  width:100%;
+
+  box-sizing:border-box;
+
+  background:#F0F0F2;
+
+  padding:45px 90px;
+
+  border-radius:32px;
+
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   PARAGRAPH
+========================= */
+
+.about-card p{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#111;
+
+  margin-bottom:28px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-item{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  gap:40px;
+
+  margin-bottom:50px;
+}
+
+.education-item:last-child{
+
+  margin-bottom:0;
+}
+
+.education-left{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#111;
+}
+
+.education-right{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#111;
+
+  text-align:right;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skill-category{
+
+  font-size:28px;
+
+  font-weight:800;
+
+  margin-top:32px;
+
+  margin-bottom:10px;
+
+  color:#111;
+}
+
+.skill-content{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#666;
+}
+
+.skill-content em{
+
+  font-style:italic;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:1100px){
+
+  .about-section{
+
+    margin:35px 0;
+  }
+
+  .about-section h1{
+
+    font-size:32px;
+
+    margin-bottom:18px;
+  }
+
+  .about-card{
+
+    padding:28px 22px;
+
+    border-radius:24px;
+  }
+
+  .about-card p{
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+  }
+
+  .education-item{
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:30px;
+  }
+
+  .education-left{
+
+    font-size:16px;
+
+    line-height:1.6;
+  }
+
+  .education-right{
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    text-align:left;
+
+    color:#666;
+  }
+
+  .skill-category{
+
+    font-size:18px;
+
+    margin-top:22px;
+
+    margin-bottom:8px;
+  }
+
+  .skill-content{
+
+    font-size:15px;
+
+    line-height:1.6;
+  }
+
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark .about-card{
+
+  background:#1f1f1f;
+}
+
+body.dark .about-section h1,
+body.dark .about-card p,
+body.dark .education-left,
+body.dark .education-right,
+body.dark .skill-category,
+body.dark .skill-content{
+
+  color:white;
+}
+
+</style>
