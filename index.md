@@ -264,7 +264,7 @@ title: Home
   font-size:96px;
   font-weight:800 !important;
   color:#000 !important;
-  margin:0 0 30px 0 !important;
+  margin:0 0 50px 0 !important;
   line-height:1;
 }
 
