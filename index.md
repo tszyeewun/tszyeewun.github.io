@@ -262,9 +262,9 @@ title: Home
 
 .hero-title{
   font-size:96px;
-  font-weight:800;
+  font-weight:800 !important;
   color:#000 !important;
-  margin:0 0 30px 0;
+  margin:0 0 50px 0;
   line-height:1;
 }
 
