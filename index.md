@@ -69,7 +69,7 @@ title: Home
 
 <section class="about-section">
 
-  <h1>Technical Skills</h1>
+  <h1>Skills</h1>
 
   <div class="about-card">
 
@@ -111,7 +111,7 @@ title: Home
 
 <section class="about-section">
 
-  <h1>Featured Projects</h1>
+  <h1>Projects</h1>
 
   <div class="about-card">
 
@@ -425,9 +425,7 @@ title: Home
     margin-bottom:18px;
   }
 
-  /* =========================
-     EDUCATION
-  ========================= */
+  /* EDUCATION */
 
   .education-item{
 
@@ -456,9 +454,7 @@ title: Home
     color:#666;
   }
 
-  /* =========================
-     SKILLS
-  ========================= */
+  /* SKILLS */
 
   .skill-category{
 
@@ -476,9 +472,7 @@ title: Home
     line-height:1.6;
   }
 
-  /* =========================
-     PROJECTS
-  ========================= */
+  /* PROJECTS */
 
   .project-title{
 
@@ -498,9 +492,7 @@ title: Home
     line-height:1.7;
   }
 
-  /* =========================
-     CONTACT
-  ========================= */
+  /* CONTACT */
 
   .contact-buttons{
 
@@ -517,8 +509,7 @@ title: Home
   }
 
 }
-
-
+  
 
 /* =========================
    DARK MODE
