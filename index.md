@@ -223,7 +223,7 @@ title: Home
 
   font-weight:700;
 
-  line-height:1;
+  line-height:1.5;
 
   color:#111;
 
