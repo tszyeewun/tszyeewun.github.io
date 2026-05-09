@@ -1,11 +1,186 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Experience</title>
-</head>
+---
+layout: default
+title: Experience
+---
 
-<body>
+<section class="about-section">
+
   <h1>Experience</h1>
-  <p>Hello this is my experience page.</p>
-</body>
-</html>
+
+  <!-- Experience 1 -->
+  <div class="about-card experience-card">
+    <div class="experience-header">
+      <span class="position">Traffic Engineer Intern</span>
+      <span class="location">Sydney, Australia</span>
+    </div>
+    <div class="experience-subheader">
+      <span class="company">Genesis Traffic</span>
+      <span class="time">May 2026 – Present</span>
+    </div>
+    <p>
+      Performed traffic assessments for individual and corporate projects, including swept path assessments, parking compliance checks, and signal phasing analysis. Utilized traffic modeling tools including SIDRA, TGS, and TAG to support traffic approvals for Development Applications (DA) and Construction Certificates (CC). Prepared technical documentation such as TIA, CTMP, GTP, LDMP, and S4.55 reports.
+    </p>
+  </div>
+
+  <!-- Experience 2 -->
+  <div class="about-card experience-card">
+    <div class="experience-header">
+      <span class="position">Urban Planning Intern</span>
+      <span class="location">Shenzhen, China</span>
+    </div>
+    <div class="experience-subheader">
+      <span class="company">Inplus Design</span>
+      <span class="time">Sep 2024 – Nov 2024</span>
+    </div>
+    <p>
+      Conducted site visits, contextual and spatial analysis, and report drafting for two urban redevelopment projects. Communicated with project stakeholders, including clients, local councils, heritage authorities, and contractors, to provide project updates, clarify requirements, and share key information. Participated in project presentations to clients and local government representatives.
+    </p>
+  </div>
+
+  <!-- Experience 3 -->
+  <div class="about-card experience-card">
+    <div class="experience-header">
+      <span class="position">GIS Research Intern</span>
+      <span class="location">Beijing, China</span>
+    </div>
+    <div class="experience-subheader">
+      <span class="company">International Society for Digital Earth</span>
+      <span class="time">Jun 2024 – Jul 2024</span>
+    </div>
+    <p>
+      Interpreted academic research on GIS and spatial modelling into accessible content for public and professional audiences. Supported project coordination and documentation with multidisciplinary teams, including meeting coordination, report drafting, and project tracking.
+    </p>
+  </div>
+
+  <!-- Experience 4 -->
+  <div class="about-card experience-card">
+    <div class="experience-header">
+      <span class="position">Venture Capital Intern</span>
+      <span class="location">Beijing, China</span>
+    </div>
+    <div class="experience-subheader">
+      <span class="company">Y Combinator</span>
+      <span class="time">Nov 2023 – Jan 2024</span>
+    </div>
+    <p>
+      Conducted industry research across key AI verticals, including AI agents (31), embodied AI and intelligent hardware (16), multimodal systems (7), AI coding tools (9), and AI for Science (6). Assisted with Demo Day preparation and coordination, including supporting pitch rehearsals, providing feedback, and refining pitch materials.
+    </p>
+  </div>
+
+</section>
+
+<style>
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.about-section{
+  width:100%;
+  margin:50px 0;
+}
+
+.about-section h1{
+  font-size:48px;
+  font-weight:800;
+  margin-bottom:25px;
+  color:#000;
+}
+
+/* =========================
+   EXPERIENCE CARD
+========================= */
+
+.experience-card{
+  background:#F0F0F2;
+  padding:35px 50px;
+  border-radius:32px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  margin-bottom:30px;
+}
+
+.experience-header,
+.experience-subheader{
+  display:flex;
+  justify-content:space-between;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.experience-header .position,
+.experience-subheader .company{
+  text-align:left;
+}
+
+.experience-header .location,
+.experience-subheader .time{
+  text-align:right;
+}
+
+.experience-card p{
+  font-size:22px;
+  font-weight:600;
+  line-height:1.5;
+  color:#666;
+  margin-top:12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:1100px){
+
+  .about-section h1{
+    font-size:32px;
+    margin-bottom:18px;
+  }
+
+  .experience-card{
+    padding:28px 22px;
+    border-radius:24px;
+  }
+
+  .experience-header,
+  .experience-subheader{
+    flex-direction:column;
+    align-items:flex-start;
+    margin-bottom:4px;
+  }
+
+  .experience-header .location,
+  .experience-subheader .time{
+    text-align:left;
+  }
+
+  .experience-card p{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark .experience-card{
+  background:#1f1f1f;
+}
+
+body.dark .experience-header .position,
+body.dark .experience-subheader .company,
+body.dark .experience-header .location,
+body.dark .experience-subheader .time{
+  color:white;
+}
+
+body.dark .experience-card p{
+  color:#bdbdbd;
+}
+
+body.dark .about-section h1{
+  color:white;
+}
+
+</style>
