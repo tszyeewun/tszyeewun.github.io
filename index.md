@@ -33,21 +33,33 @@ title: Home
 
   <h1>Education</h1>
 
-  <div class="about-card">
+  <div class="about-card education-card">
 
-    <h2>University of New South Wales</h2>
+    <div class="education-item">
 
-    <p>
-      Master of City Planning<br>
-      Nov 2024 – Aug 2026 (Expected)
-    </p>
+      <div class="education-left">
+        Master of City Planning, University of New South Wales
+      </div>
 
-    <h2>Tianjin University</h2>
+      <div class="education-right">
+        Sydney, Australia<br>
+        Nov 2024 – Aug 2026 (Expected)
+      </div>
 
-    <p>
-      Bachelor of Finance<br>
-      Sep 2020 – Jul 2024
-    </p>
+    </div>
+
+    <div class="education-item">
+
+      <div class="education-left">
+        Bachelor of Finance, Tianjin University
+      </div>
+
+      <div class="education-right">
+        Tianjin, China<br>
+        Sep 2020 – Jul 2024
+      </div>
+
+    </div>
 
   </div>
 
@@ -230,19 +242,50 @@ title: Home
   margin-bottom:28px;
 }
 
-/* H2 */
+/* =========================
+   EDUCATION
+========================= */
 
-.about-card h2{
+.education-item{
 
-  margin-top:40px;
+  display:flex;
 
-  margin-bottom:18px;
+  justify-content:space-between;
 
-  font-size:34px;
+  align-items:flex-start;
 
-  font-weight:800;
+  gap:40px;
 
-  color:#000;
+  margin-bottom:50px;
+}
+
+.education-item:last-child{
+
+  margin-bottom:0;
+}
+
+.education-left{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#111;
+}
+
+.education-right{
+
+  font-size:28px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+  color:#111;
+
+  text-align:right;
 }
 
 /* =========================
@@ -311,8 +354,9 @@ body.dark .about-card{
 }
 
 body.dark .about-section h1,
-body.dark .about-card h2,
 body.dark .about-card p,
+body.dark .education-left,
+body.dark .education-right,
 body.dark .skill-category,
 body.dark .skill-content,
 body.dark .project-title{
