@@ -383,6 +383,48 @@ title: Home
 
   transform:translateY(-3px);
 }
+  
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:1100px){
+
+  .about-section{
+
+    margin:35px 0;
+  }
+
+  .about-section h1{
+
+    font-size:32px;
+
+    margin-bottom:18px;
+  }
+
+  .about-card{
+
+    padding:28px 22px;
+
+    border-radius:24px;
+  }
+
+  .about-card p{
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+  }
+
+  /* EDUCATION */
+
+  .education-item{
+
+    flex-direction:column;
+
+    gap:10px
 
 /* =========================
    DARK MODE
