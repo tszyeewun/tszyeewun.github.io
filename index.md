@@ -14,7 +14,7 @@ title: Home
     </p>
 
     <p>
-      I am a Master of City Planning student at the University of New South Wales (UNSW), Sydney, Australia.
+      I am a Master of City Planning student at the University of New South Wales.
     </p>
 
     <p>
@@ -189,7 +189,7 @@ title: Home
 
 .about-section h1{
 
-  font-size:36px;
+  font-size:48px;
 
   font-weight:800;
 
@@ -223,7 +223,7 @@ title: Home
 
   font-weight:700;
 
-  line-height:1.8;
+  line-height:1;
 
   color:#111;
 
