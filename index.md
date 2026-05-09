@@ -296,7 +296,7 @@ title: Home
 
 .skill-category{
 
-  font-size:30px;
+  font-size:28px;
 
   font-weight:800;
 
@@ -304,18 +304,18 @@ title: Home
 
   margin-bottom:10px;
 
-  color:#000;
+  color:#111;
 }
 
 .skill-content{
 
-  font-size:26px;
+  font-size:28px;
 
   font-weight:700;
 
-  line-height:1.8;
+  line-height:1.5;
 
-  color:#000;
+  color:#111;
 }
 
 .skill-content em{
