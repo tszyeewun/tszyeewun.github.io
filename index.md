@@ -384,11 +384,14 @@ title: Home
   transform:translateY(-3px);
 }
   
+
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width:1100px){
+
+  /* SECTION */
 
   .about-section{
 
@@ -402,12 +405,16 @@ title: Home
     margin-bottom:18px;
   }
 
+  /* CARD */
+
   .about-card{
 
     padding:28px 22px;
 
     border-radius:24px;
   }
+
+  /* ABOUT TEXT */
 
   .about-card p{
 
@@ -418,13 +425,100 @@ title: Home
     margin-bottom:18px;
   }
 
-  /* EDUCATION */
+  /* =========================
+     EDUCATION
+  ========================= */
 
   .education-item{
 
     flex-direction:column;
 
-    gap:10px
+    gap:10px;
+
+    margin-bottom:30px;
+  }
+
+  .education-left{
+
+    font-size:16px;
+
+    line-height:1.6;
+  }
+
+  .education-right{
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    text-align:left;
+
+    color:#666;
+  }
+
+  /* =========================
+     SKILLS
+  ========================= */
+
+  .skill-category{
+
+    font-size:18px;
+
+    margin-top:22px;
+
+    margin-bottom:8px;
+  }
+
+  .skill-content{
+
+    font-size:15px;
+
+    line-height:1.6;
+  }
+
+  /* =========================
+     PROJECTS
+  ========================= */
+
+  .project-title{
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    margin-top:24px;
+
+    margin-bottom:8px;
+  }
+
+  .project-description{
+
+    font-size:14px;
+
+    line-height:1.7;
+  }
+
+  /* =========================
+     CONTACT
+  ========================= */
+
+  .contact-buttons{
+
+    gap:14px;
+  }
+
+  .hero-btn{
+
+    font-size:14px;
+
+    padding:8px 18px;
+
+    border-radius:14px;
+  }
+
+}
+
+
 
 /* =========================
    DARK MODE
