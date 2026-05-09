@@ -18,11 +18,11 @@ title: Home
     </p>
 
     <p>
-      Alongside my studies, I work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.
+      My interests focus on applying AI and data-driven approaches to urban problems across transport modelling, GIS and spatial analytics, urban planning, and economic analysis.
     </p>
 
     <p>
-      My interests focus on applying AI and data-driven approaches to urban problems across transport modelling, GIS and spatial analytics, urban planning, and economic analysis.
+      Alongside my studies, I work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.
     </p>
 
   </div>
@@ -38,7 +38,8 @@ title: Home
     <div class="education-item">
 
       <div class="education-left">
-        Master of City Planning, University of New South Wales
+        Master of City Planning<br>
+        University of New South Wales
       </div>
 
       <div class="education-right">
@@ -51,7 +52,8 @@ title: Home
     <div class="education-item">
 
       <div class="education-left">
-        Bachelor of Finance, Tianjin University
+        Bachelor of Finance<br>
+        Tianjin University
       </div>
 
       <div class="education-right">
