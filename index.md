@@ -69,48 +69,6 @@ title: Home
 
 <section class="about-section">
 
-  <h1>Skills</h1>
-
-  <div class="about-card">
-
-    <div class="skill-category">
-      Traffic & Transport
-    </div>
-
-    <div class="skill-content">
-      <em>SIDRA, AutoTURN, SUMO, AutoCAD</em>
-    </div>
-
-    <div class="skill-category">
-      GIS & Spatial
-    </div>
-
-    <div class="skill-content">
-      <em>QGIS, ArcGIS Pro, ArcGIS Online, Vectorworks</em>
-    </div>
-
-    <div class="skill-category">
-      Programming
-    </div>
-
-    <div class="skill-content">
-      <em>Python, MATLAB, C++</em>
-    </div>
-
-    <div class="skill-category">
-      Data & Analytics
-    </div>
-
-    <div class="skill-content">
-      <em>MySQL, SPSS, EViews, NVivo</em>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="about-section">
-
   <h1>Projects</h1>
 
   <div class="about-card">
@@ -145,6 +103,48 @@ title: Home
 
     <div class="project-description">
       Applied GARCH and TGARCH models to analyse volatility dynamics, asymmetry effects, and market risk before and after the introduction of stock index options.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <h1>Skills</h1>
+
+  <div class="about-card">
+
+    <div class="skill-category">
+      Traffic & Transport
+    </div>
+
+    <div class="skill-content">
+      <em>SIDRA, AutoTURN, SUMO, AutoCAD</em>
+    </div>
+
+    <div class="skill-category">
+      GIS & Spatial
+    </div>
+
+    <div class="skill-content">
+      <em>QGIS, ArcGIS Pro, ArcGIS Online, Vectorworks</em>
+    </div>
+
+    <div class="skill-category">
+      Programming
+    </div>
+
+    <div class="skill-content">
+      <em>Python, MATLAB, C++</em>
+    </div>
+
+    <div class="skill-category">
+      Data & Analytics
+    </div>
+
+    <div class="skill-content">
+      <em>MySQL, SPSS, EViews, NVivo</em>
     </div>
 
   </div>
