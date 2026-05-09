@@ -155,22 +155,28 @@ title: Home
 
   <h1>Contact</h1>
 
-  <div class="about-card">
+  <div class="about-card contact-buttons">
 
-    <p>
-      Email<br>
-      tszyeewun_au@outlook.com
-    </p>
+    <a href="./Resume.pdf" class="hero-btn">
+      Resume
+    </a>
 
-    <p>
-      LinkedIn<br>
-      linkedin.com/in/tszyeewun
-    </p>
+    <a href="mailto:tszyeewun_au@outlook.com"
+       class="hero-btn">
+       Email
+    </a>
 
-    <p>
-      GitHub<br>
-      github.com/liawun
-    </p>
+    <a href="https://www.linkedin.com/in/tszyeewun"
+       class="hero-btn"
+       target="_blank">
+       LinkedIn
+    </a>
+
+    <a href="https://github.com/tszyeewun"
+       class="hero-btn"
+       target="_blank">
+       GitHub
+    </a>
 
   </div>
 
@@ -333,6 +339,47 @@ title: Home
   line-height:1.5;
 
   color:#666;
+}
+
+/* =========================
+   CONTACT BUTTONS
+========================= */
+
+.contact-buttons{
+
+  display:flex;
+
+  gap:24px;
+
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+
+  display:inline-block;
+
+  text-decoration:none;
+
+  background:white;
+
+  color:#000 !important;
+
+  font-size:28px;
+
+  font-weight:700;
+
+  padding:6px 30px;
+
+  border-radius:18px;
+
+  transition:0.3s ease;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+.hero-btn:hover{
+
+  transform:translateY(-3px);
 }
 
 /* =========================
