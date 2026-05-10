@@ -199,6 +199,8 @@ title: Home
 
 </section>
 
+
+---
 <section class="about-section">
 
   <h1>Contact</h1>
@@ -206,29 +208,34 @@ title: Home
   <div class="contact-buttons">
 
     <a href="./Resume.pdf" class="hero-btn">
+      <i class="fa-solid fa-file-lines"></i>
       Resume
     </a>
 
     <a href="mailto:tszyeewun_au@outlook.com"
        class="hero-btn">
+       <i class="fa-solid fa-envelope"></i>
        Email
     </a>
 
     <a href="https://www.linkedin.com/in/tszyeewun"
        class="hero-btn"
        target="_blank">
+       <i class="fa-brands fa-linkedin"></i>
        LinkedIn
     </a>
 
     <a href="https://github.com/tszyeewun"
        class="hero-btn"
        target="_blank">
+       <i class="fa-brands fa-github"></i>
        GitHub
     </a>
 
   </div>
 
 </section>
+
 
 <style>
 
@@ -289,8 +296,16 @@ title: Home
   align-items:center;
 }
 .hero-btn{
-  display:inline-block;
 
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:12px;
+
+
+
+     
   text-decoration:none;
 
   background:#ECECEF;
@@ -308,6 +323,12 @@ title: Home
   box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 
+.hero-btn i{
+
+  font-size:24px;
+}
+
+     
 .hero-btn:hover{
   transform:translateY(-3px);
 }
@@ -704,16 +725,23 @@ title: Home
 
     gap:14px;
   }
-
+  
   .hero-btn{
 
-    font-size:14px;
+  font-size:14px;
 
-    padding:8px 18px;
+  padding:8px 18px;
 
-    border-radius:14px;
+  border-radius:14px;
+
+  gap:8px;
   }
 
+  .hero-btn i{
+
+  font-size:14px;
+  }   
+  
 }
 
 /* =========================
