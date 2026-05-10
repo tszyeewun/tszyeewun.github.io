@@ -25,18 +25,22 @@ title: Home
       Sydney, New South Wales, Australia
     </div>
 
+    
     <div class="hero-buttons">
 
       <a href="./Resume.pdf" class="hero-btn">
-        Resume.pdf
+        <i class="fa-solid fa-file-lines"></i>
+        Resume
       </a>
 
       <a href="https://www.linkedin.com/in/tszyeewun"
          class="hero-btn">
-         LinkedIn Profile
+         <i class="fa-brands fa-linkedin"></i>
+         LinkedIn
       </a>
 
     </div>
+
 
   </div>
 
