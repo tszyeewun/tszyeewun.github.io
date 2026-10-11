@@ -187,7 +187,7 @@ function fix46(k,v){if(k!=="p3")return v;const m=v.find(e=>e.id==="p3sydMap");if
   v.filter(e=>e.type==="footer").forEach(ft=>ft.y=PAGES.p3.H-110);return v}
 
 // Oct 2026 · Projects: Athens and Colombo as pictures (same frame as Sydney); order Sydney → Athens → Colombo
-const CMB_PIC={pic:"img/colombo-map.webp",crop:[0, 0, 1440, 630],border:"#D8957E"},ATH_PIC={pic:"img/athens-map.webp",crop:[0, 235, 1440, 630],border:"#B4A3D6"};
+const CMB_PIC={pic:"img/colombo-map-v3.webp",crop:[0,90,992,434],border:"#D8957E"},ATH_PIC={pic:"img/athens-map-v3.webp",crop:[0,235,1440,630],border:"#B4A3D6"};
 function fix47(k,v){if(k!=="p3")return v;const f=id=>v.find(e=>e.id===id);const sm=f("p3sydMap");if(!sm)return v;
   const bottom=sm.y+(sm.h||525),G=90;let y=bottom;
   [["ath",ATH_PIC],["cmb",CMB_PIC]].forEach(([r,P])=>{const cap=r[0].toUpperCase()+r.slice(1);
@@ -855,8 +855,8 @@ function loadPage(k){const v=loadRaw(k);let done=false;try{done=__LS.getItem("li
   if(!c45){fix45(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome45-"+k,"1")}catch(_){}}
   let c46=false;try{c46=__LS.getItem("lia-chrome46-"+k)==="1"}catch(_){}
   if(!c46){fix46(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome46-"+k,"1")}catch(_){}}
-  let c48=false;try{c48=__LS.getItem("lia-chrome48-"+k)==="1"}catch(_){}
-  if(!c48&&k==="p3"){v.forEach(e=>{if(e.id==="p3cmbMap")Object.assign(e,CMB_PIC);if(e.id==="p3athMap")Object.assign(e,ATH_PIC)});try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome48-"+k,"1")}catch(_){}}
+  let c48=false;try{c48=__LS.getItem("lia-chrome49-"+k)==="1"}catch(_){}
+  if(!c48&&k==="p3"){v.forEach(e=>{if(e.id==="p3cmbMap")Object.assign(e,CMB_PIC);if(e.id==="p3athMap")Object.assign(e,ATH_PIC)});try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome49-"+k,"1")}catch(_){}}
   let c47=false;try{c47=__LS.getItem("lia-chrome47-"+k)==="1"}catch(_){}
   if(!c47){fix47(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome47-"+k,"1")}catch(_){}}
   return v}
@@ -1720,9 +1720,8 @@ function siteTick(){
 
 /* Athens / Colombo picture maps: project card (same look as the Sydney map) only on the pin, or on Slave Island */
 const REGION_CARDS={
-  ath:{"Kolonaki":[{t:"Mapping the City: Kolonaki, Athens",s:"Kolonaki",tag:"Urban design · 2025",d:"Mapping Kolonaki's public domain: Vasilissis Sofias and Michalakopoulou, a walkable street network and a dense figure-ground.",imgs:["img/athens-streets.jpg","img/athens-buildings.jpg"]}]},
-  cmb:{"Slave Island":[{t:"Cooling Slave Island: Urban Heat and Sustainable Design Strategies for Colombo",s:"Slave Island",tag:"Urban heat · Design · 2026",d:"Cooling a dense, heat-stressed precinct with shade, greening, cool materials and water-sensitive design.",img:"img/colombo-before-after.jpg"},
-    {t:"Urban Heat & Sustainable Design: Slave Island",s:"Slave Island",tag:"Urban heat",d:"How density, hard surfaces and lost tree cover heat Slave Island, and which design moves cool it."}]}};
+  ath:{"Kolonaki":[{t:"Mapping the City: Kolonaki, Athens",s:"Kolonaki",tag:"Urban design · 2025",d:"Mapping Kolonaki's public domain: Vasilissis Sofias and Michalakopoulou, a walkable street network and a dense figure-ground.",img:"img/athens-figure-ground.jpg"}]},
+  cmb:{"Slave Island":[{t:"Cooling Slave Island: Urban Heat and Sustainable Design Strategies for Colombo",s:"Slave Island",tag:"Urban heat · Design · 2026",d:"How density, hard surfaces and lost tree cover heat Slave Island, and which design moves cool it.",img:"img/colombo-before-after.jpg"}]}};
 function regionCards(){if(document.getElementById("rcard"))return;const card=document.createElement("div");card.id="rcard";card.className="pcard";board.appendChild(card);
   const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));let cur=null,ht=null;
   const place=anchor=>{const b=board.getBoundingClientRect(),r=anchor.getBoundingClientRect(),x=r.left+r.width/2-b.left,y=r.top+r.height/2-b.top,w=card.offsetWidth,h=card.offsetHeight,g=18,pad=10;
