@@ -1556,7 +1556,7 @@ function buildOverlays(){let ov=document.getElementById("ov");if(!ov){ov=documen
         const sub=encodeURIComponent("Website message from "+(v[0]||"a visitor"));const bod=encodeURIComponent((v[2]||"")+"\n\n"+(v[0]||"")+" · "+(v[1]||""));
         location.href=`mailto:tszyeewun_au@outlook.com?subject=${sub}&body=${bod}`});ov.appendChild(f)}
     if(e.type==="map"&&(e.region||"syd")==="syd"&&cur==="p3"){const M=REGIONS.syd.M,h=e.h||M.H*e.w/M.W;const fr=document.createElement("iframe");
-      fr.src="sydney-map.html?embed=1";fr.title="Interactive map of Lia's Sydney projects";fr.loading="lazy";fr.className="mapframe";fr.style.cssText=pct(e.x,e.y,e.w,h);ov.appendChild(fr)}
+      fr.src="sydney-map.html?embed=1&v="+SITE_V;fr.title="Interactive map of Lia's Sydney projects";fr.loading="lazy";fr.className="mapframe";fr.style.cssText=pct(e.x,e.y,e.w,h);ov.appendChild(fr)}
   })}
 function clipUnderNav(){const ov=document.getElementById("ov");if(!ov)return;const navH=96*board.clientWidth/P().W,top=document.getElementById("main").getBoundingClientRect().top;
   [...ov.children].forEach(c=>{const r=c.getBoundingClientRect(),cut=Math.max(0,navH-(r.top-top));
@@ -1645,7 +1645,7 @@ function buildMobile(){
     if(e.type==="poster"){const [s,d]=mSvg(`${e.x} ${e.y} ${e.w} ${e.h}`,"m-poster");s.setAttribute("preserveAspectRatio","xMidYMid slice");const g=mk("g",{},s);try{drawPoster(e,g,d)}catch(_){}
       const sec=out(`<section class="m-posterwrap"></section>`);sec.appendChild(s);continue}
     if(e.type==="map"){const r=e.region||"syd";
-      if(r==="syd"){out(`<div class="m-mapframe"><iframe src="sydney-map.html?embed=1" title="Interactive map of Lia's Sydney projects" loading="lazy"></iframe></div>`)}
+      if(r==="syd"){out(`<div class="m-mapframe"><iframe src="sydney-map.html?embed=1&v=${window.SITE_V||""}" title="Interactive map of Lia's Sydney projects" loading="lazy"></iframe></div>`)}
       else{const sec=out(`<figure class="m-staticmap"></figure>`);try{sec.appendChild(mapSvg(e))}catch(err){sec.remove()}}continue}
     if(e.type==="form"){out(`<form class="m-form"><label for="m-name">${mEsc(e.fields[0]||"name")}</label><input id="m-name" name="name" required>
       <label for="m-email">${mEsc(e.fields[1]||"email address")}</label><input id="m-email" name="email" type="email" required>
