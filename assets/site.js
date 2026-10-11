@@ -2,7 +2,7 @@ const __LS=(()=>{const m={};return{getItem:k=>k in m?m[k]:null,setItem:(k,v)=>{m
 (() => {
 const NS = "http://www.w3.org/2000/svg";
 // "Dawn" palette — sampled from Lia's reference: pink-purple sky gradient (main), lime/teal land and water (accents)
-const GR={sky:["#DAB3B5","#EA9F8B"],lilac2:["#CFC8DC","#9FA1B4"],lime:["#C3BA6E","#A6A724"],fern:["#BEC45A","#93A038"],teal:["#7F988D","#497358"],lake:["#C2B7D3","#9E9FB9"],spectrum:["#E8B4B0","#EF9483","#B9AAE2","#A8A6E0","#C3D04A","#8DB845","#3E9E8E","#9FB0D6"],dawn:["#F6C9B4","#EE9A88","#B9A8E6"],lilac:["#F3C6C4","#B3A6E3"],haze:["#F7D9C4","#C4B8EC"],lagoon:["#9FD0C4","#A9A6E0"],meadow:["#D8E37A","#7DBFA8"],rib:["#EE9988","#C7B8EA"]};
+const GR={sky:["#DAB3B5","#EA9F8B"],lilac2:["#CFC8DC","#9FA1B4"],lime:["#C3BA6E","#A6A724"],fern:["#BEC45A","#93A038"],teal:["#7F988D","#497358"],lake:["#C2B7D3","#9E9FB9"],spectrum:["#E8B4B0","#EF9483","#B9AAE2","#A8A6E0","#C3D04A","#8DB845","#3E9E8E","#9FB0D6"],dawn:["#F6C9B4","#EE9A88","#B9A8E6"],lilac:["#F3C6C4","#B3A6E3"],haze:["#F7D9C4","#C4B8EC"],lagoon:["#9FD0C4","#A9A6E0"],meadow:["#D8E37A","#7DBFA8"],rib:["#EE9988","#C7B8EA"],sun:["#F7D774","#F4B862","#F09A55","#EC8A4C"]};
 const SOLIDS=["#F4C7B5","#EE9988","#E7AFC0","#C7B8EA","#A9A3E3","#9DB1E8","#DCE39A","#7DBFA8"];
 const CYCLE=["g:dawn","g:lilac","g:haze","#C7B8EA","g:lagoon","#EE9988","g:dawn","#F4C7B5","g:lilac","g:meadow"];
 const MOR=["#D7B98E","#A9B59A","#C7A895","#9FBDBF","#D9A8A0","#B5A3B0","#CBB48F","#9DB4A6","#B2C7D3","#AC7F6E"]; // previous Morandi set (for migration)
@@ -187,7 +187,7 @@ function fix46(k,v){if(k!=="p3")return v;const m=v.find(e=>e.id==="p3sydMap");if
   v.filter(e=>e.type==="footer").forEach(ft=>ft.y=PAGES.p3.H-110);return v}
 
 // Oct 2026 · Projects: Athens and Colombo as pictures (same frame as Sydney); order Sydney → Athens → Colombo
-const CMB_PIC={pic:"img/colombo-map.webp",crop:[0, 0, 1440, 630],border:"#D8957E"},ATH_PIC={pic:"img/athens-map.webp",crop:[0, 133, 1440, 630],border:"#B4A3D6"};
+const CMB_PIC={pic:"img/colombo-map.webp",crop:[0, 0, 1440, 630],border:"#D8957E"},ATH_PIC={pic:"img/athens-map.webp",crop:[0, 235, 1440, 630],border:"#B4A3D6"};
 function fix47(k,v){if(k!=="p3")return v;const f=id=>v.find(e=>e.id===id);const sm=f("p3sydMap");if(!sm)return v;
   const bottom=sm.y+(sm.h||525),G=90;let y=bottom;
   [["ath",ATH_PIC],["cmb",CMB_PIC]].forEach(([r,P])=>{const cap=r[0].toUpperCase()+r.slice(1);
@@ -646,7 +646,7 @@ const PROJ_ATH=[{t:"Mapping the City: Kolonaki, Athens",s:"Kolonaki",lga:"Athens
 const proj=(M,lon,lat)=>[(lon-M.lon0)*M.c*M.k,(M.lat1-lat)*M.k];
 const REGIONS={
   syd:{label:"Sydney, NSW",M:MAP,P:PROJECTS,colors:MORANDI,sea:"#A9D2C8",minA:l=>l.a>3,noLabel:["Randwick","Ryde","Hawkesbury"],left:p=>p.ll[0]<151.05&&!["Windsor","Kellyville"].includes(p.s)},
-  cmb:{label:"Colombo, Sri Lanka",M:MAP_CMB,P:PROJ_CMB,colors:{"Slave Island":"g:dawn"},sea:"#E9B7A4",minA:l=>l.big,noLabel:["Slave Island"],left:()=>false},
+  cmb:{label:"Colombo, Sri Lanka",M:MAP_CMB,P:PROJ_CMB,colors:{"Slave Island":"g:sun"},sea:"#E9B7A4",minA:l=>l.big,noLabel:["Slave Island"],left:()=>false},
   ath:{label:"Athens, Greece",M:MAP_ATH,P:PROJ_ATH,colors:{"Athens":"g:lilac"},sea:"#EFEAF5",minA:l=>l.big,noLabel:[],left:()=>false}};
 Object.values(REGIONS).forEach(R=>{R.names=[...new Set(R.P.map(p=>p.lga))];
   R.pins=[...new Map(R.P.map(p=>[p.s,p])).values()].map(p=>({s:p.s,xy:proj(R.M,...p.ll),left:R.left(p)}))});
@@ -855,6 +855,8 @@ function loadPage(k){const v=loadRaw(k);let done=false;try{done=__LS.getItem("li
   if(!c45){fix45(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome45-"+k,"1")}catch(_){}}
   let c46=false;try{c46=__LS.getItem("lia-chrome46-"+k)==="1"}catch(_){}
   if(!c46){fix46(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome46-"+k,"1")}catch(_){}}
+  let c48=false;try{c48=__LS.getItem("lia-chrome48-"+k)==="1"}catch(_){}
+  if(!c48&&k==="p3"){v.forEach(e=>{if(e.id==="p3cmbMap")Object.assign(e,CMB_PIC);if(e.id==="p3athMap")Object.assign(e,ATH_PIC)});try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome48-"+k,"1")}catch(_){}}
   let c47=false;try{c47=__LS.getItem("lia-chrome47-"+k)==="1"}catch(_){}
   if(!c47){fix47(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome47-"+k,"1")}catch(_){}}
   return v}
@@ -1101,14 +1103,14 @@ function drawRegionPic(e,g,defs){const R=REGIONS[e.region],M=R.M,c=e.crop,k=e.w/
   const body=mk("g",{"clip-path":`url(#${cid})`},g);mk("rect",{x:e.x,y:e.y,width:e.w,height:h,fill:R.sea},body);
   mk("image",{href:e.pic,x:e.x,y:e.y,width:e.w,height:h,preserveAspectRatio:"xMidYMid slice"},body);
   const inner=mk("g",{transform:`translate(${e.x-c[0]*k},${e.y-c[1]*k}) scale(${k})`},body);
-  M.lgas.forEach(l=>{const has=R.names.includes(l.name);mk("path",{d:l.d,class:"lgapic"+(has?" has":""),fill:has?paint(R.colors[l.name]||"#C7B8EA"):"#FFFFFF",stroke:has?"#7D7590":"#9A94A8","stroke-width":1.6/k,"data-lga":l.name},inner)});
-  const fs=v=>v/Math.max(k,1);
-  if(e.allNames)M.lgas.filter(l=>!R.names.includes(l.name)&&R.minA(l)).forEach(l=>{const t=mk("text",{x:l.c[0],y:l.c[1],"text-anchor":"middle","font-family":MONO,"font-size":fs(10.5)*Math.min(k,1.25)/k*1.2,fill:"#9A968A","letter-spacing":"0.04em","pointer-events":"none"},inner);t.textContent=l.name.toUpperCase()});
-  if(e.labels)M.lgas.filter(l=>R.names.includes(l.name)&&!R.noLabel.includes(l.name)).forEach(l=>{const t=mk("text",{x:l.c[0],y:l.c[1],"text-anchor":"middle","font-family":fontOf("display"),"font-size":19/k,fill:INK,"pointer-events":"none"},inner);t.textContent=l.name});
-  if(e.pins)R.pins.forEach(p=>{const [x,y]=p.xy,dir=p.left?-1:1,lx=x+dir*34/k;const pg=mk("g",{"pointer-events":"none"},inner);
-    mk("path",{d:`M${x+dir*8/k},${y} H${lx}`,stroke:INK,"stroke-width":1.2/k},pg);
-    mk("circle",{cx:x,cy:y,r:7/k,fill:"#FFFFFF",stroke:INK,"stroke-width":2/k},pg);mk("circle",{cx:x,cy:y,r:2.6/k,fill:INK},pg);
-    const t=mk("text",{x:lx+dir*6/k,y:y+4/k,"text-anchor":p.left?"end":"start","font-family":MONO,"font-size":12.5/k,fill:INK},pg);t.textContent=p.s});
+  M.lgas.forEach(l=>{const has=R.names.includes(l.name);mk("path",{d:l.d,class:"lgapic"+(has?" has":""),fill:has?paint(R.colors[l.name]||"#C7B8EA"):"#FFFFFF",stroke:has?"#7D7590":"#9A94A8","stroke-width":1.6/k,"data-area":l.name,"data-region":e.region},inner)});
+  // only the project area's name, Sydney style (12px Bodoni, warm grey)
+  M.lgas.filter(l=>R.names.includes(l.name)&&!R.noLabel.includes(l.name)).forEach(l=>{const t=mk("text",{x:l.c[0],y:l.c[1],"text-anchor":"middle","dominant-baseline":"central","font-family":SERIF,"font-size":12/k,fill:"#7A766C","pointer-events":"none"},inner);t.textContent=l.name});
+  // project points: white dot with red ring, label in bold mono, no leader line (same as Sydney)
+  if(e.pins)R.pins.forEach(p=>{const [x,y]=p.xy;const pg=mk("g",{class:"rpin","data-region":e.region,"data-pin":p.s},inner);
+    mk("circle",{cx:x,cy:y,r:16/k,fill:"transparent"},pg);
+    mk("circle",{cx:x,cy:y,r:7/k,fill:"#FFFFFF",stroke:"#E2483D","stroke-width":2.2/k},pg);mk("circle",{cx:x,cy:y,r:2.2/k,fill:"#E2483D"},pg);
+    const t=mk("text",{x:x+12/k,y:y+4/k,"font-family":MONO,"font-weight":700,"font-size":11/k,"letter-spacing":"0.04em",fill:INK,stroke:"#FFFFFF","stroke-width":3/k,"paint-order":"stroke","stroke-linejoin":"round"},pg);t.textContent=p.s});
   mk("rect",{x:e.x+1,y:e.y+1,width:e.w-2,height:h-2,rx:21,fill:"none",stroke:e.border||"#C9C4BA","stroke-width":2,"pointer-events":"none"},g)}
 function drawMap(e,g,defs){if(typeof e.pic==="string")return drawRegionPic(e,g,defs);if(e.pic)return drawMapPic(e,g,defs);
   const R=REGIONS[e.region||"syd"],M=R.M,rx=e.frame===false?0:24;
@@ -1715,6 +1717,29 @@ function siteTick(){
     n.g.replaceWith(g0);__drawEl(e,g0,defs,[]);n.defs=[...defs.children].slice(b0);
     if(darkMode){darkify(g0);n.defs.forEach(d=>darkify(d))}n.g=g0});
 }
+
+/* Athens / Colombo picture maps: project card (same look as the Sydney map) only on the pin, or on Slave Island */
+const REGION_CARDS={
+  ath:{"Kolonaki":[{t:"Mapping the City: Kolonaki, Athens",s:"Kolonaki",tag:"Urban design · 2025",d:"Mapping Kolonaki's public domain: Vasilissis Sofias and Michalakopoulou, a walkable street network and a dense figure-ground.",imgs:["img/athens-streets.jpg","img/athens-buildings.jpg"]}]},
+  cmb:{"Slave Island":[{t:"Cooling Slave Island: Urban Heat and Sustainable Design Strategies for Colombo",s:"Slave Island",tag:"Urban heat · Design · 2026",d:"Cooling a dense, heat-stressed precinct with shade, greening, cool materials and water-sensitive design.",img:"img/colombo-before-after.jpg"},
+    {t:"Urban Heat & Sustainable Design: Slave Island",s:"Slave Island",tag:"Urban heat",d:"How density, hard surfaces and lost tree cover heat Slave Island, and which design moves cool it."}]}};
+function regionCards(){if(document.getElementById("rcard"))return;const card=document.createElement("div");card.id="rcard";card.className="pcard";board.appendChild(card);
+  const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));let cur=null,ht=null;
+  const place=anchor=>{const b=board.getBoundingClientRect(),r=anchor.getBoundingClientRect(),x=r.left+r.width/2-b.left,y=r.top+r.height/2-b.top,w=card.offsetWidth,h=card.offsetHeight,g=18,pad=10;
+    const fr=anchor.closest("g[data-id]").getBoundingClientRect(),L=fr.left-b.left,T=fr.top-b.top,R_=fr.right-b.left,B=fr.bottom-b.top;
+    const opts=[[x+g,y-h/2],[x-g-w,y-h/2],[x-w/2,y-g-h],[x-w/2,y+g]],fits=([a,c])=>a>=L+pad&&c>=T+pad&&a+w<=R_-pad&&c+h<=B-pad;
+    let [cx,cy]=opts.find(fits)||opts[0];cx=Math.max(L+pad,Math.min(cx,R_-pad-w));cy=Math.max(T+pad,Math.min(cy,B-pad-h));card.style.left=cx+"px";card.style.top=cy+"px"};
+  const show=(region,name,anchor)=>{clearTimeout(ht);const items=(REGION_CARDS[region]||{})[name];if(!items)return;const key=region+name;
+    if(cur!==key){card.innerHTML=items.map(q=>`<div class="card">${q.imgs?`<div class="strip">${q.imgs.map(u=>`<img src="${u}" alt="">`).join("")}</div>`:q.img?`<img src="${q.img}" alt="">`:""}<span class="tag">${esc(q.s)} · ${esc(q.tag)}</span><h3>${esc(q.t)}</h3><p>${esc(q.d)}</p></div>`).join("");card.scrollTop=0;
+      card.querySelectorAll("img").forEach(im=>im.complete||im.addEventListener("load",()=>place(anchor),{once:true}))}
+    cur=key;card.classList.add("on");place(anchor)};
+  const hide=()=>{clearTimeout(ht);ht=setTimeout(()=>{card.classList.remove("on");cur=null},280)};
+  card.addEventListener("pointerenter",()=>clearTimeout(ht));card.addEventListener("pointerleave",hide);
+  card.addEventListener("wheel",e=>{e.preventDefault();e.stopPropagation();card.scrollTop+=e.deltaY},{passive:false});
+  svg.addEventListener("pointerover",e=>{const pin=e.target.closest&&e.target.closest(".rpin");if(pin){show(pin.dataset.region,pin.dataset.pin,pin.querySelector("circle:nth-child(2)")||pin);return}
+    const a=e.target.closest&&e.target.closest(".lgapic.has");if(a&&a.dataset.region==="cmb"){const pn=a.parentNode.querySelector(".rpin");show("cmb",a.dataset.area,pn?pn.querySelector("circle:nth-child(2)"):a)}});
+  svg.addEventListener("pointerout",e=>{const t=e.target.closest&&e.target.closest(".rpin,.lgapic.has");if(t&&!(e.relatedTarget&&card.contains(e.relatedTarget)))hide()});
+  document.getElementById("main").addEventListener("scroll",()=>{if(card.classList.contains("on")){card.classList.remove("on");cur=null}},{passive:true})}
 const ROAD_IMG={"x": 75, "y": 789, "w": 1289, "h": 3573, "src": "img/road-about.webp"};window.ROAD_IMG=ROAD_IMG;
 window.__site={get els(){return els},P,REGIONS,get cur(){return cur},drawMap,mk,svg};
 (function startSite(){
@@ -1729,7 +1754,7 @@ window.__site={get els(){return els},P,REGIONS,get cur(){return cur},drawMap,mk,
     nv.addEventListener("pointerdown",ev=>{const n=ev.target.dataset&&ev.target.dataset.nav;if(!n)return;
       if(n==="Dark"){darkMode=!darkMode;board.classList.toggle("dark",darkMode);saveDark();render();return}
       if(SITE_URL[n]&&NAVPAGE[n]!==cur)location.href=SITE_URL[n]})}
-  if(MOBILE_Q.matches){buildMobile();}else{renderAll();if(!preview)togglePreview();buildOverlays();clipUnderNav();}
+  if(MOBILE_Q.matches){buildMobile();}else{renderAll();if(!preview)togglePreview();buildOverlays();clipUnderNav();regionCards();}
   let wasM=MOBILE_Q.matches;MOBILE_Q.addEventListener("change",q=>{if(q.matches!==wasM)location.reload()});
 })();
 })();
