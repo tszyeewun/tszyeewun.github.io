@@ -1740,7 +1740,64 @@ function regionCards(){if(document.getElementById("rcard"))return;const card=doc
   svg.addEventListener("pointerout",e=>{const t=e.target.closest&&e.target.closest(".rpin,.lgapic.has");if(t&&!(e.relatedTarget&&card.contains(e.relatedTarget)))hide()});
   document.getElementById("main").addEventListener("scroll",()=>{if(card.classList.contains("on")){card.classList.remove("on");cur=null}},{passive:true})}
 const ROAD_IMG={"x": 75, "y": 789, "w": 1289, "h": 3573, "src": "img/road-about.webp"};window.ROAD_IMG=ROAD_IMG;
-window.__site={get els(){return els},P,REGIONS,get cur(){return cur},drawMap,mk,svg};
+
+/* ---------- vertical rhythm: every section title sits 300 below the end of the section above ---------- */
+const SGAP=300;
+const DEL_LABELS=["p1aboutLabel","p1eduLabel","p1skillsLabel","topicsLabel"];
+function cvK(){const r=svg.getBoundingClientRect();return {k:r.height/P().H,top:r.top}}
+function bb(id){const g=svg.querySelector(`g[data-id="${id}"]`);if(!g)return null;try{const b=g.getBBox();return {top:b.y,bottom:b.y+b.height}}catch(_){return null}}
+function visTop(id){const e=els.find(x=>x.id===id);if(!e)return null;
+  if(e.type==="text")return e.y-e.size*0.72;
+  if(e.type==="title")return e.y-e.size*0.72;
+  if(e.type==="line")return e.y-(e.sw||4)/2;
+  if(e.type==="milestone"){const fo=svg.querySelector(`g[data-id="${id}"] foreignObject`);const d=fo&&fo.firstChild;const f=d&&d.firstElementChild;
+    if(f){const {k,top}=cvK();return (f.getBoundingClientRect().top-top)/k}return e.y}
+  const b=bb(id);return b?b.top:e.y}
+function visBottom(id){const e=els.find(x=>x.id===id);if(!e)return null;
+  if(e.type==="text"||e.type==="title")return e.y+(e.type==="title"?(e.lines.length-1)*e.size*(e.lh||1):0)+e.size*0.2;
+  if(e.type==="milestone"){const fo=svg.querySelector(`g[data-id="${id}"] foreignObject`);const d=fo&&fo.firstChild;if(!d)return e.y;const {k,top}=cvK();
+    if(e.tint||e.glass)return (d.getBoundingClientRect().bottom-top)/k;
+    const last=d.lastElementChild;if(!last)return (d.getBoundingClientRect().bottom-top)/k;
+    const r=document.createRange();r.selectNodeContents(last);const rs=[...r.getClientRects()];const bt=rs.length?Math.max(...rs.map(x=>x.bottom)):last.getBoundingClientRect().bottom;return (bt-top)/k}
+  if(e.type==="map"&&e.h)return e.y+e.h;
+  if(e.type==="poster")return e.y+e.h;
+  if(e.type==="image")return e.y+e.w*e.ratio;
+  if(e.type==="window")return e.y+e.h;
+  const b=bb(id);return b?b.bottom:e.y}
+function shiftBelow(limit,dy,keep){if(!dy)return;els.forEach(e=>{if(e.type==="nav"||e.type==="footer"||(keep&&keep.includes(e.id))||typeof e.y!=="number")return;
+    if(e.y>limit){e.y+=dy;if(e.dot)e.dot=[e.dot[0],e.dot[1]+dy]}});
+  PAGES[cur].H+=dy;els.filter(e=>e.type==="footer").forEach(f=>f.y=PAGES[cur].H-110)}
+function rule(anchorBottom,groupIds,gap){const tops=groupIds.map(visTop).filter(v=>v!=null);if(!tops.length||anchorBottom==null)return;
+  const dy=Math.round(anchorBottom+gap-Math.min(...tops));shiftBelow(anchorBottom,dy);renderAll()}
+function maxBottom(ids){const v=ids.map(visBottom).filter(x=>x!=null);return v.length?Math.max(...v):null}
+function applySpacing(){
+  for(let i=els.length-1;i>=0;i--)if(DEL_LABELS.includes(els[i].id))els.splice(i,1);
+  if(cur==="p1"){const pt=els.find(e=>e.id==="introPortrait"),cr=els.find(e=>e.id==="introCredit");if(pt&&cr){cr.anchor="end";cr.x=pt.x+pt.w}}
+  renderAll();
+  if(cur==="p1"){
+    // Hi, I'm Lia: its current gap below the hero + 300
+    const heroB=visBottom("title");shiftBelow(heroB,SGAP);renderAll();
+    rule(visBottom("introCredit"),["p1aboutTitle","p1about"],SGAP);
+    rule(visBottom("p1about"),["p1eduTitle"],SGAP);
+    rule(maxBottom(["p1edu1","p1edu2"]),["p1projTitle"],SGAP);
+    rule(visBottom("hlKilImg0"),["p1skillsTitle"],SGAP);
+  }
+  if(cur==="p2"){
+    const road=els.find(e=>e.id==="liaRoadImg"||e.id==="liaRoad");
+    if(road){const tb=visBottom("p2title"),rt=road.y,dy=Math.round(tb+SGAP-rt);
+      els.forEach(e=>{if(["p2title","p2blob","p2rule","p2num"].includes(e.id)||e.type==="nav"||e.type==="footer"||typeof e.y!=="number")return;if(e.y>tb){e.y+=dy;if(e.dot)e.dot=[e.dot[0],e.dot[1]+dy]}});
+      PAGES.p2.H+=dy;els.filter(e=>e.type==="footer").forEach(f=>f.y=PAGES.p2.H-110);renderAll();
+      const rb=road.type==="image"?road.y+road.w*road.ratio:road.y+road.h;rule(rb,["p2aboutHead"],SGAP)}
+  }
+  if(cur==="p3"){
+    rule(visBottom("p3poster"),["topicsTitle"],SGAP);
+    const bubs=els.filter(e=>e.type==="bubble").map(e=>e.id);
+    rule(maxBottom(bubs),["p3sydRule","p3sydTitle","p3sydIntro"],SGAP);
+    rule(visBottom("p3sydMap"),["p3athRule","p3athTitle","p3athIntro"],SGAP);
+    rule(visBottom("p3athMap"),["p3cmbRule","p3cmbTitle","p3cmbIntro"],SGAP);
+  }
+  layoutBoard();render()}
+window.__site={visBottom,visTop,get els(){return els},P,REGIONS,get cur(){return cur},drawMap,mk,svg};
 (function startSite(){
   cur=window.SITE_PAGE&&PAGES[window.SITE_PAGE]?window.SITE_PAGE:"p1";
   S().els=S().els.filter(e=>!(e.type==="window"&&!e.src&&!e.bg)); // hide empty photo placeholders
@@ -1753,7 +1810,7 @@ window.__site={get els(){return els},P,REGIONS,get cur(){return cur},drawMap,mk,
     nv.addEventListener("pointerdown",ev=>{const n=ev.target.dataset&&ev.target.dataset.nav;if(!n)return;
       if(n==="Dark"){darkMode=!darkMode;board.classList.toggle("dark",darkMode);saveDark();render();return}
       if(SITE_URL[n]&&NAVPAGE[n]!==cur)location.href=SITE_URL[n]})}
-  if(MOBILE_Q.matches){buildMobile();}else{renderAll();if(!preview)togglePreview();buildOverlays();clipUnderNav();regionCards();}
+  if(MOBILE_Q.matches){for(let i=els.length-1;i>=0;i--)if(DEL_LABELS.includes(els[i].id))els.splice(i,1);buildMobile();}else{renderAll();if(!preview)togglePreview();applySpacing();buildOverlays();clipUnderNav();regionCards();}
   let wasM=MOBILE_Q.matches;MOBILE_Q.addEventListener("change",q=>{if(q.matches!==wasM)location.reload()});
 })();
 })();
