@@ -724,7 +724,10 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,112px);li
 .leaflet-tooltip.lab::before{display:none}
 .leaflet-tooltip.lab.off{display:none}
 .leaflet-tooltip.lga{background:var(--card);color:var(--ink);border:0;box-shadow:0 4px 12px var(--shadow);font:500 12px var(--ui);border-radius:8px;padding:4px 8px}
-.leaflet-control-zoom a{background:var(--card)!important;color:var(--ink)!important;border-color:var(--line)!important}
+.leaflet-control-zoom a{background:var(--card)!important;color:#4F9484!important;border-color:#7FB8AA!important;font-weight:600}
+.leaflet-control-zoom a:hover{background:#EEF6F3!important}
+.leaflet-touch .leaflet-bar,.leaflet-bar{border:1.5px solid #7FB8AA!important;box-shadow:0 2px 8px rgba(79,148,132,.18)!important}
+.leaflet-control-zoom a.leaflet-disabled{color:#B9D6CF!important}
 .hint{position:absolute;inset:auto 0 16px 0;margin:auto;width:max-content;max-width:90%;z-index:500;background:var(--ink);color:var(--bg);font-size:13px;padding:8px 14px;border-radius:999px;opacity:0;transition:opacity .25s;pointer-events:none}
 .hint.on{opacity:.9}
 @media (prefers-reduced-motion:reduce){.pt,.hint{transition:none}}
@@ -732,7 +735,7 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,112px);li
 html.embed body{background:transparent}
 html.embed .wrap{max-width:none;padding:0}
 html.embed header,html.embed .legend{display:none}
-html.embed #map{height:100vh;min-height:0;border:1.5px solid #D2CDC3;border-radius:22px;box-sizing:border-box}
+html.embed #map{height:100vh;min-height:0;border:2px solid #7FB8AA;border-radius:22px;box-sizing:border-box}
 @media (max-width:760px){html.embed #map{border-radius:14px}}
 </style>
 
@@ -804,6 +807,14 @@ function toggleSubs(){if(!subs)return;const want=map.getZoom()>=11.5&&hovName&&s
   if(shownSub)subLabsBy[shownSub].eachLayer(fitSub)}
 map.on("zoomend moveend",toggleSubs);
 const farCheck=()=>{map.getContainer().classList.toggle("far",map.getZoom()<9);map.getContainer().classList.toggle("near",map.getZoom()>=11.5)};map.on("zoomend",farCheck);farCheck();
+// two-finger pinch on a trackpad zooms the map, not the page
+(()=>{const el=map.getContainer();let z0=null,pt=null;
+  el.addEventListener("gesturestart",e=>{e.preventDefault();z0=map.getZoom();const r=el.getBoundingClientRect();pt=L.point(e.clientX-r.left,e.clientY-r.top)},{passive:false});
+  el.addEventListener("gesturechange",e=>{e.preventDefault();if(z0==null)return;map.setZoomAround(pt,Math.max(map.getMinZoom(),Math.min(map.getMaxZoom(),z0+Math.log2(e.scale))),{animate:false})},{passive:false});
+  el.addEventListener("gestureend",e=>{e.preventDefault();z0=null},{passive:false});
+  el.addEventListener("wheel",e=>{if(e.ctrlKey)e.preventDefault()},{passive:false});
+  document.addEventListener("gesturestart",e=>e.preventDefault(),{passive:false});
+  document.addEventListener("touchmove",e=>{if(e.touches&&e.touches.length>1)e.preventDefault()},{passive:false})})();
 // drag to move the map (left button / trackpad press, or the middle wheel button); open cards move with it
 let panning=false;map.on("dragstart",()=>panning=true);map.on("dragend",()=>setTimeout(()=>panning=false,50));
 (()=>{const el=map.getContainer();let last=null;
