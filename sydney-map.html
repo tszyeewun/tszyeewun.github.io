@@ -710,6 +710,9 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,112px);li
 .leaflet-popup-tip{background:var(--card)}
 .leaflet-popup-content{margin:18px 20px;width:min(300px,70vw)!important}
 html,body{overscroll-behavior:none}
+.sbar{position:absolute;z-index:801;width:5px;border-radius:3px;pointer-events:none;opacity:0;transition:opacity .45s}
+.sbar.on{opacity:1;transition:opacity .15s}
+.sbar i{display:block;width:5px;border-radius:3px;background:rgba(29,28,24,.38)}
 .pcard{position:absolute;z-index:800;overscroll-behavior:contain;overflow-anchor:none;width:min(320px,calc(100% - 20px));max-height:calc(100% - 20px);overflow:auto;background:var(--card);color:var(--ink);border-radius:18px;box-shadow:0 14px 34px var(--shadow);padding:18px 20px;box-sizing:border-box}
 .card + .card{border-top:1px solid var(--line);margin-top:14px;padding-top:14px}
 .strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-bottom:12px}
@@ -832,7 +835,7 @@ L.DomEvent.disableClickPropagation(card);L.DomEvent.disableScrollPropagation(car
 // on the project card it scrolls the card only; everywhere else the map handles it (zoom)
 card.addEventListener("wheel",e=>{e.preventDefault();e.stopPropagation();card.scrollTop+=e.deltaMode===1?e.deltaY*16:e.deltaY},{passive:false});
 document.addEventListener("wheel",e=>{if(!card.contains(e.target))e.preventDefault()},{passive:false,capture:true});
-let cardM=null,ct=null;const keepCard=()=>clearTimeout(ct),hideLater=()=>{clearTimeout(ct);ct=setTimeout(()=>{if(!panning){card.hidden=true;cardM=null}},350)};
+let cardM=null,ct=null;const keepCard=()=>clearTimeout(ct),hideLater=()=>{clearTimeout(ct);ct=setTimeout(()=>{if(!panning){card.hidden=true;cardM=null;sbar.classList.remove("on")}},350)};
 card.addEventListener("mouseenter",keepCard);card.addEventListener("mouseleave",hideLater);
 function placeCard(){if(!cardM||card.hidden)return;const M=map.getSize(),pt=map.latLngToContainerPoint(cardM.getLatLng()),w=card.offsetWidth,h=card.offsetHeight,g=16,pad=10;
   const opts=[["r",pt.x+g,pt.y-h/2],["l",pt.x-g-w,pt.y-h/2],["t",pt.x-w/2,pt.y-g-h],["b",pt.x-w/2,pt.y+g]];
@@ -841,10 +844,18 @@ function placeCard(){if(!cardM||card.hidden)return;const M=map.getSize(),pt=map.
   if(!best){best=opts.slice().sort((a,b)=>vis(b)-vis(a))[0]}
   let [side,x,y]=best;if(side==="r"||side==="l")y=Math.max(pad,Math.min(y,M.y-pad-h));else x=Math.max(pad,Math.min(x,M.x-pad-w));
   card.style.left=Math.round(x)+"px";card.style.top=Math.round(y)+"px";card.dataset.side=side}
-function showCard(m,html){if(cardM!==m){card.innerHTML=html;card.scrollTop=0;card.querySelectorAll("img").forEach(im=>{if(!im.complete)im.addEventListener("load",placeCard,{once:true})})}
+function showCard(m,html){setTimeout(()=>{placeCard();drawBar(true)},30);if(cardM!==m){card.innerHTML=html;card.scrollTop=0;card.querySelectorAll("img").forEach(im=>{if(!im.complete)im.addEventListener("load",placeCard,{once:true})})}
   cardM=m;card.hidden=false;placeCard()}
-map.on("move zoom",placeCard);map.on("zoomstart",()=>{card.hidden=true;cardM=null});
-map.on("click",()=>{card.hidden=true;cardM=null});
+// scroll hint: a thin bar on the card's right edge, shown when the card opens (if it can scroll), then fades
+const sbar=document.createElement("div");sbar.className="sbar";sbar.innerHTML="<i></i>";map.getContainer().appendChild(sbar);
+let sbT=null;function drawBar(show){if(card.hidden||card.scrollHeight<=card.clientHeight+2){sbar.classList.remove("on");return}
+  const r=card.getBoundingClientRect(),m=map.getContainer().getBoundingClientRect(),h=card.clientHeight-28,th=Math.max(28,h*card.clientHeight/card.scrollHeight),t=(h-th)*card.scrollTop/(card.scrollHeight-card.clientHeight);
+  sbar.style.left=(r.right-m.left-9)+"px";sbar.style.top=(r.top-m.top+14)+"px";sbar.style.height=h+"px";sbar.firstChild.style.height=th+"px";sbar.firstChild.style.transform=`translateY(${t}px)`;
+  if(show){sbar.classList.add("on");clearTimeout(sbT);sbT=setTimeout(()=>sbar.classList.remove("on"),1800)}}
+card.addEventListener("scroll",()=>drawBar(true),{passive:true});
+new ResizeObserver(()=>{placeCard();drawBar(false)}).observe(card);
+map.on("move zoom",()=>{placeCard();drawBar(false)});map.on("zoomstart",()=>{card.hidden=true;cardM=null;sbar.classList.remove("on")});
+map.on("click",()=>{card.hidden=true;cardM=null;sbar.classList.remove("on")});
 // group projects that share a point
 const groups={};P.forEach(p=>{const k=p.ll.join();(groups[k]=groups[k]||[]).push(p)});
 const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
