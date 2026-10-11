@@ -709,7 +709,8 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,112px);li
 .leaflet-popup-content-wrapper{background:var(--card);color:var(--ink);border-radius:18px;box-shadow:0 14px 34px var(--shadow)}
 .leaflet-popup-tip{background:var(--card)}
 .leaflet-popup-content{margin:18px 20px;width:min(300px,70vw)!important}
-.pcard{position:absolute;z-index:800;width:min(320px,calc(100% - 20px));max-height:calc(100% - 20px);overflow:auto;background:var(--card);color:var(--ink);border-radius:18px;box-shadow:0 14px 34px var(--shadow);padding:18px 20px;box-sizing:border-box}
+html,body{overscroll-behavior:none}
+.pcard{position:absolute;z-index:800;overscroll-behavior:contain;overflow-anchor:none;width:min(320px,calc(100% - 20px));max-height:calc(100% - 20px);overflow:auto;background:var(--card);color:var(--ink);border-radius:18px;box-shadow:0 14px 34px var(--shadow);padding:18px 20px;box-sizing:border-box}
 .card + .card{border-top:1px solid var(--line);margin-top:14px;padding-top:14px}
 .strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-bottom:12px}
 .strip img{flex:0 0 86%;height:170px;object-fit:contain;scroll-snap-align:start;margin-bottom:0!important}
@@ -825,6 +826,10 @@ let panning=false;map.on("dragstart",()=>panning=true);map.on("dragend",()=>setT
 // floating project card: opens on whichever side of the point has room, so the whole card stays visible
 const card=document.createElement("div");card.className="pcard";card.hidden=true;card.setAttribute("role","dialog");map.getContainer().appendChild(card);
 L.DomEvent.disableClickPropagation(card);L.DomEvent.disableScrollPropagation(card);
+// scrolling never moves the web page while the pointer is on the map:
+// on the project card it scrolls the card only; everywhere else the map handles it (zoom)
+card.addEventListener("wheel",e=>{e.preventDefault();e.stopPropagation();card.scrollTop+=e.deltaMode===1?e.deltaY*16:e.deltaY},{passive:false});
+document.addEventListener("wheel",e=>{if(!card.contains(e.target))e.preventDefault()},{passive:false,capture:true});
 let cardM=null,ct=null;const keepCard=()=>clearTimeout(ct),hideLater=()=>{clearTimeout(ct);ct=setTimeout(()=>{if(!panning){card.hidden=true;cardM=null}},350)};
 card.addEventListener("mouseenter",keepCard);card.addEventListener("mouseleave",hideLater);
 function placeCard(){if(!cardM||card.hidden)return;const M=map.getSize(),pt=map.latLngToContainerPoint(cardM.getLatLng()),w=card.offsetWidth,h=card.offsetHeight,g=16,pad=10;
