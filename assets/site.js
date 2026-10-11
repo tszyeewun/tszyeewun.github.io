@@ -178,6 +178,13 @@ function fix45(k,v){if(k!=="p2")return v;const f=id=>v.find(e=>e.id===id),keep=n
   v.forEach(e=>{if(e.type==="nav"||e.type==="footer"||keep.has(e.id))return;
     if(typeof e.y==="number"&&e.y>290){e.y+=225;if(e.dot)e.dot=[e.dot[0],e.dot[1]+225]}});
   v.filter(e=>e.type==="footer").forEach(ft=>ft.y=5875-110);return v}
+
+// Oct 2026 · Projects: Sydney map becomes a picture (1200 × 525, inside the 120 margins); everything below moves up
+function fix46(k,v){if(k!=="p3")return v;const m=v.find(e=>e.id==="p3sydMap");if(!m||m.pic)return v;
+  const oldBottom=m.y+Math.round(MAP.H*m.w/MAP.W),newH=525,dy=oldBottom-(m.y+newH);
+  Object.assign(m,{x:120,w:1200,h:newH,pic:true,fade:false,frame:true});
+  v.forEach(e=>{if(e===m||e.type==="nav"||e.type==="footer")return;if(typeof e.y==="number"&&e.y>=oldBottom-40)e.y-=dy});
+  v.filter(e=>e.type==="footer").forEach(ft=>ft.y=PAGES.p3.H-110);return v}
 // Oct 2026 · page 1: layout from Lia's screenshots
 function p1v3(v){if(v.some(e=>e.id==="p1aboutBlob"))return v;
   const f=id=>v.find(e=>e.id===id),drop=new Set(["btn","introCta1","introBlob","p1projLabel"]);
@@ -693,7 +700,7 @@ function page4(){return[
 const PAGES={
   p1:{label:"Page 1 · Home",W:1440,H:TOP_BOTTOM+260+P1_GAP+P1_GAP2+P1_GAP3+P1_GAP4-TOPICS_H+P1_GAP5,store:"lia-page1-layout-v1",def:()=>recolor(page1(),true)},
   p2:{label:"Page 2 · About me",W:1440,H:5875,store:"lia-page2-layout-v1",def:()=>wideCloud(p2reorder(spacing2(alongWay(aboutHead(timelineV2(gapP2900(useLiaRoad(eventFirst(restyle2(roadify(recolor(page2(),true))))))))))))},
-  p3:{label:"Page 3 · Projects",W:1440,H:1000+3*300+Math.round(MAP.H*1440/MAP.W)+MAP_CMB.H+MAP_ATH.H+110+TOPICS_H,store:"lia-page3-layout-v5",def:()=>recolor(page3(),true)},
+  p3:{label:"Page 3 · Projects",W:1440,H:1000+3*300+525+MAP_CMB.H+MAP_ATH.H+110+TOPICS_H,store:"lia-page3-layout-v5",def:()=>recolor(page3(),true)},
   pb:{label:"Page 4 · Blog",W:1440,H:1400,store:"lia-pageblog-layout-v1",def:()=>pageBlog()},
   p4:{label:"Page 5 · Contact",W:1440,H:1800,store:"lia-page4-layout-v1",def:()=>recolor(page4(),true)}
 };
@@ -835,6 +842,8 @@ function loadPage(k){const v=loadRaw(k);let done=false;try{done=__LS.getItem("li
   if(!c44){fix44(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome44-"+k,"1")}catch(_){}}
   let c45=false;try{c45=__LS.getItem("lia-chrome45-"+k)==="1"}catch(_){}
   if(!c45){fix45(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome45-"+k,"1")}catch(_){}}
+  let c46=false;try{c46=__LS.getItem("lia-chrome46-"+k)==="1"}catch(_){}
+  if(!c46){fix46(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome46-"+k,"1")}catch(_){}}
   return v}
 function loadRaw(k){try{const s=__LS.getItem(PAGES[k].store);if(s){const v=JSON.parse(s);if(Array.isArray(v)&&v.length){
   // keep the saved hero as it is; add the topic bubbles below it once
@@ -1063,7 +1072,17 @@ function drawForm(e,g){
   mk("circle",{cx:e.x+e.w-22,cy:by-10,r:22,fill:paint(e.accent)},g);
   mk("path",{d:`M${e.x+e.w-30},${by-10} H${e.x+e.w-13} M${e.x+e.w-19},${by-16} L${e.x+e.w-13},${by-10} L${e.x+e.w-19},${by-4}`,stroke:INK,"stroke-width":2,fill:"none","stroke-linecap":"round"},g)}
 let hoverLGA=null, hs={};
-function drawMap(e,g,defs){
+const SYD_PIC={src:"img/sydney-map.webp",W:1200,H:525,labs:[[454.5, 204.5, "Blacktown"], [602.2, 391.5, "Canterbury-Bankstown"], [594.6, 263.5, "Parramatta"], [698, 197.5, "Ku-ring-gai"], [752, 442, "Randwick"], [663.7, 263.5, "Ryde"], [741.4, 356.5, "Sydney"], [537.6, 48.5, "The Hills Shire"]],pins:[[412, 73, "Windsor", 1], [530, 185, "Kellyville", 1], [491, 235, "Blacktown", 2], [573, 280, "Parramatta", 1], [564, 341, "Chester Hill", 1], [676, 242, "Macquarie Park", 1], [724, 220, "East Killara", 1], [747, 325, "The Rocks", 1], [760, 385, "Kensington", 2], [774, 410, "Maroubra", 1]]};
+function drawMapPic(e,g,defs){const P_=SYD_PIC,sc=e.w/P_.W,h=e.h||P_.H*sc,cid="mpc-"+e.id;
+  const cp=mk("clipPath",{id:cid},defs);mk("rect",{x:e.x,y:e.y,width:e.w,height:h,rx:22},cp);
+  const body=mk("g",{"clip-path":`url(#${cid})`},g);mk("rect",{x:e.x,y:e.y,width:e.w,height:h,fill:"#A9D2C8"},body);
+  mk("image",{href:P_.src,x:e.x,y:e.y,width:e.w,height:h,preserveAspectRatio:"xMidYMid slice"},body);
+  P_.labs.forEach(([lx,ly,nm])=>{const t=mk("text",{x:e.x+lx*sc,y:e.y+ly*sc,"text-anchor":"middle","dominant-baseline":"central","font-family":SERIF,"font-size":12*sc,fill:"#7A766C"},body);t.textContent=nm});
+  P_.pins.forEach(([px,py,name,n])=>{const x=e.x+px*sc,y=e.y+py*sc;
+    mk("circle",{cx:x,cy:y,r:7*sc,fill:"#FFFFFF",stroke:"#E2483D","stroke-width":2.2*sc},body);mk("circle",{cx:x,cy:y,r:2.2*sc,fill:"#E2483D"},body);
+    const t=mk("text",{x:x+12*sc,y:y+4*sc,"font-family":MONO,"font-weight":700,"font-size":11*sc,fill:INK,stroke:"#FFFFFF","stroke-width":3*sc,"paint-order":"stroke","stroke-linejoin":"round"},body);t.textContent=name;
+    if(n>1){mk("circle",{cx:x+9*sc,cy:y-9*sc,r:6.5*sc,fill:"#FFFFFF",stroke:"#E2483D","stroke-width":1.5*sc},body);const bt=mk("text",{x:x+9*sc,y:y-5.5*sc,"text-anchor":"middle","font-family":SANS,"font-weight":700,"font-size":9*sc,fill:"#E2483D"},body);bt.textContent=n}})}
+function drawMap(e,g,defs){if(e.pic)return drawMapPic(e,g,defs);
   const R=REGIONS[e.region||"syd"],M=R.M,rx=e.frame===false?0:24;
   const sc=e.w/M.W, inner=mk("g",{transform:`translate(${e.x},${e.y}) scale(${sc})`},g);
   const pat=mk("pattern",{id:"mapDots-"+e.id,width:8,height:8,patternUnits:"userSpaceOnUse"},defs);mk("circle",{cx:4,cy:4,r:1.3,fill:"#FFFFFF"},pat);
@@ -1536,7 +1555,7 @@ function buildOverlays(){let ov=document.getElementById("ov");if(!ov){ov=documen
       f.addEventListener("submit",ev=>{ev.preventDefault();const v=[...f.querySelectorAll("input")].map(i=>i.value.trim());
         const sub=encodeURIComponent("Website message from "+(v[0]||"a visitor"));const bod=encodeURIComponent((v[2]||"")+"\n\n"+(v[0]||"")+" · "+(v[1]||""));
         location.href=`mailto:tszyeewun_au@outlook.com?subject=${sub}&body=${bod}`});ov.appendChild(f)}
-    if(e.type==="map"&&(e.region||"syd")==="syd"&&cur==="p3"){const M=REGIONS.syd.M,h=M.H*e.w/M.W;const fr=document.createElement("iframe");
+    if(e.type==="map"&&(e.region||"syd")==="syd"&&cur==="p3"){const M=REGIONS.syd.M,h=e.h||M.H*e.w/M.W;const fr=document.createElement("iframe");
       fr.src="sydney-map.html?embed=1";fr.title="Interactive map of Lia's Sydney projects";fr.loading="lazy";fr.className="mapframe";fr.style.cssText=pct(e.x,e.y,e.w,h);ov.appendChild(fr)}
   })}
 function clipUnderNav(){const ov=document.getElementById("ov");if(!ov)return;const navH=96*board.clientWidth/P().W,top=document.getElementById("main").getBoundingClientRect().top;
