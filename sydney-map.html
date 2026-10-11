@@ -776,26 +776,32 @@ const subPane=map.createPane("subs");subPane.style.zIndex=410;subPane.style.poin
 let lga,subs;
 let lines,lineOf={};
 function subStyle(){if(subs)subs.setStyle(f=>({color:css("--sub"),weight:.6,fill:false,opacity:f.properties.lga===hovName?1:0}))}
+let subsOf={};function subsFor(n,on){(subsOf[n]||[]).forEach(l=>l.setStyle({opacity:on?1:0}))}
+function resetOne(l,name){l.setStyle({fillColor:COL[name]||css("--land"),fillOpacity:1,color:css("--edge"),weight:1});const ln=lineOf[name];if(ln)ln.setStyle({fill:false,color:css("--edge"),weight:1})}
 function style(){if(lga)lga.setStyle(f=>({fillColor:COL[f.properties.name]||css("--land"),fillOpacity:1,color:css("--edge"),weight:1}));if(lines)lines.setStyle({fill:false,color:css("--edge"),weight:1});subStyle()}
 const labs=[];let hov=null,hovName=null;
 function fitLabels(){labs.forEach(({l,t,has})=>{const b=l.getBounds(),a=map.latLngToContainerPoint(b.getNorthWest()),c=map.latLngToContainerPoint(b.getSouthEast());
   const w=c.x-a.x,h=c.y-a.y,ok=has?(w>34&&h>18):l===hov;const el=t.getElement();if(el)el.classList.toggle("off",!ok)})}
 fetch("lga.geojson").then(r=>r.json()).then(g=>{
   lga=L.geoJSON(g,{onEachFeature:(f,l)=>{const has=!!COL[f.properties.name];
-    l.on("mouseover",()=>{hovName=f.properties.name;l.setStyle({color:"#87837A",weight:1.9});l.bringToFront();const ln=lineOf[f.properties.name];if(ln){ln.setStyle({color:"#87837A",weight:1.9});ln.bringToFront()}if(!has){l.setStyle({fillColor:css("--hover")});hov=l;fitLabels()}toggleSubs()});
-    l.on("mouseout",()=>{style();if(hovName===f.properties.name)hovName=null;if(hov===l){hov=null;fitLabels()}toggleSubs()})}}).addTo(map);
+    l.on("mouseover",()=>{hovName=f.properties.name;l.setStyle({color:"#87837A",weight:1.9});l.bringToFront();const ln=lineOf[f.properties.name];if(ln){ln.setStyle({color:"#87837A",weight:1.9});ln.bringToFront()}if(!has){l.setStyle({fillColor:css("--hover")});hov=l;fitLabels()}subsFor(hovName,true);toggleSubs(true)});
+    l.on("mouseout",()=>{resetOne(l,f.properties.name);subsFor(f.properties.name,false);if(hovName===f.properties.name)hovName=null;if(hov===l){hov=null;fitLabels()}toggleSubs(true)})}}).addTo(map);
   lines=L.geoJSON(g,{pane:"lgaLines",interactive:false,onEachFeature:(f,l)=>{lineOf[f.properties.name]=l}}).addTo(map);style();
   lga.eachLayer(l=>{const name=l.feature.properties.name,has=!!COL[name];
     const t=L.tooltip({pane:"labs",permanent:true,direction:"center",className:"lab"+(has?" has":""),interactive:false}).setLatLng(l.getCenter()).setContent(name);t.addTo(map);labs.push({l,t,has})});
   fitLabels();map.on("zoomend moveend",fitLabels);
-  fetch("suburbs.geojson").then(r=>r.json()).then(s=>{subs=L.geoJSON(s,{pane:"subs",interactive:false});style();toggleSubs()});
+  fetch("suburbs.geojson").then(r=>r.json()).then(s=>{subs=L.geoJSON(s,{pane:"subs",interactive:false});subs.eachLayer(l=>{const k=l.feature.properties.lga;(subsOf[k]=subsOf[k]||[]).push(l)});style();toggleSubs()});
 });
 let subLabs=null;
-function toggleSubs(){if(!subs)return;subStyle();const z=map.getZoom(),on=z>=11.5;if(on&&!map.hasLayer(subs))subs.addTo(map);if(!on&&map.hasLayer(subs))map.removeLayer(subs);
-  if(!subLabs){subLabs=L.layerGroup();subs.eachLayer(l=>{const t=L.tooltip({pane:"labs",permanent:true,direction:"center",className:"lab sub",interactive:false}).setLatLng(l.getBounds().getCenter()).setContent(l.feature.properties.name);t._lb=l;subLabs.addLayer(t)})}
-  const show=on&&!!hovName;if(show&&!map.hasLayer(subLabs))subLabs.addTo(map);if(!show&&map.hasLayer(subLabs))map.removeLayer(subLabs);
-  if(show)subLabs.eachLayer(t=>{const el=t.getElement();if(!el)return;const b=t._lb.getBounds(),a=map.latLngToContainerPoint(b.getNorthWest()),c=map.latLngToContainerPoint(b.getSouthEast());
-    el.classList.toggle("off",t._lb.feature.properties.lga!==hovName||c.x-a.x<34||c.y-a.y<12)})}
+let labsOf={},lastLab=null;
+function fitSub(t){const el=t.getElement();if(!el)return;if(t._lb.feature.properties.lga!==hovName){el.classList.add("off");return}
+  const b=t._lb.getBounds(),a=map.latLngToContainerPoint(b.getNorthWest()),c=map.latLngToContainerPoint(b.getSouthEast());el.classList.toggle("off",c.x-a.x<34||c.y-a.y<12)}
+function toggleSubs(fast){if(!subs)return;if(fast!==true)subStyle();const z=map.getZoom(),on=z>=11.5;if(on&&!map.hasLayer(subs))subs.addTo(map);if(!on&&map.hasLayer(subs))map.removeLayer(subs);
+  if(!subLabs){subLabs=L.layerGroup();subs.eachLayer(l=>{const t=L.tooltip({pane:"labs",permanent:true,direction:"center",className:"lab sub off",interactive:false}).setLatLng(l.getBounds().getCenter()).setContent(l.feature.properties.name);t._lb=l;const k=l.feature.properties.lga;(labsOf[k]=labsOf[k]||[]).push(t);subLabs.addLayer(t)})}
+  const added=on&&!map.hasLayer(subLabs);if(added)subLabs.addTo(map);if(!on&&map.hasLayer(subLabs))map.removeLayer(subLabs);
+  if(!on){lastLab=hovName;return}
+  if(fast===true&&!added){(labsOf[lastLab]||[]).forEach(fitSub);(labsOf[hovName]||[]).forEach(fitSub)}else subLabs.eachLayer(fitSub);
+  lastLab=hovName}
 map.on("zoomend moveend",toggleSubs);
 const farCheck=()=>{map.getContainer().classList.toggle("far",map.getZoom()<9);map.getContainer().classList.toggle("near",map.getZoom()>=11.5)};map.on("zoomend",farCheck);farCheck();
 // drag to move the map (left button / trackpad press, or the middle wheel button); open cards move with it

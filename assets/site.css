@@ -70,6 +70,9 @@ kbd{font-family:var(--mono);font-size:10.5px;border:1px solid var(--line);border
 .ms .when{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8C8B83;margin-top:8px}
 .ms .tt{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.2;color:#1D1C18;margin:10px 0 8px;text-wrap:balance}
 .ms p{margin:0 0 4px}
+.app.preview .hov,.app.preview .cw{transition:transform .25s cubic-bezier(.2,.8,.3,1.2);transform-box:fill-box;transform-origin:center;cursor:default}
+.app.preview .hov:hover{transform:scale(1.14)}
+.app.preview .cw:hover{transform:scale(1.35)}
 .board.dark{background:#17161C}
 .board.dark .ms{color:#BEB8CB}.board.dark .ms .yr,.board.dark .ms .tt{color:#EEEAF4}.board.dark .ms .when{color:#A39DB0}
 /* frosted-glass hover card on the map (preview only) */
