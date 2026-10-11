@@ -185,6 +185,17 @@ function fix46(k,v){if(k!=="p3")return v;const m=v.find(e=>e.id==="p3sydMap");if
   Object.assign(m,{x:120,w:1200,h:newH,pic:true,fade:false,frame:true});
   v.forEach(e=>{if(e===m||e.type==="nav"||e.type==="footer")return;if(typeof e.y==="number"&&e.y>=oldBottom-40)e.y-=dy});
   v.filter(e=>e.type==="footer").forEach(ft=>ft.y=PAGES.p3.H-110);return v}
+
+// Oct 2026 · Projects: Athens and Colombo as pictures (same frame as Sydney); order Sydney → Athens → Colombo
+const CMB_PIC={pic:"img/colombo-map.webp",crop:[0, 0, 1440, 630],border:"#D8957E"},ATH_PIC={pic:"img/athens-map.webp",crop:[0, 133, 1440, 630],border:"#B4A3D6"};
+function fix47(k,v){if(k!=="p3")return v;const f=id=>v.find(e=>e.id===id);const sm=f("p3sydMap");if(!sm)return v;
+  const bottom=sm.y+(sm.h||525),G=90;let y=bottom;
+  [["ath",ATH_PIC],["cmb",CMB_PIC]].forEach(([r,P])=>{const cap=r[0].toUpperCase()+r.slice(1);
+    const rule=f("p3"+r+"Rule"),title=f("p3"+r+"Title"),intro=f("p3"+r+"Intro"),map=f("p3"+r+"Map");
+    if(rule)rule.y=y+G;if(title)title.y=y+G+90;if(intro)intro.y=y+G-20;
+    if(map)Object.assign(map,{x:120,y:y+G+210,w:1200,h:525,frame:false,fade:false,...P});y=y+G+210+525});
+  const ai=f("p3athIntro"),ci=f("p3cmbIntro");if(ai)ai.when="02 · Greece";if(ci)ci.when="03 · Sri Lanka";
+  v.filter(e=>e.type==="footer").forEach(ft=>ft.y=PAGES.p3.H-110);return v}
 // Oct 2026 · page 1: layout from Lia's screenshots
 function p1v3(v){if(v.some(e=>e.id==="p1aboutBlob"))return v;
   const f=id=>v.find(e=>e.id===id),drop=new Set(["btn","introCta1","introBlob","p1projLabel"]);
@@ -635,7 +646,7 @@ const PROJ_ATH=[{t:"Mapping the City: Kolonaki, Athens",s:"Kolonaki",lga:"Athens
 const proj=(M,lon,lat)=>[(lon-M.lon0)*M.c*M.k,(M.lat1-lat)*M.k];
 const REGIONS={
   syd:{label:"Sydney, NSW",M:MAP,P:PROJECTS,colors:MORANDI,sea:"#A9D2C8",minA:l=>l.a>3,noLabel:["Randwick","Ryde","Hawkesbury"],left:p=>p.ll[0]<151.05&&!["Windsor","Kellyville"].includes(p.s)},
-  cmb:{label:"Colombo, Sri Lanka",M:MAP_CMB,P:PROJ_CMB,colors:{"Slave Island":"g:dawn"},sea:"#9FD0C4",minA:l=>l.big,noLabel:["Slave Island"],left:()=>false},
+  cmb:{label:"Colombo, Sri Lanka",M:MAP_CMB,P:PROJ_CMB,colors:{"Slave Island":"g:dawn"},sea:"#E9B7A4",minA:l=>l.big,noLabel:["Slave Island"],left:()=>false},
   ath:{label:"Athens, Greece",M:MAP_ATH,P:PROJ_ATH,colors:{"Athens":"g:lilac"},sea:"#EFEAF5",minA:l=>l.big,noLabel:[],left:()=>false}};
 Object.values(REGIONS).forEach(R=>{R.names=[...new Set(R.P.map(p=>p.lga))];
   R.pins=[...new Map(R.P.map(p=>[p.s,p])).values()].map(p=>({s:p.s,xy:proj(R.M,...p.ll),left:R.left(p)}))});
@@ -700,7 +711,7 @@ function page4(){return[
 const PAGES={
   p1:{label:"Page 1 · Home",W:1440,H:TOP_BOTTOM+260+P1_GAP+P1_GAP2+P1_GAP3+P1_GAP4-TOPICS_H+P1_GAP5,store:"lia-page1-layout-v1",def:()=>recolor(page1(),true)},
   p2:{label:"Page 2 · About me",W:1440,H:5875,store:"lia-page2-layout-v1",def:()=>wideCloud(p2reorder(spacing2(alongWay(aboutHead(timelineV2(gapP2900(useLiaRoad(eventFirst(restyle2(roadify(recolor(page2(),true))))))))))))},
-  p3:{label:"Page 3 · Projects",W:1440,H:1000+3*300+525+MAP_CMB.H+MAP_ATH.H+110+TOPICS_H,store:"lia-page3-layout-v5",def:()=>recolor(page3(),true)},
+  p3:{label:"Page 3 · Projects",W:1440,H:1000+3*300+525*3+110+TOPICS_H,store:"lia-page3-layout-v5",def:()=>recolor(page3(),true)},
   pb:{label:"Page 4 · Blog",W:1440,H:1400,store:"lia-pageblog-layout-v1",def:()=>pageBlog()},
   p4:{label:"Page 5 · Contact",W:1440,H:1800,store:"lia-page4-layout-v1",def:()=>recolor(page4(),true)}
 };
@@ -844,6 +855,8 @@ function loadPage(k){const v=loadRaw(k);let done=false;try{done=__LS.getItem("li
   if(!c45){fix45(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome45-"+k,"1")}catch(_){}}
   let c46=false;try{c46=__LS.getItem("lia-chrome46-"+k)==="1"}catch(_){}
   if(!c46){fix46(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome46-"+k,"1")}catch(_){}}
+  let c47=false;try{c47=__LS.getItem("lia-chrome47-"+k)==="1"}catch(_){}
+  if(!c47){fix47(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome47-"+k,"1")}catch(_){}}
   return v}
 function loadRaw(k){try{const s=__LS.getItem(PAGES[k].store);if(s){const v=JSON.parse(s);if(Array.isArray(v)&&v.length){
   // keep the saved hero as it is; add the topic bubbles below it once
@@ -1082,7 +1095,22 @@ function drawMapPic(e,g,defs){const P_=SYD_PIC,sc=e.w/P_.W,h=e.h||P_.H*sc,cid="m
     mk("circle",{cx:x,cy:y,r:7*sc,fill:"#FFFFFF",stroke:"#E2483D","stroke-width":2.2*sc},body);mk("circle",{cx:x,cy:y,r:2.2*sc,fill:"#E2483D"},body);
     const t=mk("text",{x:x+12*sc,y:y+4*sc,"font-family":MONO,"font-weight":700,"font-size":11*sc,fill:INK,stroke:"#FFFFFF","stroke-width":3*sc,"paint-order":"stroke","stroke-linejoin":"round"},body);t.textContent=name;
     if(n>1){mk("circle",{cx:x+9*sc,cy:y-9*sc,r:6.5*sc,fill:"#FFFFFF",stroke:"#E2483D","stroke-width":1.5*sc},body);const bt=mk("text",{x:x+9*sc,y:y-5.5*sc,"text-anchor":"middle","font-family":SANS,"font-weight":700,"font-size":9*sc,fill:"#E2483D"},body);bt.textContent=n}})}
-function drawMap(e,g,defs){if(e.pic)return drawMapPic(e,g,defs);
+// Colombo / Athens: one pre-drawn picture in the same 1200 × 525 frame as Sydney; areas pop on hover
+function drawRegionPic(e,g,defs){const R=REGIONS[e.region],M=R.M,c=e.crop,k=e.w/c[2],h=e.h,cid="rpc-"+e.id;
+  const cp=mk("clipPath",{id:cid},defs);mk("rect",{x:e.x,y:e.y,width:e.w,height:h,rx:22},cp);
+  const body=mk("g",{"clip-path":`url(#${cid})`},g);mk("rect",{x:e.x,y:e.y,width:e.w,height:h,fill:R.sea},body);
+  mk("image",{href:e.pic,x:e.x,y:e.y,width:e.w,height:h,preserveAspectRatio:"xMidYMid slice"},body);
+  const inner=mk("g",{transform:`translate(${e.x-c[0]*k},${e.y-c[1]*k}) scale(${k})`},body);
+  M.lgas.forEach(l=>{const has=R.names.includes(l.name);mk("path",{d:l.d,class:"lgapic"+(has?" has":""),fill:has?paint(R.colors[l.name]||"#C7B8EA"):"#FFFFFF",stroke:has?"#7D7590":"#9A94A8","stroke-width":1.6/k,"data-lga":l.name},inner)});
+  const fs=v=>v/Math.max(k,1);
+  if(e.allNames)M.lgas.filter(l=>!R.names.includes(l.name)&&R.minA(l)).forEach(l=>{const t=mk("text",{x:l.c[0],y:l.c[1],"text-anchor":"middle","font-family":MONO,"font-size":fs(10.5)*Math.min(k,1.25)/k*1.2,fill:"#9A968A","letter-spacing":"0.04em","pointer-events":"none"},inner);t.textContent=l.name.toUpperCase()});
+  if(e.labels)M.lgas.filter(l=>R.names.includes(l.name)&&!R.noLabel.includes(l.name)).forEach(l=>{const t=mk("text",{x:l.c[0],y:l.c[1],"text-anchor":"middle","font-family":fontOf("display"),"font-size":19/k,fill:INK,"pointer-events":"none"},inner);t.textContent=l.name});
+  if(e.pins)R.pins.forEach(p=>{const [x,y]=p.xy,dir=p.left?-1:1,lx=x+dir*34/k;const pg=mk("g",{"pointer-events":"none"},inner);
+    mk("path",{d:`M${x+dir*8/k},${y} H${lx}`,stroke:INK,"stroke-width":1.2/k},pg);
+    mk("circle",{cx:x,cy:y,r:7/k,fill:"#FFFFFF",stroke:INK,"stroke-width":2/k},pg);mk("circle",{cx:x,cy:y,r:2.6/k,fill:INK},pg);
+    const t=mk("text",{x:lx+dir*6/k,y:y+4/k,"text-anchor":p.left?"end":"start","font-family":MONO,"font-size":12.5/k,fill:INK},pg);t.textContent=p.s});
+  mk("rect",{x:e.x+1,y:e.y+1,width:e.w-2,height:h-2,rx:21,fill:"none",stroke:e.border||"#C9C4BA","stroke-width":2,"pointer-events":"none"},g)}
+function drawMap(e,g,defs){if(typeof e.pic==="string")return drawRegionPic(e,g,defs);if(e.pic)return drawMapPic(e,g,defs);
   const R=REGIONS[e.region||"syd"],M=R.M,rx=e.frame===false?0:24;
   const sc=e.w/M.W, inner=mk("g",{transform:`translate(${e.x},${e.y}) scale(${sc})`},g);
   const pat=mk("pattern",{id:"mapDots-"+e.id,width:8,height:8,patternUnits:"userSpaceOnUse"},defs);mk("circle",{cx:4,cy:4,r:1.3,fill:"#FFFFFF"},pat);
@@ -1568,7 +1596,8 @@ function mEsc(s){return String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;")
 function mGrad(defs){Object.entries(GR).forEach(([k,st])=>{const lg=mk("linearGradient",{id:"mgr-"+k,x1:0,y1:0,x2:1,y2:1},defs);st.forEach((c,j)=>mk("stop",{offset:j/(st.length-1),"stop-color":c},lg))})}
 function mSvg(vb,cls){const s=document.createElementNS(NS,"svg");s.setAttribute("viewBox",vb);s.setAttribute("class",cls||"");s.setAttribute("aria-hidden","true");const d=mk("defs",{},s);mGrad(d);return [s,d]}
 function mBlob(e,cls){const [s]=mSvg("-115 -115 230 230","mblob "+(cls||""));mk("path",{d:blobPath(e,0),fill:paint(e.fill),transform:`rotate(${e.r||0})`},s);return s}
-function mapSvg(e){const R=REGIONS[e.region||"syd"],M=R.M;const [s,d]=mSvg(`0 0 ${M.W} ${M.H}`,"mmap");const g=mk("g",{},s);document.getElementById("m-tmp").appendChild(s);
+function mapSvg(e){if(typeof e.pic==="string"){const [s,d]=mSvg(`${e.x} ${e.y} ${e.w} ${e.h}`,"mmap pic");const g=mk("g",{},s);document.getElementById("m-tmp").appendChild(s);drawMap(e,g,d);return s}
+  const R=REGIONS[e.region||"syd"],M=R.M;const [s,d]=mSvg(`0 0 ${M.W} ${M.H}`,"mmap");const g=mk("g",{},s);document.getElementById("m-tmp").appendChild(s);
   drawMap({...e,x:0,y:0,w:M.W,fade:false,frame:false,labels:true,pins:true,allNames:false},g,d);
   // zoom to the coloured council(s) so labels stay readable on a phone
   let bb=null;s.querySelectorAll("path[data-lga]").forEach(p=>{if(!R.names.includes(p.dataset.lga))return;const b=p.getBBox();bb=bb?{x0:Math.min(bb.x0,b.x),y0:Math.min(bb.y0,b.y),x1:Math.max(bb.x1,b.x+b.width),y1:Math.max(bb.y1,b.y+b.height)}:{x0:b.x,y0:b.y,x1:b.x+b.width,y1:b.y+b.height}});
@@ -1661,7 +1690,7 @@ function buildMobile(){
 }
 
 
-function isDyn(e){return (e.type==="blob"&&(e.morph||e.follow))||e.type==="bubble"||(e.type==="logo"&&!e.still)||e.type==="typer"||e.type==="map"}
+function isDyn(e){return (e.type==="blob"&&(e.morph||e.follow))||e.type==="bubble"||(e.type==="logo"&&!e.still)||e.type==="typer"||(e.type==="map"&&typeof e.pic!=="string")}
 function viewY(){const main=document.getElementById("main"),sc=board.clientHeight/P().H,y0=(main.scrollTop-board.offsetTop)/sc;return [y0-200,y0+main.clientHeight/sc+200]}
 function mapSig(e){const M=(REGIONS[e.region||"syd"]||REGIONS.syd).M;return hoverLGA+"|"+M.lgas.map(l=>((hs[l.name]||1)*1000|0)).join(",")}
 function mapUpdate(e,n,defs){const R=REGIONS[e.region||"syd"],M=R.M,sc=e.w/M.W;
@@ -1687,7 +1716,7 @@ function siteTick(){
     if(darkMode){darkify(g0);n.defs.forEach(d=>darkify(d))}n.g=g0});
 }
 const ROAD_IMG={"x": 75, "y": 789, "w": 1289, "h": 3573, "src": "img/road-about.webp"};window.ROAD_IMG=ROAD_IMG;
-window.__site={get els(){return els},P,REGIONS,get cur(){return cur}};
+window.__site={get els(){return els},P,REGIONS,get cur(){return cur},drawMap,mk,svg};
 (function startSite(){
   cur=window.SITE_PAGE&&PAGES[window.SITE_PAGE]?window.SITE_PAGE:"p1";
   S().els=S().els.filter(e=>!(e.type==="window"&&!e.src&&!e.bg)); // hide empty photo placeholders
