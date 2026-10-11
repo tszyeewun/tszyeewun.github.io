@@ -713,6 +713,7 @@ html,body{overscroll-behavior:none}
 .sbar{position:absolute;z-index:801;width:5px;border-radius:3px;pointer-events:none;opacity:0;transition:opacity .45s}
 .sbar.on{opacity:1;transition:opacity .15s}
 .sbar i{display:block;width:5px;border-radius:3px;background:rgba(29,28,24,.38)}
+.pcard{scrollbar-width:none;-ms-overflow-style:none}.pcard::-webkit-scrollbar{display:none;width:0;height:0}
 .pcard{position:absolute;z-index:800;overscroll-behavior:contain;overflow-anchor:none;width:min(320px,calc(100% - 20px));max-height:calc(100% - 20px);overflow:auto;background:var(--card);color:var(--ink);border-radius:18px;box-shadow:0 14px 34px var(--shadow);padding:18px 20px;box-sizing:border-box}
 .card + .card{border-top:1px solid var(--line);margin-top:14px;padding-top:14px}
 .strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-bottom:12px}
@@ -842,7 +843,7 @@ function placeCard(){if(!cardM||card.hidden)return;const M=map.getSize(),pt=map.
   const vis=([,x,y])=>Math.max(0,Math.min(x+w,M.x-pad)-Math.max(x,pad))*Math.max(0,Math.min(y+h,M.y-pad)-Math.max(y,pad));
   let best=opts.find(o=>{const r=o[1]>=pad&&o[2]>=pad&&o[1]+w<=M.x-pad&&o[2]+h<=M.y-pad;return r&&o[0]!=="t"&&o[0]!=="b"})||opts.find(o=>o[1]>=pad&&o[2]>=pad&&o[1]+w<=M.x-pad&&o[2]+h<=M.y-pad);
   if(!best){best=opts.slice().sort((a,b)=>vis(b)-vis(a))[0]}
-  let [side,x,y]=best;if(side==="r"||side==="l")y=Math.max(pad,Math.min(y,M.y-pad-h));else x=Math.max(pad,Math.min(x,M.x-pad-w));
+  let [side,x,y]=best;y=Math.max(pad,Math.min(y,M.y-pad-h));x=Math.max(pad,Math.min(x,M.x-pad-w));
   card.style.left=Math.round(x)+"px";card.style.top=Math.round(y)+"px";card.dataset.side=side}
 function showCard(m,html){setTimeout(()=>{placeCard();drawBar(true)},30);if(cardM!==m){card.innerHTML=html;card.scrollTop=0;card.querySelectorAll("img").forEach(im=>{if(!im.complete)im.addEventListener("load",placeCard,{once:true})})}
   cardM=m;card.hidden=false;placeCard()}
