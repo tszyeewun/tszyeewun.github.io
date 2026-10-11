@@ -770,7 +770,8 @@ const P=[
  {t:"Data Literacy and Smart Cities: UNSW Students",s:"Kensington",tag:"Smart cities",ll:[-33.917,151.223],d:"How willing UNSW students are to share personal data for smart city services.",img:"img/data-literacy.jpg"},
  {t:"Waiting at the Kerb: Pedestrian Equity at Signalised Intersections",s:"Maroubra",tag:"Transport",ll:[-33.942,151.240],d:"How long pedestrians wait compared with cars at Sydney's signalised intersections.",img:"img/maroubra.jpg"}];
 const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-const map=L.map("map",{zoomControl:true,scrollWheelZoom:true,wheelPxPerZoomLevel:110,wheelDebounceTime:25,minZoom:6,maxZoom:15,zoomSnap:.25,zoomDelta:.5,attributionControl:false,fadeAnimation:false,markerZoomAnimation:true}).fitBounds([[-34.054,150.33],[-33.54,151.74]],{animate:false});
+const map=L.map("map",{zoomControl:true,scrollWheelZoom:true,wheelPxPerZoomLevel:90,wheelDebounceTime:10,minZoom:6,maxZoom:15,zoomSnap:0,zoomDelta:.5,preferCanvas:true,attributionControl:false,fadeAnimation:false,markerZoomAnimation:true}).fitBounds([[-34.054,150.33],[-33.54,151.74]],{animate:false});
+{const B=L.latLngBounds([[-34.054,150.33],[-33.54,151.74]]),z=Math.floor(map.getBoundsZoom(B)*4)/4+.5;map.setView([-33.785,151.03],z,{animate:false})}
 const HOME=map.getZoom();
 map.setMaxBounds([[-38.5,139.5],[-27.2,155.2]]);
 // scroll only zooms with Ctrl / Cmd, so the page still scrolls
@@ -787,17 +788,18 @@ function subsFor(){}
 function resetOne(l,name){l.setStyle({fillColor:COL[name]||css("--land"),fillOpacity:1,color:css("--edge"),weight:1});const ln=lineOf[name];if(ln)ln.setStyle({fill:false,color:css("--edge"),weight:1})}
 function style(){if(lga)lga.setStyle(f=>({fillColor:COL[f.properties.name]||css("--land"),fillOpacity:1,color:css("--edge"),weight:1}));if(lines)lines.setStyle({fill:false,color:css("--edge"),weight:1});subStyle()}
 const labs=[];let hov=null,hovName=null;
-function fitLabels(){labs.forEach(({l,t,has})=>{const b=l.getBounds(),a=map.latLngToContainerPoint(b.getNorthWest()),c=map.latLngToContainerPoint(b.getSouthEast());
+let fitRaf=0;function fitLabels(){if(fitRaf)return;fitRaf=requestAnimationFrame(()=>{fitRaf=0;fitNow()})}
+function fitNow(){labs.forEach(({l,t,has})=>{const b=l._bb||(l._bb=l.getBounds()),a=map.latLngToContainerPoint(b.getNorthWest()),c=map.latLngToContainerPoint(b.getSouthEast());
   const w=c.x-a.x,h=c.y-a.y,ok=has?(w>34&&h>18):l===hov;const el=t.getElement();if(el)el.classList.toggle("off",!ok)})}
 fetch("lga.geojson").then(r=>r.json()).then(g=>{
-  lga=L.geoJSON(g,{onEachFeature:(f,l)=>{const has=!!COL[f.properties.name];
+  lga=L.geoJSON(g,{renderer:L.canvas({padding:.5,tolerance:2}),onEachFeature:(f,l)=>{const has=!!COL[f.properties.name];
     l.on("mouseover",()=>{hovName=f.properties.name;l.setStyle({color:"#87837A",weight:1.9});l.bringToFront();const ln=lineOf[f.properties.name];if(ln){ln.setStyle({color:"#87837A",weight:1.9});ln.bringToFront()}if(!has){l.setStyle({fillColor:css("--hover")});hov=l;fitLabels()}subsFor(hovName,true);toggleSubs(true)});
     l.on("mouseout",()=>{resetOne(l,f.properties.name);subsFor(f.properties.name,false);if(hovName===f.properties.name)hovName=null;if(hov===l){hov=null;fitLabels()}toggleSubs(true)})}}).addTo(map);
-  lines=L.geoJSON(g,{pane:"lgaLines",interactive:false,smoothFactor:1.2,onEachFeature:(f,l)=>{lineOf[f.properties.name]=l}}).addTo(map);style();
+  lines=L.geoJSON(g,{pane:"lgaLines",renderer:L.canvas({pane:"lgaLines",padding:.5}),interactive:false,smoothFactor:1.2,onEachFeature:(f,l)=>{lineOf[f.properties.name]=l}}).addTo(map);style();
   lga.eachLayer(l=>{const name=l.feature.properties.name,has=!!COL[name];
     const t=L.tooltip({pane:"labs",permanent:true,direction:"center",className:"lab"+(has?" has":""),interactive:false}).setLatLng(l.getCenter()).setContent(name);t.addTo(map);labs.push({l,t,has})});
   fitLabels();map.on("zoomend moveend",fitLabels);
-  fetch("suburbs.geojson").then(r=>r.json()).then(s=>{subs=L.geoJSON(s,{pane:"subs",interactive:false,smoothFactor:1.5});subs.eachLayer(l=>{const k=l.feature.properties.lga;(subsBy[k]=subsBy[k]||L.layerGroup()).addLayer(l)});subStyle();toggleSubs()});
+  fetch("suburbs.geojson").then(r=>r.json()).then(s=>{subs=L.geoJSON(s,{pane:"subs",renderer:L.canvas({pane:"subs",padding:.5}),interactive:false,smoothFactor:1.5});subs.eachLayer(l=>{const k=l.feature.properties.lga;(subsBy[k]=subsBy[k]||L.layerGroup()).addLayer(l)});subStyle();toggleSubs()});
 });
 function fitSub(t){const el=t.getElement();if(!el)return;const b=t._lb.getBounds(),a=map.latLngToContainerPoint(b.getNorthWest()),c=map.latLngToContainerPoint(b.getSouthEast());el.classList.toggle("off",c.x-a.x<34||c.y-a.y<12)}
 function toggleSubs(){if(!subs)return;const want=map.getZoom()>=11.5&&hovName&&subsBy[hovName]?hovName:null;
@@ -811,7 +813,7 @@ const farCheck=()=>{map.getContainer().classList.toggle("far",map.getZoom()<9);m
 // two-finger pinch on a trackpad zooms the map, not the page
 (()=>{const el=map.getContainer();let z0=null,pt=null;
   el.addEventListener("gesturestart",e=>{e.preventDefault();z0=map.getZoom();const r=el.getBoundingClientRect();pt=L.point(e.clientX-r.left,e.clientY-r.top)},{passive:false});
-  el.addEventListener("gesturechange",e=>{e.preventDefault();if(z0==null)return;map.setZoomAround(pt,Math.max(map.getMinZoom(),Math.min(map.getMaxZoom(),z0+Math.log2(e.scale))),{animate:false})},{passive:false});
+  let gz=null,graf=0;el.addEventListener("gesturechange",e=>{e.preventDefault();if(z0==null)return;gz=Math.max(map.getMinZoom(),Math.min(map.getMaxZoom(),z0+Math.log2(e.scale)));if(!graf)graf=requestAnimationFrame(()=>{graf=0;if(gz!=null)map.setZoomAround(pt,gz,{animate:false})})},{passive:false});
   el.addEventListener("gestureend",e=>{e.preventDefault();z0=null},{passive:false});
   el.addEventListener("wheel",e=>{if(e.ctrlKey)e.preventDefault()},{passive:false});
   document.addEventListener("gesturestart",e=>e.preventDefault(),{passive:false});
