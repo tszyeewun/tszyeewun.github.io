@@ -1,157 +1,56 @@
----
-layout: default
-title: Projects
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Lia Wun</title>
+<meta name="description" content="Lia Wun (Tsz Yee Wun) — city planner and traffic engineer in Sydney. Transport, GIS and spatial analysis, urban design and AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header>
+    <h1>Lia Wun · V2.0</h1>
+    <div class="pages" id="pages" role="tablist" aria-label="Pages"></div>
+    <span class="sp"></span>
+    <button class="btn" id="undo" title="Undo (Ctrl/⌘+Z)">Undo</button>
+    <button class="btn" id="grid">Grid</button>
+    <button class="btn" id="darkBtn">Dark page</button>
+    <button class="btn" id="reset">Reset page</button>
+    <button class="btn" id="import">Import</button>
+    <button class="btn" id="exportBtn">Export for AI</button>
+    <button class="btn primary" id="previewBtn">Preview</button>
+  </header>
 
-<section class="about-section">
+  <aside class="left">
+    <section>
+      <p class="h">素材库 Asset library</p>
+      <div class="assets" id="assets"></div>
+      <p class="hint" style="margin-top:10px">Click an asset to add it to the page you are on. Upload your own art (PNG / SVG) with the last tile.</p>
+      <input type="file" id="file" accept="image/png,image/svg+xml,image/jpeg,image/webp" hidden>
+      <input type="file" id="photoFile" accept="image/png,image/jpeg,image/webp" hidden>
+    </section>
+    <section>
+      <p class="h">图层 Layers <span style="text-transform:none;letter-spacing:0">(top first)</span></p><p class="hint" style="margin:0 0 6px">Click a name here to pick something hidden under another item.</p>
+      <div class="layers" id="layers"></div>
+    </section>
+  </aside>
 
-  <h1>Projects</h1>
-
-  <!-- Project 1 -->
-  <div class="about-card project-card">
-
-    <div class="project-title">
-      PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity
+  <main id="main">
+    <div class="board" id="board">
+      <svg id="svg" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg"></svg>
+      <span class="dim" id="dim"></span>
+      <div class="glass" id="glass" aria-hidden="true"></div>
     </div>
+  </main>
 
-    <div class="project-description">
-      Soft Actor-Critic (SAC) framework for pedestrian-aware traffic signal optimisation.
-    </div>
+  <aside class="right" id="inspector"></aside>
+</div>
 
-  </div>
-
-  <!-- Project 2 -->
-  <div class="about-card project-card">
-
-    <div class="project-title">
-      GIS Analysis of Amenity Equity in Blacktown, NSW
-    </div>
-
-    <div class="project-description">
-      Spatial analysis and interactive GIS storytelling exploring amenity accessibility and social equity.
-    </div>
-
-  </div>
-
-  <!-- Project 3 -->
-  <div class="about-card project-card">
-
-    <div class="project-title">
-      Urban Analysis and Design Proposal for East Killara, NSW
-    </div>
-
-    <div class="project-description">
-      Urban design proposal of transport accessibility, public domain networks, LEP controls, and 3D spatial visualisations.
-    </div>
-
-  </div>
-
-  <!-- Project 4 -->
-  <div class="about-card project-card">
-
-    <div class="project-title">
-      Time Series Volatility Modelling using GARCH and TGARCH: The Impact of Stock Index Options on Stock Price Volatility
-    </div>
-
-    <div class="project-description">
-      Applied GARCH and TGARCH models to analyse volatility dynamics, asymmetry effects, and market risk before and after the introduction of stock index options.
-    </div>
-
-  </div>
-
-</section>
-
-<style>
-
-/* =========================
-   SECTION HEADER
-========================= */
-
-.about-section{
-  width:100%;
-  margin:50px 0;
-}
-
-.about-section h1{
-  font-size:48px;
-  font-weight:800;
-  margin-bottom:25px;
-  color:#000;
-}
-
-/* =========================
-   PROJECT CARD
-========================= */
-
-.project-card{
-  background:#F0F0F2;
-  padding:35px 50px;
-  border-radius:32px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.06);
-  margin-bottom:30px;
-}
-
-.project-title{
-  font-size:28px;
-  font-weight:700;
-  margin-bottom:12px;
-  color:#111;
-}
-
-.project-description{
-  font-size:22px;
-  font-weight:600;
-  line-height:1.5;
-  color:#666;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:1100px){
-
-  .about-section h1{
-    font-size:32px;
-    margin-bottom:18px;
-  }
-
-  .project-card{
-    padding:28px 22px;
-    border-radius:24px;
-  }
-
-  .project-title{
-    font-size:17px;
-    line-height:1.6;
-    margin-bottom:8px;
-  }
-
-  .project-description{
-    font-size:14px;
-    line-height:1.7;
-  }
-
-}
-
-/* =========================
-   DARK MODE
-========================= */
-
-body.dark .project-card{
-  background:#1f1f1f;
-}
-
-body.dark .project-title{
-  color:white;
-}
-
-body.dark .project-description{
-  color:#bdbdbd;
-}
-
-body.dark .about-section h1{
-  color:white; /* 保证 h1 在暗模式下可见 */
-}
-  
-</style>
+<script>window.SITE_PAGE="p3";</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
