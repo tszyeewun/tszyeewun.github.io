@@ -754,6 +754,8 @@ function loadPage(k){const v=loadRaw(k);let done=false;try{done=__LS.getItem("li
   if(!c39){if(k==="p1")v.forEach(e=>{if(e.id==="p1skt0")e.body=["SUMO, AutoTURN"];if(e.id==="p1skt1")e.body=["ArcGIS, QGIS, ArcGIS Online, Google Earth Pro"]});try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome39-"+k,"1")}catch(_){}}
   let c40=false;try{c40=__LS.getItem("lia-chrome40-"+k)==="1"}catch(_){}
   if(!c40){if(k==="pb")v.forEach(e=>{if(/^pbpost\d$/.test(e.id))e.nobal=true});try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome40-"+k,"1")}catch(_){}}
+  let c41=false;try{c41=__LS.getItem("lia-chrome41-"+k)==="1"}catch(_){}
+  if(!c41){if(k==="p1")v.forEach(e=>{if(["hlPedBlob","hlBlkBlob","hlWinBlob","hlKilBlob"].includes(e.id))e.morph=false});try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome41-"+k,"1")}catch(_){}}
   return v}
 function loadRaw(k){try{const s=__LS.getItem(PAGES[k].store);if(s){const v=JSON.parse(s);if(Array.isArray(v)&&v.length){
   // keep the saved hero as it is; add the topic bubbles below it once
@@ -803,7 +805,7 @@ function render(){
     mk("line",{x1:W/2,y1:0,x2:W/2,y2:H,stroke:"rgba(43,89,195,.25)","stroke-dasharray":"6 6"},gg);
     for(let y=900;y<H;y+=900)mk("line",{x1:0,y1:y,x2:W,y2:y,stroke:"rgba(43,89,195,.35)","stroke-dasharray":"2 6"},gg)}
   const navLater=[];
-  if(preview){const main=document.getElementById("main"),sc=board.clientHeight/H;navOff=Math.max(0,Math.min(H-120,(main.scrollTop-board.offsetTop)/sc))}
+  if(preview&&!window.NAVSVG){const main=document.getElementById("main"),sc=board.clientHeight/H;navOff=Math.max(0,Math.min(H-120,(main.scrollTop-board.offsetTop)/sc))}
   // layers: pebble blobs at the bottom, text always on top (also for anything added later)
   const TEXTY=new Set(["text","title","meta","milestone","typer","cloud","button","cta","social","form","footer","nav"]);
   const layer=e=>e.type==="blob"?0:TEXTY.has(e.type)?2:1;
@@ -851,7 +853,7 @@ function render(){
     else if(e.type==="social")drawSocial(e,g,defs);
     else if(e.type==="nav"){if(preview)navLater.push([e,g]);else drawNav(e,g)}
   });
-  navLater.forEach(([e,g])=>{svg.appendChild(g);drawNav(e,g)});
+  navLater.forEach(([e,g])=>{const t=window.NAVSVG||svg;if(t!==svg)t.innerHTML="";t.appendChild(g);drawNav(e,g);if(t!==svg&&darkMode)darkify(t)});
   if(darkMode)darkify(svg);
   if(sel&&!preview)drawSelection();
 }
@@ -1313,7 +1315,7 @@ function dup(){const e=byId(sel);if(!e)return;snap();const c=JSON.parse(JSON.str
   if(c.type==="band")c.pts=c.pts.map(q=>[q[0]+30,q[1]+30]);else{c.x+=30;c.y+=30}if(c.dot)c.dot=[c.dot[0]+30,c.dot[1]+30];els.push(c);sel=c.id;save();renderAll()}
 function removeSel(){if(!sel)return;snap();els.splice(els.findIndex(e=>e.id===sel),1);sel=null;save();renderAll()}
 
-document.getElementById("main").addEventListener("scroll",()=>{if(preview&&!raf)render()});
+document.getElementById("main").addEventListener("scroll",()=>{if(preview&&!raf&&!window.NAVSVG)render()});
 function renderAll(){layoutBoard();renderTabs();render();renderLayers();renderInspector()}
 
 /* ---------- header actions ---------- */
@@ -1437,12 +1439,117 @@ function clipUnderNav(){const ov=document.getElementById("ov");if(!ov)return;con
   [...ov.children].forEach(c=>{const r=c.getBoundingClientRect(),cut=Math.max(0,navH-(r.top-top));
     if(c.tagName==="IFRAME")c.style.clipPath=cut>0?`inset(${Math.min(cut,r.height)}px 0 0 0)`:"";else c.style.visibility=cut>4?"hidden":""})}
 document.getElementById("main").addEventListener("scroll",clipUnderNav,{passive:true});addEventListener("resize",clipUnderNav);
+/* ================= phone layout: same content, re-flowed into one readable column ================= */
+const MOBILE_Q=matchMedia("(max-width: 760px)");
+function mEsc(s){return String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function mGrad(defs){Object.entries(GR).forEach(([k,st])=>{const lg=mk("linearGradient",{id:"mgr-"+k,x1:0,y1:0,x2:1,y2:1},defs);st.forEach((c,j)=>mk("stop",{offset:j/(st.length-1),"stop-color":c},lg))})}
+function mSvg(vb,cls){const s=document.createElementNS(NS,"svg");s.setAttribute("viewBox",vb);s.setAttribute("class",cls||"");s.setAttribute("aria-hidden","true");const d=mk("defs",{},s);mGrad(d);return [s,d]}
+function mBlob(e,cls){const [s]=mSvg("-115 -115 230 230","mblob "+(cls||""));mk("path",{d:blobPath(e,0),fill:paint(e.fill),transform:`rotate(${e.r||0})`},s);return s}
+function mapSvg(e){const R=REGIONS[e.region||"syd"],M=R.M;const [s,d]=mSvg(`0 0 ${M.W} ${M.H}`,"mmap");const g=mk("g",{},s);document.getElementById("m-tmp").appendChild(s);
+  drawMap({...e,x:0,y:0,w:M.W,fade:false,frame:false,labels:true,pins:true,allNames:false},g,d);
+  // zoom to the coloured council(s) so labels stay readable on a phone
+  let bb=null;s.querySelectorAll("path[data-lga]").forEach(p=>{if(!R.names.includes(p.dataset.lga))return;const b=p.getBBox();bb=bb?{x0:Math.min(bb.x0,b.x),y0:Math.min(bb.y0,b.y),x1:Math.max(bb.x1,b.x+b.width),y1:Math.max(bb.y1,b.y+b.height)}:{x0:b.x,y0:b.y,x1:b.x+b.width,y1:b.y+b.height}});
+  if(bb){const cx=(bb.x0+bb.x1)/2,cy=(bb.y0+bb.y1)/2;let w=Math.max(560,(bb.x1-bb.x0)*1.5),h=w*0.8;if(h<(bb.y1-bb.y0)*1.3){h=(bb.y1-bb.y0)*1.3;w=h/0.8}
+    s.setAttribute("viewBox",`${Math.max(0,Math.min(M.W-w,cx-w/2))} ${Math.max(0,Math.min(M.H-h,cy-h/2))} ${w} ${h}`)}
+  s.remove();return s}
+function buildMobile(){
+  const app=document.getElementById("app");app.style.display="none";try{cancelAnimationFrame(raf);raf=null}catch(_){}svg.innerHTML="";
+  const root=document.createElement("div");root.id="m";document.body.appendChild(root);
+  const tmp=document.createElement("div");tmp.id="m-tmp";tmp.style.cssText="position:absolute;left:-9999px;top:0;width:1440px;height:10px;overflow:hidden";document.body.appendChild(tmp);
+  const page=cur,all=els.slice();
+  // ---- top bar ----
+  const nav=all.find(e=>e.type==="nav");
+  const links=(nav?nav.links:["Home","About","Projects","Blog","Contact"]);
+  root.insertAdjacentHTML("beforeend",`<header class="m-bar"><a class="m-logo" href="index.html">Lia Wun</a>
+    <button class="m-menu-btn" aria-expanded="false" aria-controls="m-menu">Menu</button></header>
+    <nav class="m-menu" id="m-menu" hidden>${links.map(l=>`<a href="${SITE_URL[l]||"#"}"${NAVPAGE[l]===page?' aria-current="page"':""}>${mEsc(l)}</a>`).join("")}
+    <button class="m-dark" type="button">${darkMode?"Light mode":"Dark mode"}</button></nav>`);
+  const mb=root.querySelector(".m-menu-btn"),mm=root.querySelector(".m-menu");
+  mb.onclick=()=>{const o=mm.hidden;mm.hidden=!o;mb.setAttribute("aria-expanded",o);mb.textContent=o?"Close":"Menu"};
+  root.querySelector(".m-dark").onclick=ev=>{darkMode=!darkMode;saveDark();document.documentElement.classList.toggle("m-darkmode",darkMode);ev.currentTarget.textContent=darkMode?"Light mode":"Dark mode"};
+  document.documentElement.classList.toggle("m-darkmode",darkMode);
+  const main=document.createElement("main");main.className="m-main";root.appendChild(main);
+  const out=h=>{main.insertAdjacentHTML("beforeend",h);return main.lastElementChild};
+  // ---- order elements top to bottom; side-by-side text drops below its neighbour ----
+  const key=e=>(e.y||0)-(e.type==="text"&&e.anchor==="end"&&e.x>=1000&&e.size<=16?60:0)+(e.type==="milestone"&&!e.dot&&e.x>=560?150:0)+(e.type==="image"&&e.x>=560?500:0);
+  const skip=new Set(["nav","line","button","blob","contours","shape","band","footer","skillpack"]);
+  const used=new Set();
+  const list=all.filter(e=>!skip.has(e.type)).sort((a,b)=>key(a)-key(b));
+  const blobs=all.filter(e=>e.type==="blob");
+  const imgsFor=m=>all.filter(w=>w.type==="window"&&w.src&&w.id!==m.id&&w.id.startsWith(m.id)).sort((a,b)=>a.y-b.y);
+  let bubblesDone=false,cloudBubbles=all.filter(e=>e.type==="bubble");
+  const isTimeline=all.some(e=>e.type==="shape");
+  let tl=null;
+  all.filter(m=>m.type==="milestone").forEach(m=>imgsFor(m).forEach(w=>used.add(w.id)));
+  for(const e of list){
+    if(used.has(e.id))continue;used.add(e.id);
+    if(e.type!=="milestone"||!e.dot)tl=null;
+    if(e.type==="title"){const lines=Array.isArray(e.lines)?e.lines:[String(e.lines)];
+      const hb=blobs.filter(b=>Math.abs(b.y-e.y)<500).sort((a,b)=>b.w-a.w)[0];
+      const sec=out(`<section class="m-hero"><h1>${lines.map(mEsc).join("<br>")}</h1></section>`);if(hb)sec.prepend(mBlob(hb,"hero"));continue}
+    if(e.type==="text"){const t=String(e.text||"").trim();if(!t)continue;
+      if(/num$/.test(e.id)&&/^\d+$/.test(t))continue;
+      if(e.size>=60)out(`<h2 class="m-h2">${mEsc(t)}</h2>`);
+      else if(e.size>=40)out(`<p class="m-hi">${mEsc(t)}</p>`);
+      else if(t===t.toUpperCase()&&/[A-Z]/.test(t))out(`<p class="m-eyebrow">${mEsc(t)}</p>`);
+      else out(`<p class="m-small">${mEsc(t)}</p>`);continue}
+    if(e.type==="typer"){const el=out(`<p class="m-typer" aria-live="off"><span></span><i></i></p>`),sp=el.querySelector("span");let li=0,ci=0,dir=1,hold=0;
+      const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;if(reduce){sp.textContent=e.lines[0];continue}
+      setInterval(()=>{const L=e.lines[li];if(hold>0){hold--;return}ci+=dir;if(ci>=L.length){dir=-1;hold=22}if(ci<=0){dir=1;li=(li+1)%e.lines.length;hold=4}sp.textContent=L.slice(0,ci)},70);continue}
+    if(e.type==="milestone"){
+      if(e.dot){if(!tl)tl=out(`<ol class="m-timeline"></ol>`);
+        tl.insertAdjacentHTML("beforeend",`<li><h3>${mEsc(e.title)}</h3>${e.when?`<p class="m-when">${mEsc(e.when)}</p>`:""}${(e.body||[]).map(p=>`<p>${mEsc(p)}</p>`).join("")}</li>`);continue}
+      const imgs=imgsFor(e);
+      const hb=blobs.find(b=>b.id===e.id+"Blob");
+      const T=e.tint?TINTS[(e.tintI||0)%TINTS.length]:null;
+      const cls=T?"m-card tint":(e.glass?"m-card m-glassy":(e.title?"m-block":"m-text"));
+      const sec=out(`<article class="${cls}"${T?` style="--t1:${T[0]};--t2:${T[1]}"`:""}>${e.title?`<h3${(e.tsize||0)>=30||imgs.length?' class="big"':""}>${mEsc(e.title)}</h3>`:""}${e.when?`<p class="m-when">${mEsc(e.when)}</p>`:""}${(e.body||[]).map(p=>`<p>${mEsc(p)}</p>`).join("")}${imgs.map(w=>`<img src="${w.src}" alt="" loading="lazy">`).join("")}</article>`);
+      if(hb){sec.classList.add("has-blob");sec.prepend(mBlob(hb,"card"))}
+      // skill logos sit with their row
+      if(/^p1skt/.test(e.id)){const row=all.filter(l=>l.type==="logo"&&Math.abs(l.y-e.y)<60).sort((a,b)=>a.x-b.x);row.forEach(l=>used.add(l.id));
+        if(row.length)sec.insertAdjacentHTML("beforeend",`<div class="m-logos">${row.map(l=>`<span><img src="${l.src}" alt="${mEsc(l.name.replace("Logo · ",""))}" loading="lazy"></span>`).join("")}</div>`)}
+      continue}
+    if(e.type==="meta"){const isLinks=e.id==="p4links";out(`<dl class="m-meta">${e.items.map(([l,v])=>`<div><dt>${mEsc(l)}</dt><dd>${isLinks&&LINKS[l]?`<a href="${LINKS[l]}"${/^https?:/.test(LINKS[l])?' target="_blank" rel="noopener"':""}>${mEsc(v)}</a>`:mEsc(v)}</dd></div>`).join("")}</dl>`);continue}
+    if(e.type==="image"&&e.src){const cr=all.find(t=>t.id==="introCredit");if(cr)used.add(cr.id);out(`<figure class="m-portrait"><img src="${e.src}" alt="Illustrated portrait of Lia">${cr?`<figcaption>${mEsc(cr.text)}</figcaption>`:""}</figure>`);continue}
+    if(e.type==="window"){if(e.src)out(`<img class="m-img" src="${e.src}" alt="" loading="lazy">`);continue}
+    if(e.type==="cta"){out(`<a class="m-cta" href="contact.html">${mEsc(e.label)}</a>`);continue}
+    if(e.type==="social"){out(`<div class="m-social"><span>${mEsc(e.label)}</span>${e.items.filter(i=>LINKS[i]).map(i=>`<a href="${LINKS[i]}"${/^https?:/.test(LINKS[i])?' target="_blank" rel="noopener"':""}>${mEsc(i)}</a>`).join("")}</div>`);continue}
+    if(e.type==="logo"){continue}
+    if(e.type==="cloud"){const ws=(e.words||[]).slice().sort((a,b)=>b[1]-a[1]);const mx=ws[0]?ws[0][1]:100;
+      out(`<p class="m-cloud">${ws.map((w,i)=>`<span style="font-size:${(15+28*Math.pow(w[1]/mx,1.3)).toFixed(1)}px;color:${CLOUD_INK[i%CLOUD_INK.length]}">${mEsc(w[0])}</span>`).join(" ")}</p>`);continue}
+    if(e.type==="bubble"){if(bubblesDone)continue;bubblesDone=true;const bs=cloudBubbles.slice().sort((a,b)=>b.d-a.d),mx=bs[0].d;
+      out(`<div class="m-bubbles">${bs.map(b=>`<span style="background:${b.fill&&!String(b.fill).startsWith("g:")?b.fill:cssPaint(b.fill)};font-size:${(12+7*(b.d/mx)).toFixed(1)}px;padding:${(10+14*(b.d/mx)).toFixed(0)}px ${(14+16*(b.d/mx)).toFixed(0)}px">${mEsc(b.label)}</span>`).join("")}</div>`);continue}
+    if(e.type==="poster"){const [s,d]=mSvg(`${e.x} ${e.y} ${e.w} ${e.h}`,"m-poster");s.setAttribute("preserveAspectRatio","xMidYMid slice");const g=mk("g",{},s);try{drawPoster(e,g,d)}catch(_){}
+      const sec=out(`<section class="m-posterwrap"></section>`);sec.appendChild(s);continue}
+    if(e.type==="map"){const r=e.region||"syd";
+      if(r==="syd"){out(`<div class="m-mapframe"><iframe src="sydney-map.html?embed=1" title="Interactive map of Lia's Sydney projects" loading="lazy"></iframe></div>`)}
+      else{const sec=out(`<figure class="m-staticmap"></figure>`);try{sec.appendChild(mapSvg(e))}catch(err){sec.remove()}}continue}
+    if(e.type==="form"){out(`<form class="m-form"><label for="m-name">${mEsc(e.fields[0]||"name")}</label><input id="m-name" name="name" required>
+      <label for="m-email">${mEsc(e.fields[1]||"email address")}</label><input id="m-email" name="email" type="email" required>
+      <label for="m-msg">${mEsc(e.fields[2]||"message")}</label><textarea id="m-msg" name="message" rows="4" required></textarea>
+      <button type="submit">${mEsc(e.button||"send")} →</button></form>`).addEventListener("submit",ev=>{ev.preventDefault();const f=ev.currentTarget;
+        const sub=encodeURIComponent("Website message from "+f.name.value);const bod=encodeURIComponent(f.message.value+"\n\n"+f.name.value+" · "+f.email.value);
+        location.href=`mailto:tszyeewun_au@outlook.com?subject=${sub}&body=${bod}`});continue}
+  }
+  const ft=all.find(e=>e.type==="footer");
+  root.insertAdjacentHTML("beforeend",`<footer class="m-foot"><nav>${(ft?ft.links:["Email","LinkedIn","GitHub","Message"]).filter(l=>LINKS[l]).map(l=>`<a href="${LINKS[l]}"${/^https?:/.test(LINKS[l])?' target="_blank" rel="noopener"':""}>${mEsc(l)}</a>`).join("")}</nav><p>${mEsc(ft?ft.note:"© 2026 Lia Wun")}</p></footer>`);
+  root.querySelectorAll("[fill],[stroke]").forEach(n=>["fill","stroke"].forEach(a=>{const v=n.getAttribute(a);if(v&&v.indexOf("url(#gr-")===0)n.setAttribute(a,v.replace("url(#gr-","url(#mgr-"))}));
+  tmp.remove();
+}
+
+window.__site={get els(){return els},P,REGIONS,get cur(){return cur}};
 (function startSite(){
   cur=window.SITE_PAGE&&PAGES[window.SITE_PAGE]?window.SITE_PAGE:"p1";
   S().els=S().els.filter(e=>!(e.type==="window"&&!e.src&&!e.bg)); // hide empty photo placeholders
   els=S().els;sel=null;
   try{darkMode=REAL_LS.getItem("lia-site-dark")==="1"}catch(_){}
   board.classList.toggle("dark",darkMode);
-  renderAll();if(!preview)togglePreview();buildOverlays();clipUnderNav();
+  if(!MOBILE_Q.matches){const nv=document.createElementNS("http://www.w3.org/2000/svg","svg");nv.id="navbar";nv.setAttribute("viewBox",`0 0 ${P().W} 96`);nv.setAttribute("preserveAspectRatio","xMidYMin meet");
+    board.insertBefore(nv,board.firstChild);window.NAVSVG=nv;
+    nv.addEventListener("pointerdown",ev=>{const n=ev.target.dataset&&ev.target.dataset.nav;if(!n)return;
+      if(n==="Dark"){darkMode=!darkMode;board.classList.toggle("dark",darkMode);saveDark();render();return}
+      if(SITE_URL[n]&&NAVPAGE[n]!==cur)location.href=SITE_URL[n]})}
+  if(MOBILE_Q.matches){buildMobile();}else{renderAll();if(!preview)togglePreview();buildOverlays();clipUnderNav();}
+  let wasM=MOBILE_Q.matches;MOBILE_Q.addEventListener("change",q=>{if(q.matches!==wasM)location.reload()});
 })();
 })();
