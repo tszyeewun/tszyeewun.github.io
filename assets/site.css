@@ -65,10 +65,10 @@ main{position:relative;overflow:auto;display:flex;align-items:flex-start;justify
 .hint{color:var(--muted);font-size:11.5px;line-height:1.55}
 kbd{font-family:var(--mono);font-size:10.5px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 4px}
 /* milestone text (inside the artboard, always on white) */
-.ms{font-family:var(--ui);color:#4A4942;font-size:15px;line-height:1.55}
-.ms .yr{font-family:var(--display);font-size:60px;line-height:1;color:#1D1C18;letter-spacing:-.01em}
-.ms .when{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8C8B83;margin-top:8px}
-.ms .tt{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.2;color:#1D1C18;margin:10px 0 8px;text-wrap:balance}
+.ms{font-family:Arial,Helvetica,sans-serif;color:#4A4942;font-size:16px;line-height:1.4}
+.ms .yr{font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.3;color:#1D1C18;letter-spacing:normal;font-weight:400}
+.ms .when{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.4;letter-spacing:normal;color:#8C8B83;margin-top:8px}
+.ms .tt{font-family:Arial,Helvetica,sans-serif;font-weight:400;font-size:20px;line-height:1.3;color:#1D1C18;margin:10px 0 8px;text-wrap:balance}
 .ms p{margin:0 0 4px}
 .app.preview .hov,.app.preview .cw{transition:transform .25s cubic-bezier(.2,.8,.3,1.2);transform-box:fill-box;transform-origin:center;cursor:default}
 .app.preview .hov:hover{transform:scale(1.14)}
@@ -111,6 +111,7 @@ kbd{font-family:var(--mono);font-size:10.5px;border:1px solid var(--line);border
 
 /* ===== live site overrides ===== */
 html,body{height:100%;margin:0;background:#fff}
+#syncBadge{display:none!important}
 .app{display:block!important;height:100vh!important}
 .app header,.app aside,#dim,.toast,.modal{display:none!important}
 main{display:block!important;height:100vh;overflow:auto;padding:0!important}
@@ -119,21 +120,21 @@ main{display:block!important;height:100vh;overflow:auto;padding:0!important}
 #navbar{position:sticky;top:0;display:block;width:100%;height:auto;aspect-ratio:1440/96;margin-bottom:-6.6667%;z-index:30;touch-action:auto;user-select:none}
 #navbar [data-nav]{cursor:pointer}
 #ov{position:absolute;inset:0;pointer-events:none;container-type:inline-size}
-#rcard{position:absolute;z-index:40;width:320px;max-height:505px;overflow:auto;overscroll-behavior:contain;overflow-anchor:none;background:#fff;border-radius:18px;box-shadow:0 14px 34px rgba(42,35,64,.16);padding:18px 20px;box-sizing:border-box;display:none;font-family:"IBM Plex Sans",system-ui,sans-serif;color:#1D1C18}
+#rcard{position:absolute;z-index:40;width:320px;max-height:505px;overflow:auto;overscroll-behavior:contain;overflow-anchor:none;background:#fff;border-radius:18px;box-shadow:0 14px 34px rgba(42,35,64,.16);padding:18px 20px;box-sizing:border-box;display:none;font-family:Arial,Helvetica,sans-serif;color:#1D1C18}
 #rcard.on{display:block}
 #rcard .card+.card{border-top:1px solid #D9D6CE;margin-top:14px;padding-top:14px}
 #rcard .strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-bottom:12px}
 #rcard .strip img{flex:0 0 86%;height:170px;object-fit:contain;scroll-snap-align:start;margin-bottom:0!important;display:block;border-radius:10px;background:#fff}
 #rcard .card>img{display:block;width:100%;border-radius:10px;margin-bottom:12px;background:#fff}
-#rcard .tag{font:500 11px "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#8C8B83}
-#rcard h3{font-family:"Bodoni Moda",Didot,"Times New Roman",serif;font-weight:500;font-size:19px;line-height:1.2;margin:6px 0 6px;text-wrap:balance}
+#rcard .tag{font:400 12px Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#8C8B83}
+#rcard h3{font-family:"Spectral",Georgia,serif;font-weight:400;letter-spacing:-0.03em;font-size:21px;line-height:1.2;margin:6px 0 6px;text-wrap:balance}
 #rcard p{margin:0;font-size:14px;line-height:1.5;color:#8C8B83}
 .board.dark #rcard{background:#211F27;color:#EEEAF4}
 #ov a,#ov iframe,#ov form{position:absolute;pointer-events:auto;display:block}
 #ov a{border-radius:10px}
 #ov a:focus-visible{outline:2px solid #EE9988;outline-offset:3px}
 #ov .mapframe{border:0;border-radius:1.6cqw;background:#A9D2C8}
-#ov form input{position:absolute;background:transparent;border:0;outline:0;font:500 1.15cqw "IBM Plex Sans",system-ui,sans-serif;color:#1D1C18;padding:0 .4cqw;box-sizing:border-box}
+#ov form input{position:absolute;background:transparent;border:0;outline:0;font:400 1.15cqw Arial,Helvetica,sans-serif;color:#1D1C18;padding:0 .4cqw;box-sizing:border-box}
 #ov form input:focus{background:rgba(238,153,136,.10);border-radius:6px}
 #ov form button{position:absolute;background:transparent;border:0;cursor:pointer;border-radius:30px}
 #ov form button:focus-visible{outline:2px solid #EE9988}

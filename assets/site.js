@@ -1,4 +1,4 @@
-const __LS=(()=>{const m={};return{getItem:k=>k in m?m[k]:null,setItem:(k,v)=>{m[k]=String(v)},removeItem:k=>{delete m[k]}}})();
+const __LS=(()=>{const m={"lia-page1-layout-v1": "[{\"id\":\"p1aboutBlob\",\"type\":\"blob\",\"name\":\"Blob \u00b7 About me\",\"reveal\":false,\"follow\":false,\"shape\":\"harm\",\"seed\":223,\"ks\":[2,3],\"amp\":0.07,\"hr\":0,\"x\":275,\"y\":2198,\"w\":380,\"r\":-12,\"fill\":\"g:lagoon\",\"morph\":true},{\"id\":\"blob1\",\"type\":\"blob\",\"name\":\"Main blob\",\"shape\":\"harm\",\"seed\":59,\"lobes\":6,\"x\":462,\"y\":563,\"w\":840,\"r\":-8,\"fill\":\"g:dawn\",\"reveal\":true,\"morph\":true,\"follow\":false,\"ks\":[2,3,4],\"amp\":0.1,\"hr\":0},{\"id\":\"drop1\",\"type\":\"blob\",\"name\":\"Droplet\",\"shape\":\"drop\",\"seed\":415,\"x\":640,\"y\":28,\"w\":120,\"r\":20,\"fill\":\"g:haze\",\"reveal\":false,\"morph\":true,\"follow\":false},{\"id\":\"drop2\",\"type\":\"blob\",\"name\":\"Droplet 2\",\"shape\":\"drop\",\"seed\":902,\"x\":1120,\"y\":205,\"w\":80,\"r\":-30,\"fill\":\"#C7B8EA\",\"reveal\":false,\"morph\":true,\"follow\":false},{\"id\":\"title\",\"type\":\"title\",\"name\":\"Big title\",\"x\":90,\"y\":346,\"size\":131,\"lh\":1,\"lines\":[\"LIA WUN\",\"CITY\",\"PLANNER &\",\"TRAFFIC\",\"ENGINEER\"],\"fill\":\"#1D1C18\",\"revealFill\":\"#1D1C18\",\"font\":\"display\",\"weight\":400},{\"id\":\"line1\",\"type\":\"line\",\"name\":\"Rule top\",\"x\":1302,\"y\":248,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"num\",\"type\":\"text\",\"name\":\"Index number\",\"x\":1350,\"y\":330,\"text\":\"01\",\"size\":64,\"weight\":400,\"font\":\"ui\",\"fill\":\"#1D1C18\",\"anchor\":\"end\",\"r\":0},{\"id\":\"meta\",\"type\":\"meta\",\"name\":\"Meta block\",\"x\":1350,\"y\":590,\"size\":15,\"gap\":62,\"items\":[[\"Based\",\"Sydney, NSW\"],[\"Study\",\"Master of City Planning, UNSW\"],[\"Role\",\"Traffic Engineer\"],[\"Focus\",\"Transport \u00b7 GIS \u00b7 AI\"]],\"fill\":\"#1D1C18\",\"labelFill\":\"#8C8B83\",\"anchor\":\"end\"},{\"id\":\"line2\",\"type\":\"line\",\"name\":\"Rule bottom\",\"x\":1302,\"y\":820,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"introHi\",\"type\":\"text\",\"name\":\"Intro \u00b7 Hi\",\"x\":90,\"y\":1334,\"text\":\"Hi, I'm Lia.\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"introType\",\"type\":\"typer\",\"name\":\"Intro \u00b7 typing line\",\"x\":90,\"y\":1418,\"size\":44,\"weight\":600,\"lines\":[\"Urban Planner\",\"Traffic Engineer\",\"GIS & Data Analyst\"],\"fill\":\"#1D1C18\"},{\"id\":\"introText\",\"type\":\"milestone\",\"name\":\"Intro \u00b7 text\",\"x\":90,\"y\":1456,\"w\":640,\"fontSize\":20,\"year\":\"\",\"when\":\"\",\"title\":\"\",\"body\":[\"I plan cities with data: transport, GIS and spatial analysis, and AI.\",\"Master of City Planning, UNSW \u00b7 Traffic Engineer at Genesis Traffic.\"],\"dot\":null},{\"id\":\"introMeta\",\"type\":\"text\",\"name\":\"Intro \u00b7 place\",\"x\":90,\"y\":1539,\"text\":\"Sydney, NSW   \u00b7   Traffic Engineer, Genesis Traffic\",\"size\":15,\"weight\":400,\"font\":\"ui\",\"fill\":\"#6D6C64\",\"anchor\":\"start\",\"r\":0},{\"id\":\"introRule\",\"type\":\"line\",\"name\":\"Intro \u00b7 divider\",\"x\":90,\"y\":1651,\"w\":620,\"stroke\":\"#D9D3E2\",\"sw\":1.4},{\"id\":\"introSocial\",\"type\":\"social\",\"name\":\"Intro \u00b7 follow me\",\"x\":90,\"y\":1589,\"label\":\"Follow me\",\"items\":[\"Email\",\"LinkedIn\",\"GitHub\",\"Instagram\"],\"color\":true},{\"id\":\"introPortrait\",\"type\":\"image\",\"name\":\"Portrait (illustration)\",\"src\":\"__local__\",\"x\":922,\"y\":1184,\"w\":428,\"ratio\":1.3583333333333334,\"r\":0},{\"id\":\"p1aboutTitle\",\"type\":\"text\",\"name\":\"About me title\",\"x\":90,\"y\":2203,\"text\":\"About me\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"p1about\",\"type\":\"milestone\",\"name\":\"About me \u00b7 text\",\"x\":630,\"y\":2053,\"w\":720,\"fontSize\":20,\"year\":\"\",\"when\":\"\",\"title\":\"\",\"dot\":null,\"body\":[\"Hello World! Welcome to Lia\u2019s homepage.\",\"I am a Master of City Planning student at the University of New South Wales.\",\"Alongside my studies, I also work as a Traffic Engineer at Genesis Traffic, focusing on traffic modelling, swept path analysis, parking compliance, and transport reporting.\",\"I am dedicated to applying AI and data-driven approaches to urban challenges, across transport modeling, GIS and spatial analysis, urban planning, and economic analysis.\"]},{\"id\":\"p1eduTitle\",\"type\":\"text\",\"name\":\"Education title\",\"x\":90,\"y\":2608,\"text\":\"Education\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"p1edu1\",\"type\":\"milestone\",\"name\":\"Master of City Planning\",\"x\":90,\"y\":2644,\"w\":620,\"year\":\"\",\"swap\":true,\"tint\":true,\"minH\":150,\"when\":\"Nov 2024 \u2013 Aug 2026 (Expected)\",\"title\":\"Master of City Planning\",\"body\":[\"University of New South Wales\",\"Sydney, Australia\"],\"dot\":null,\"tintI\":0},{\"id\":\"p1edu2\",\"type\":\"milestone\",\"name\":\"Bachelor of Finance\",\"x\":730,\"y\":2644,\"w\":620,\"year\":\"\",\"swap\":true,\"tint\":true,\"minH\":150,\"when\":\"Sep 2020 \u2013 Jul 2024\",\"title\":\"Bachelor of Finance\",\"body\":[\"Tianjin University\",\"Tianjin, China\"],\"dot\":null,\"tintI\":1},{\"id\":\"p1projTitle\",\"type\":\"text\",\"name\":\"Projects title\",\"x\":90,\"y\":3151,\"text\":\"Project highlights\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"hlPedNet\",\"type\":\"window\",\"name\":\"Image \u00b7 PedLight network\",\"x\":730,\"y\":3210,\"w\":620,\"h\":291,\"rad\":16,\"src\":\"img/pedlight-network.jpg\",\"card\":true,\"caption\":\"\",\"r\":0},{\"id\":\"hlPedChart\",\"type\":\"window\",\"name\":\"Image \u00b7 PedLight charts\",\"x\":730,\"y\":3524,\"w\":620,\"h\":240,\"rad\":16,\"src\":\"img/pedlight-charts.jpg\",\"card\":true,\"caption\":\"\",\"r\":0},{\"id\":\"hlPed\",\"type\":\"milestone\",\"name\":\"PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity\",\"x\":90,\"y\":3340,\"w\":520,\"year\":\"\",\"swap\":true,\"when\":\"Reinforcement learning \u00b7 Soft Actor-Critic \u00b7 SUMO \u00b7 Python \u00b7 Pedestrian equity\",\"title\":\"PedLight-SAC: Reinforcement Learning for Traffic Signal Control with Pedestrian Equity\",\"body\":[\"Master's thesis, UNSW. Sydney's signals (SCATS) favour vehicles, so pedestrians often wait far longer than cars at the same intersection.\",\"I built PedLight-SAC, a Soft Actor-Critic model in SUMO that balances vehicle and pedestrian delay and adds a penalty for extreme pedestrian waits. It was tested at two two-stage crossings on Anzac Parade, Maroubra and Kensington, against fixed-time and rule-based control.\",\"At Maroubra, average pedestrian waiting fell from 67 s to under 10 s while vehicle waiting also dropped. At Kensington, pedestrians waited 54 s less for only 2 s more vehicle delay.\"],\"dot\":null,\"fontSize\":16},{\"id\":\"hlBlkImg0\",\"type\":\"window\",\"name\":\"Image \u00b7 GIS Analysis of Amenity Equity in Blacktown\",\"x\":90,\"y\":3784,\"w\":620,\"h\":408,\"rad\":16,\"src\":\"img/blacktown.jpg\",\"card\":true,\"caption\":\"\",\"r\":0},{\"id\":\"hlBlk\",\"type\":\"milestone\",\"name\":\"GIS Analysis of Amenity Equity in Blacktown\",\"x\":830,\"y\":3790,\"w\":520,\"year\":\"\",\"swap\":true,\"when\":\"QGIS \u00b7 ArcGIS Online \u00b7 Hot spot analysis \u00b7 IRSAD \u00b7 StoryMap\",\"title\":\"GIS Analysis of Amenity Equity in Blacktown\",\"body\":[\"Who can reach parks, schools, health and transport in Blacktown, and who can't?\",\"We scored every 400 m hexagon on access to amenities, ran a hot spot analysis and compared it with population density and the IRSAD socio-economic index. Results were shared as an interactive ArcGIS StoryMap with swipe maps.\",\"Amenities cluster in the dense centre, while the low-density north is a cold spot below the minimum service threshold: inequity driven by location rather than population.\"],\"dot\":null,\"fontSize\":16},{\"id\":\"hlWinImg0\",\"type\":\"window\",\"name\":\"Image \u00b7 Bridging Community\",\"x\":730,\"y\":4214,\"w\":620,\"h\":145,\"rad\":16,\"src\":\"img/windsor-section.jpg\",\"card\":true,\"caption\":\"\",\"r\":0},{\"id\":\"hlWinImg1\",\"type\":\"window\",\"name\":\"Image \u00b7 Bridging Community\",\"x\":730,\"y\":4379,\"w\":620,\"h\":165,\"rad\":16,\"src\":\"img/windsor-people.jpg\",\"card\":true,\"caption\":\"\",\"r\":0},{\"id\":\"hlWin\",\"type\":\"milestone\",\"name\":\"Bridging Community: Flood-Resilient Urban Design for Windsor\",\"x\":90,\"y\":4212,\"w\":520,\"year\":\"\",\"swap\":true,\"when\":\"Flood resilience \u00b7 Urban design \u00b7 Vertical evacuation \u00b7 Hawkesbury\",\"title\":\"Bridging Community: Flood-Resilient Urban Design for Windsor\",\"body\":[\"Windsor sits on the Hawkesbury\u2013Nepean floodplain, where a 1-in-100-year flood would force about 64,000 people to evacuate.\",\"The proposal links existing rooftops and vacant upper floors into a 'bridging community': everyday shared spaces that become vertical evacuation routes in a flood, with bridges for horizontal escape.\",\"A section of private line, common space and public axis responds to the 1-in-20, 1-in-100 and 1-in-500 flood levels. In the largest floods, residents move together to South Windsor and Bligh Park.\"],\"dot\":null,\"fontSize\":16},{\"id\":\"hlKilImg0\",\"type\":\"window\",\"name\":\"Image \u00b7 Urban Design for East Killara\",\"x\":90,\"y\":4564,\"w\":477,\"h\":464,\"rad\":16,\"src\":\"img/killara-legend.jpg\",\"card\":true,\"caption\":\"\",\"r\":0},{\"id\":\"hlKil\",\"type\":\"milestone\",\"name\":\"Urban Design for East Killara\",\"x\":830,\"y\":4606,\"w\":520,\"year\":\"\",\"swap\":true,\"when\":\"Urban design \u00b7 LEP controls \u00b7 Public domain \u00b7 Housing diversity \u00b7 3D\",\"title\":\"Urban Design for East Killara\",\"body\":[\"East Killara is a low-density R2 suburb on the edge of bushland, close to rail but short on local shops and housing choice.\",\"After analysing transport access, public domain, open space, tree canopy and walkability, the plan adds a mixed-use local centre spine framed by medium- and high-density homes, the 'missing middle', within a 5-minute walk.\",\"It includes a public domain hierarchy plan, a built form plan, LEP controls for zoning, height and FSR, and 3D views.\"],\"dot\":null,\"fontSize\":16},{\"id\":\"p1skt0\",\"type\":\"milestone\",\"name\":\"Skills \u00b7 Traffic & Transport\",\"x\":90,\"y\":5441,\"w\":440,\"year\":\"\",\"swap\":true,\"when\":\"\",\"title\":\"Traffic & Transport\",\"body\":[\"SUMO, AutoTURN\"],\"dot\":null,\"fontSize\":16},{\"id\":\"logo-sumo\",\"type\":\"logo\",\"name\":\"Logo \u00b7 sumo\",\"x\":586,\"y\":5427,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/sumo.png\",\"still\":true},{\"id\":\"logo-sidra\",\"type\":\"logo\",\"name\":\"Logo \u00b7 sidra\",\"x\":782,\"y\":5427,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/sidra.png\",\"still\":true},{\"id\":\"logo-autoturn\",\"type\":\"logo\",\"name\":\"Logo \u00b7 autoturn\",\"x\":978,\"y\":5427,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/autoturn.png\",\"still\":true},{\"id\":\"p1skt1\",\"type\":\"milestone\",\"name\":\"Skills \u00b7 GIS & Spatial\",\"x\":90,\"y\":5585,\"w\":440,\"year\":\"\",\"swap\":true,\"when\":\"\",\"title\":\"GIS & Spatial\",\"body\":[\"ArcGIS, QGIS, ArcGIS Online, Google Earth Pro\"],\"dot\":null,\"fontSize\":16},{\"id\":\"logo-arcgis\",\"type\":\"logo\",\"name\":\"Logo \u00b7 arcgis\",\"x\":586,\"y\":5571,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/arcgis.png\",\"still\":true},{\"id\":\"logo-qgis\",\"type\":\"logo\",\"name\":\"Logo \u00b7 qgis\",\"x\":782,\"y\":5571,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/qgis.png\",\"still\":true},{\"id\":\"logo-arcgis-online\",\"type\":\"logo\",\"name\":\"Logo \u00b7 arcgis-online\",\"x\":978,\"y\":5571,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/arcgis-online.png\",\"still\":true},{\"id\":\"logo-google-earth-pro\",\"type\":\"logo\",\"name\":\"Logo \u00b7 google-earth-pro\",\"x\":1174,\"y\":5571,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/google-earth-pro.png\",\"still\":true},{\"id\":\"p1skt2\",\"type\":\"milestone\",\"name\":\"Skills \u00b7 Programming\",\"x\":90,\"y\":5729,\"w\":440,\"year\":\"\",\"swap\":true,\"when\":\"\",\"title\":\"Programming\",\"body\":[\"Python, C++, MySQL, MATLAB\"],\"dot\":null,\"fontSize\":16},{\"id\":\"logo-python\",\"type\":\"logo\",\"name\":\"Logo \u00b7 python\",\"x\":586,\"y\":5715,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/python.png\",\"still\":true},{\"id\":\"logo-cpp\",\"type\":\"logo\",\"name\":\"Logo \u00b7 cpp\",\"x\":782,\"y\":5715,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/cpp.png\",\"still\":true},{\"id\":\"logo-mysql\",\"type\":\"logo\",\"name\":\"Logo \u00b7 mysql\",\"x\":978,\"y\":5715,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/mysql.png\",\"still\":true},{\"id\":\"logo-matlab\",\"type\":\"logo\",\"name\":\"Logo \u00b7 matlab\",\"x\":1174,\"y\":5715,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/matlab.png\",\"still\":true},{\"id\":\"p1skt3\",\"type\":\"milestone\",\"name\":\"Skills \u00b7 Data & Analytics\",\"x\":90,\"y\":5873,\"w\":440,\"year\":\"\",\"swap\":true,\"when\":\"\",\"title\":\"Data & Analytics\",\"body\":[\"SPSS, EViews, NVivo\"],\"dot\":null,\"fontSize\":16},{\"id\":\"logo-spss\",\"type\":\"logo\",\"name\":\"Logo \u00b7 spss\",\"x\":586,\"y\":5859,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/spss.png\",\"still\":true},{\"id\":\"logo-eviews\",\"type\":\"logo\",\"name\":\"Logo \u00b7 eviews\",\"x\":782,\"y\":5859,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/eviews.png\",\"still\":true},{\"id\":\"logo-nvivo\",\"type\":\"logo\",\"name\":\"Logo \u00b7 nvivo\",\"x\":978,\"y\":5859,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/nvivo.png\",\"still\":true},{\"id\":\"p1skt4\",\"type\":\"milestone\",\"name\":\"Skills \u00b7 Design\",\"x\":90,\"y\":6017,\"w\":440,\"year\":\"\",\"swap\":true,\"when\":\"\",\"title\":\"Design\",\"body\":[\"AutoCAD, Vectorworks, InDesign, Photoshop\"],\"dot\":null,\"fontSize\":16},{\"id\":\"logo-autocad\",\"type\":\"logo\",\"name\":\"Logo \u00b7 autocad\",\"x\":586,\"y\":6003,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/autocad.png\",\"still\":true},{\"id\":\"logo-vectorworks\",\"type\":\"logo\",\"name\":\"Logo \u00b7 vectorworks\",\"x\":782,\"y\":6003,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/vectorworks.png\",\"still\":true},{\"id\":\"logo-indesign\",\"type\":\"logo\",\"name\":\"Logo \u00b7 indesign\",\"x\":978,\"y\":6003,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/indesign.png\",\"still\":true},{\"id\":\"logo-photoshop\",\"type\":\"logo\",\"name\":\"Logo \u00b7 photoshop\",\"x\":1174,\"y\":6003,\"w\":176,\"h\":124,\"pad\":22,\"src\":\"img/logos/photoshop.png\",\"still\":true},{\"id\":\"p1skillsTitle\",\"type\":\"text\",\"name\":\"Skills title\",\"x\":90,\"y\":5365,\"text\":\"Skills\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"foot-p1\",\"type\":\"footer\",\"name\":\"Footer\",\"x\":0,\"y\":6271,\"w\":1440,\"h\":110,\"links\":[\"Email\",\"LinkedIn\",\"GitHub\",\"Message\"],\"note\":\"\u00a9 Oct 2026 Lia Wun\"},{\"type\":\"blob\",\"name\":\"Pebble blob\",\"shape\":\"soft\",\"seed\":24098,\"x\":330,\"y\":3480,\"w\":998,\"r\":0,\"fill\":\"g:dawn\",\"reveal\":true,\"morph\":true,\"follow\":false,\"id\":\"blob2aati\",\"sy\":0.65,\"sx\":0.69},{\"type\":\"blob\",\"name\":\"Pebble blob\",\"shape\":\"soft\",\"seed\":24279,\"x\":1060,\"y\":3930,\"w\":857,\"r\":0,\"fill\":\"g:lilac\",\"reveal\":true,\"morph\":true,\"follow\":false,\"id\":\"blobxu5u1\",\"sy\":0.56,\"sx\":0.73},{\"type\":\"blob\",\"name\":\"Pebble blob\",\"shape\":\"soft\",\"seed\":64229,\"x\":347,\"y\":4390,\"w\":824,\"r\":0,\"fill\":\"g:meadow\",\"reveal\":true,\"morph\":true,\"follow\":false,\"id\":\"blob5g468\"},{\"type\":\"blob\",\"name\":\"Pebble blob\",\"shape\":\"soft\",\"seed\":64580,\"x\":1070,\"y\":4776,\"w\":854,\"r\":0,\"fill\":\"g:dawn\",\"reveal\":true,\"morph\":true,\"follow\":false,\"id\":\"blobp9k6m\"},{\"type\":\"blob\",\"name\":\"Pebble blob\",\"shape\":\"soft\",\"seed\":85330,\"x\":270,\"y\":2172,\"w\":376,\"r\":0,\"fill\":\"g:lagoon\",\"reveal\":true,\"morph\":true,\"follow\":false,\"id\":\"blobshr08\"},{\"id\":\"nav-p1\",\"type\":\"nav\",\"name\":\"Nav bar (sticky)\",\"x\":0,\"y\":0,\"w\":1440,\"h\":96,\"links\":[\"Home\",\"About\",\"Projects\",\"Blog\",\"Contact\"],\"active\":\"Home\"}]", "lia-H-p1": "6381", "lia-chrome1-p1": "1", "lia-chrome2-p1": "1", "lia-chrome3-p1": "1", "lia-chrome4-p1": "1", "lia-chrome5-p1": "1", "lia-chrome6-p1": "1", "lia-chrome7-p1": "1", "lia-chrome8-p1": "1", "lia-chrome9-p1": "1", "lia-chrome10-p1": "1", "lia-chrome11-p1": "1", "lia-chrome12-p1": "1", "lia-chrome13-p1": "1", "lia-chrome14-p1": "1", "lia-chrome15-p1": "1", "lia-chrome16-p1": "1", "lia-chrome17-p1": "1", "lia-chrome18-p1": "1", "lia-chrome19-p1": "1", "lia-chrome20-p1": "1", "lia-chrome21-p1": "1", "lia-chrome22-p1": "1", "lia-chrome23-p1": "1", "lia-chrome24-p1": "1", "lia-chrome25-p1": "1", "lia-chrome26-p1": "1", "lia-chrome27-p1": "1", "lia-chrome28-p1": "1", "lia-chrome29-p1": "1", "lia-chrome30-p1": "1", "lia-chrome31-p1": "1", "lia-chrome32-p1": "1", "lia-chrome33-p1": "1", "lia-chrome34-p1": "1", "lia-chrome35-p1": "1", "lia-chrome36-p1": "1", "lia-chrome37-p1": "1", "lia-chrome38-p1": "1", "lia-chrome39-p1": "1", "lia-chrome40-p1": "1", "lia-chrome41-p1": "1", "lia-chrome42-p1": "1", "lia-chrome43-p1": "1", "lia-chrome44-p1": "1", "lia-chrome45-p1": "1", "lia-chrome46-p1": "1", "lia-chrome47-p1": "1", "lia-chrome48-p1": "1", "lia-chrome49-p1": "1", "lia-chrome50-p1": "1", "lia-chrome51-p1": "1", "lia-chrome52-p1": "1", "lia-chrome53-p1": "1", "lia-chrome54-p1": "1", "lia-chrome55-p1": "1", "lia-chrome56-p1": "1", "lia-chrome57-p1": "1", "lia-chrome58-p1": "1", "lia-chrome59-p1": "1", "lia-chrome60-p1": "1", "lia-chrome61-p1": "1", "lia-chrome62-p1": "1", "lia-chrome63-p1": "1", "lia-chrome64-p1": "1", "lia-chrome65-p1": "1", "lia-chrome66-p1": "1", "lia-chrome67-p1": "1", "lia-chrome68-p1": "1", "lia-chrome69-p1": "1", "lia-chrome70-p1": "1", "lia-chrome71-p1": "1", "lia-chrome72-p1": "1", "lia-chrome73-p1": "1", "lia-chrome74-p1": "1", "lia-chrome75-p1": "1", "lia-chrome76-p1": "1", "lia-chrome77-p1": "1", "lia-chrome78-p1": "1", "lia-chrome79-p1": "1", "lia-dawn-p1": "1", "lia-space300-p1": "1", "lia-apple-p1": "1", "lia-page2-layout-v1": "[{\"id\": \"p2funBlob\", \"type\": \"blob\", \"name\": \"Long blob #11 \u00b7 FUN FACT ABOUT ME\", \"shape\": \"rib\", \"rb\": {\"seed\": 2530, \"ratio\": 3.4707, \"p\": 2.3403, \"wave\": 0.8645, \"wf\": 1.0469, \"thick\": 0.1801, \"tf\": 1.0977, \"arch\": 0.0797}, \"x\": 440, \"y\": 2729, \"w\": 1163, \"r\": 1.4, \"fill\": \"g:rib\", \"reveal\": false, \"morph\": true, \"follow\": false, \"sy\": 0.39, \"sx\": 0.68}, {\"id\": \"liaRoad\", \"type\": \"shape\", \"name\": \"Ribbon (Lia's road)\", \"x\": 330, \"y\": 600, \"w\": 780, \"h\": 1802, \"fill\": \"g:dawn\", \"soft\": 0, \"fadeTop\": true, \"fadeLen\": 0.12, \"fadeSides\": false, \"ref\": {\"x\": 330, \"y\": 600, \"w\": 780, \"h\": 1802}}, {\"id\": \"p2blob\", \"type\": \"blob\", \"name\": \"Long blob #23 \u00b7 ALONG THE WAY\", \"shape\": \"rib\", \"seed\": 433, \"lobes\": 5, \"x\": 460, \"y\": 380, \"w\": 679, \"r\": 1.8, \"fill\": \"g:rib\", \"reveal\": true, \"morph\": true, \"follow\": false, \"ks\": [2, 3], \"amp\": 0.1, \"hr\": 0, \"sqn\": 2, \"rb\": {\"seed\": 3166, \"ratio\": 5.2667, \"p\": 2.7263, \"wave\": 0.9123, \"wf\": 1.1397, \"thick\": 0.209, \"tf\": 1.1495, \"arch\": -0.1092}}, {\"id\": \"p2title\", \"type\": \"title\", \"name\": \"Section title\", \"x\": 90, \"y\": 410, \"size\": 94, \"lh\": 1.1, \"lines\": [\"ALONG THE WAY\"], \"fill\": \"#1D1C18\", \"revealFill\": \"#1D1C18\", \"font\": \"display\", \"weight\": 400}, {\"id\": \"p2rule\", \"type\": \"line\", \"name\": \"Rule top\", \"x\": 1302, \"y\": 130, \"w\": 48, \"stroke\": \"#1D1C18\", \"sw\": 4}, {\"id\": \"p2num\", \"type\": \"text\", \"name\": \"Index number\", \"x\": 1350, \"y\": 212, \"text\": \"02\", \"size\": 64, \"weight\": 400, \"font\": \"ui\", \"fill\": \"#1D1C18\", \"anchor\": \"end\", \"r\": 0}, {\"id\": \"tGenesis\", \"type\": \"milestone\", \"name\": \"Traffic Engineer, Genesis Traffic\", \"x\": 990, \"y\": 710, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"Genesis Traffic \u00b7 Sydney \u00b7 May 2026 \u2013 now\", \"title\": \"Traffic Engineer\", \"body\": [\"Traffic modelling and assessments for development and construction approvals.\"], \"dot\": [701, 756], \"hline\": true}, {\"id\": \"tUNSW\", \"type\": \"milestone\", \"name\": \"Master of City Planning, UNSW\", \"x\": 90, \"y\": 874, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"UNSW \u00b7 Sydney \u00b7 Nov 2024 \u2013 Sep 2026\", \"title\": \"Master of City Planning\", \"body\": [\"Transport, GIS and spatial analysis, urban design and development.\"], \"dot\": [605, 920], \"hline\": true}, {\"id\": \"tThesis\", \"type\": \"milestone\", \"name\": \"Master's thesis: PedLight-SAC\", \"x\": 990, \"y\": 1038, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"UNSW \u00b7 Sep 2025 \u2013 May 2026\", \"title\": \"Master's thesis: PedLight-SAC\", \"body\": [\"Reinforcement learning for traffic signals that cuts pedestrian waiting time.\"], \"dot\": [699, 1084], \"hline\": true}, {\"id\": \"tInplus\", \"type\": \"milestone\", \"name\": \"Urban Planning Intern, Inplus Design\", \"x\": 90, \"y\": 1202, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"Inplus Design \u00b7 Shenzhen \u00b7 Sep \u2013 Nov 2024\", \"title\": \"Urban Planning Intern\", \"body\": [\"Site analysis and reports for two urban redevelopment projects.\"], \"dot\": [503, 1248], \"hline\": true}, {\"id\": \"tISDE\", \"type\": \"milestone\", \"name\": \"Research Intern, International Society for Digital Earth\", \"x\": 990, \"y\": 1366, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"International Society for Digital Earth \u00b7 Beijing \u00b7 Jun \u2013 Jul 2024\", \"title\": \"Research Intern\", \"body\": [\"Turned GIS and spatial modelling research into accessible content.\"], \"dot\": [722, 1412], \"hline\": true}, {\"id\": \"tTJU\", \"type\": \"milestone\", \"name\": \"Bachelor of Finance, Tianjin University\", \"x\": 90, \"y\": 1550, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"Tianjin University \u00b7 Tianjin \u00b7 Sep 2020 \u2013 Jul 2024\", \"title\": \"Bachelor of Finance\", \"body\": [\"Finance with Japanese on the side. Peiyang Chinese Orchestra and women's basketball team.\"], \"dot\": [876, 1596], \"hline\": true}, {\"id\": \"tGarch\", \"type\": \"milestone\", \"name\": \"Bachelor's thesis: GARCH models\", \"x\": 990, \"y\": 1714, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"Tianjin \u00b7 2024\", \"title\": \"Bachelor's thesis: GARCH models\", \"body\": [\"How CSI 300 index options changed stock market volatility, using GARCH and TGARCH.\"], \"dot\": [760, 1760], \"hline\": true}, {\"id\": \"tYC\", \"type\": \"milestone\", \"name\": \"VC Intern, Y Combinator\", \"x\": 90, \"y\": 1878, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"Y Combinator \u00b7 Beijing \u00b7 Nov 2023 \u2013 Jan 2024\", \"title\": \"Venture Capital Intern\", \"body\": [\"Researched AI sectors and helped prepare Demo Day pitches.\"], \"dot\": [646, 1924], \"hline\": true}, {\"id\": \"tLTP\", \"type\": \"milestone\", \"name\": \"Law Ting Pong Secondary School\", \"x\": 990, \"y\": 2042, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"Hong Kong \u00b7 2014 \u2013 2020\", \"title\": \"Law Ting Pong Secondary School\", \"body\": [\"HKDSE in Accounting, Economics, Spanish and M2. Women's basketball and youth leader.\"], \"dot\": [647, 2088], \"hline\": true}, {\"id\": \"tBorn\", \"type\": \"milestone\", \"name\": \"Born\", \"x\": 90, \"y\": 2206, \"w\": 360, \"year\": \"\", \"swap\": true, \"when\": \"Shenzhen \u00b7 2002\", \"title\": \"Born\", \"body\": [\"Where it all started.\"], \"dot\": [689, 2252], \"hline\": true}, {\"id\": \"p2cloud\", \"type\": \"cloud\", \"name\": \"Word cloud\", \"x\": 90, \"y\": 2849, \"w\": 1200, \"h\": 780, \"words\": [[\"INTJ\", 210], [\"Anime\", 129], [\"Perfectionist\", 109], [\"Gaming\", 101], [\"ADHD\", 98], [\"\u65e5\u672c\u8a9e\", 92], [\"Espa\u00f1ol\", 87], [\"English\", 81], [\"Drawing\", 78], [\"Basketball\", 76], [\"Coffee\", 73], [\"Fitness\", 70], [\"Otaku\", 67], [\"Reading\", 64], [\"Cello\", 62], [\"Hiking\", 62], [\"OCD\", 59], [\"Writing\", 56], [\"Food\", 56], [\"Beach\", 50], [\"Seaside\", 48], [\"Swimming\", 48], [\"Tennis\", 45]], \"uni\": true, \"pad\": 3, \"undefined\": 4, \"fit\": true}, {\"id\": \"p2aboutHead\", \"type\": \"text\", \"name\": \"Fun fact about me (above cloud)\", \"x\": 90, \"y\": 2739, \"text\": \"FUN FACT ABOUT ME\", \"size\": 68, \"weight\": 400, \"font\": \"display\", \"fill\": \"#1D1C18\", \"anchor\": \"start\", \"r\": 0}, {\"id\": \"foot-p2\", \"type\": \"footer\", \"name\": \"Footer\", \"x\": 0, \"y\": 3773, \"w\": 1440, \"h\": 110, \"links\": [\"Email\", \"LinkedIn\", \"GitHub\", \"Message\"], \"note\": \"\u00a9 Oct 2026 Lia Wun\"}, {\"id\": \"nav-p2\", \"type\": \"nav\", \"name\": \"Nav bar (sticky)\", \"x\": 0, \"y\": 0, \"w\": 1440, \"h\": 96, \"links\": [\"Home\", \"About\", \"Projects\", \"Blog\", \"Contact\"], \"active\": \"About\"}]", "lia-H-p2": "3883", "lia-chrome1-p2": "1", "lia-chrome2-p2": "1", "lia-chrome3-p2": "1", "lia-chrome4-p2": "1", "lia-chrome5-p2": "1", "lia-chrome6-p2": "1", "lia-chrome7-p2": "1", "lia-chrome8-p2": "1", "lia-chrome9-p2": "1", "lia-chrome10-p2": "1", "lia-chrome11-p2": "1", "lia-chrome12-p2": "1", "lia-chrome13-p2": "1", "lia-chrome14-p2": "1", "lia-chrome15-p2": "1", "lia-chrome16-p2": "1", "lia-chrome17-p2": "1", "lia-chrome18-p2": "1", "lia-chrome19-p2": "1", "lia-chrome20-p2": "1", "lia-chrome21-p2": "1", "lia-chrome22-p2": "1", "lia-chrome23-p2": "1", "lia-chrome24-p2": "1", "lia-chrome25-p2": "1", "lia-chrome26-p2": "1", "lia-chrome27-p2": "1", "lia-chrome28-p2": "1", "lia-chrome29-p2": "1", "lia-chrome30-p2": "1", "lia-chrome31-p2": "1", "lia-chrome32-p2": "1", "lia-chrome33-p2": "1", "lia-chrome34-p2": "1", "lia-chrome35-p2": "1", "lia-chrome36-p2": "1", "lia-chrome37-p2": "1", "lia-chrome38-p2": "1", "lia-chrome39-p2": "1", "lia-chrome40-p2": "1", "lia-chrome41-p2": "1", "lia-chrome42-p2": "1", "lia-chrome43-p2": "1", "lia-chrome44-p2": "1", "lia-chrome45-p2": "1", "lia-chrome46-p2": "1", "lia-chrome47-p2": "1", "lia-chrome48-p2": "1", "lia-chrome49-p2": "1", "lia-chrome50-p2": "1", "lia-chrome51-p2": "1", "lia-chrome52-p2": "1", "lia-chrome53-p2": "1", "lia-chrome54-p2": "1", "lia-chrome55-p2": "1", "lia-chrome56-p2": "1", "lia-chrome57-p2": "1", "lia-chrome58-p2": "1", "lia-chrome59-p2": "1", "lia-chrome60-p2": "1", "lia-chrome61-p2": "1", "lia-chrome62-p2": "1", "lia-chrome63-p2": "1", "lia-chrome64-p2": "1", "lia-chrome65-p2": "1", "lia-chrome66-p2": "1", "lia-chrome67-p2": "1", "lia-chrome68-p2": "1", "lia-chrome69-p2": "1", "lia-chrome70-p2": "1", "lia-chrome71-p2": "1", "lia-chrome72-p2": "1", "lia-chrome73-p2": "1", "lia-chrome74-p2": "1", "lia-chrome75-p2": "1", "lia-chrome76-p2": "1", "lia-chrome77-p2": "1", "lia-chrome78-p2": "1", "lia-chrome79-p2": "1", "lia-dawn-p2": "1", "lia-space300-p2": "1", "lia-apple-p2": "1", "lia-page3-layout-v5": "[{\"id\":\"p3poster\",\"type\":\"poster\",\"name\":\"Hero poster map\",\"x\":0,\"y\":0,\"w\":1440,\"h\":1000,\"land\":\"g:dawn\",\"sea\":\"#9FD0C4\",\"lines\":\"#FFFFFF\",\"edge\":true},{\"id\":\"p3rule\",\"type\":\"line\",\"name\":\"Rule\",\"x\":90,\"y\":150,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"p3title\",\"type\":\"text\",\"name\":\"Hero title\",\"x\":90,\"y\":290,\"text\":\"Projects\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"p3intro\",\"type\":\"milestone\",\"name\":\"Hero intro (glass)\",\"x\":90,\"y\":340,\"w\":380,\"glass\":true,\"year\":\"\",\"when\":\"Sydney \u00b7 12 projects \u00b7 9 councils\",\"title\":\"My work, mapped\",\"body\":[\"Planning, transport, urban design\",\"Scroll to explore by council\"],\"dot\":null},{\"id\":\"p3num\",\"type\":\"text\",\"name\":\"Index number\",\"x\":1350,\"y\":130,\"text\":\"03\",\"size\":64,\"weight\":400,\"font\":\"ui\",\"fill\":\"#1D1C18\",\"anchor\":\"end\",\"r\":0},{\"id\":\"p3sydRule\",\"type\":\"line\",\"name\":\"Rule \u00b7 Sydney\",\"x\":90,\"y\":2623.5,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"p3sydTitle\",\"type\":\"text\",\"name\":\"Title \u00b7 Sydney\",\"x\":90,\"y\":2713.5,\"text\":\"Sydney\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"p3sydIntro\",\"type\":\"milestone\",\"name\":\"Intro \u00b7 Sydney\",\"x\":640,\"y\":2603.5,\"w\":440,\"year\":\"\",\"when\":\"01 \u00b7 NSW\",\"title\":\"Councils\",\"body\":[\"12 projects \u00b7 9 councils\",\"Coloured: councils with my work\",\"Blank: no project yet\",\"Hover a council to see its projects\"],\"dot\":null},{\"id\":\"p3sydMap\",\"type\":\"map\",\"name\":\"Map \u00b7 Sydney\",\"region\":\"syd\",\"x\":90,\"y\":2822,\"w\":1200,\"frame\":true,\"fade\":false,\"labels\":true,\"pins\":true,\"allNames\":true,\"h\":525,\"pic\":true},{\"id\":\"p3cmbRule\",\"type\":\"line\",\"name\":\"Rule \u00b7 Colombo\",\"x\":90,\"y\":4671,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"p3cmbTitle\",\"type\":\"text\",\"name\":\"Title \u00b7 Colombo\",\"x\":90,\"y\":4761,\"text\":\"Colombo\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"p3cmbIntro\",\"type\":\"milestone\",\"name\":\"Intro \u00b7 Colombo\",\"x\":640,\"y\":4651,\"w\":440,\"year\":\"\",\"when\":\"03 \u00b7 Sri Lanka\",\"title\":\"Slave Island\",\"body\":[\"Urban heat and cooling design\",\"2 projects\",\"8,750 km from Sydney\",\"Hover Slave Island for details\"],\"dot\":null},{\"id\":\"p3cmbMap\",\"type\":\"map\",\"name\":\"Map \u00b7 Colombo\",\"region\":\"cmb\",\"x\":90,\"y\":4870,\"w\":1200,\"frame\":false,\"fade\":false,\"labels\":true,\"pins\":true,\"allNames\":true,\"h\":525,\"pic\":\"img/colombo-map-v3.webp\",\"crop\":[0,90,992,434],\"border\":\"#D8957E\"},{\"id\":\"p3athRule\",\"type\":\"line\",\"name\":\"Rule \u00b7 Athens\",\"x\":90,\"y\":3647,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"p3athTitle\",\"type\":\"text\",\"name\":\"Title \u00b7 Athens\",\"x\":90,\"y\":3737,\"text\":\"Athens\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"p3athIntro\",\"type\":\"milestone\",\"name\":\"Intro \u00b7 Athens\",\"x\":640,\"y\":3627,\"w\":440,\"year\":\"\",\"when\":\"02 \u00b7 Greece\",\"title\":\"Kolonaki\",\"body\":[\"Mapping the city\",\"1 project\",\"15,330 km from Sydney\",\"Hover Athens for details\"],\"dot\":null},{\"id\":\"p3athMap\",\"type\":\"map\",\"name\":\"Map \u00b7 Athens\",\"region\":\"ath\",\"x\":90,\"y\":3846,\"w\":1200,\"frame\":false,\"fade\":false,\"labels\":true,\"pins\":true,\"allNames\":true,\"h\":525,\"pic\":\"img/athens-map-v3.webp\",\"crop\":[0,235,1440,630],\"border\":\"#B4A3D6\"},{\"id\":\"topicsTitle\",\"type\":\"text\",\"name\":\"Topics title\",\"x\":90,\"y\":1337,\"text\":\"Topics\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"bub-0\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Transport\",\"label\":\"Transport\",\"x\":783,\"y\":1914,\"d\":362,\"shape\":\"harm\",\"sheet\":1,\"seed\":11,\"ks\":[2,3],\"amp\":0.1,\"hr\":0,\"style\":\"flat\",\"fill\":\"#A9D4C8\",\"float\":true},{\"id\":\"bub-1\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Urban planning\",\"label\":\"Urban planning\",\"x\":1148,\"y\":1896,\"d\":344,\"shape\":\"harm\",\"sheet\":12,\"seed\":71,\"ks\":[2,3],\"amp\":0.08549999999999999,\"hr\":56.8356,\"style\":\"flat\",\"fill\":\"#EBA28F\",\"float\":true},{\"id\":\"bub-2\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 AI\",\"label\":\"AI\",\"x\":452,\"y\":2001,\"d\":302,\"shape\":\"harm\",\"sheet\":10,\"seed\":313,\"ks\":[2,3],\"amp\":0.125,\"hr\":0,\"style\":\"flat\",\"fill\":\"#E7B3C6\",\"float\":true},{\"id\":\"bub-3\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 GIS & spatial analysis\",\"label\":\"GIS & spatial analysis\",\"x\":573,\"y\":1643,\"d\":278,\"shape\":\"harm\",\"sheet\":16,\"seed\":337,\"ks\":[2,3],\"amp\":0.11399999999999999,\"hr\":117.048,\"style\":\"flat\",\"fill\":\"#A3B1E8\",\"float\":true},{\"id\":\"bub-4\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Sustainability\",\"label\":\"Sustainability\",\"x\":951,\"y\":1623,\"d\":260,\"shape\":\"harm\",\"sheet\":23,\"seed\":223,\"ks\":[3,5],\"amp\":0.08,\"hr\":0,\"style\":\"flat\",\"fill\":\"#E1E6A6\",\"float\":true},{\"id\":\"bub-5\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Equity\",\"label\":\"Equity\",\"x\":972,\"y\":2182,\"d\":230,\"shape\":\"harm\",\"sheet\":2,\"seed\":23,\"ks\":[2,3],\"amp\":0.125,\"hr\":0,\"style\":\"flat\",\"fill\":\"#F2C3AE\",\"float\":true},{\"id\":\"bub-6\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Urban design\",\"label\":\"Urban design\",\"x\":626,\"y\":2221,\"d\":217,\"shape\":\"harm\",\"sheet\":7,\"seed\":301,\"ks\":[2,3],\"amp\":0.15000000000000002,\"hr\":0,\"style\":\"flat\",\"fill\":\"#C6B8EA\",\"float\":true},{\"id\":\"bub-7\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Traffic modelling\",\"label\":\"Traffic modelling\",\"x\":331,\"y\":1736,\"d\":203,\"shape\":\"harm\",\"sheet\":14,\"seed\":97,\"ks\":[2,3],\"amp\":0.1425,\"hr\":1.8132,\"style\":\"flat\",\"fill\":\"#A9D4C8\",\"float\":true},{\"id\":\"bub-8\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Data science\",\"label\":\"Data science\",\"x\":211,\"y\":1910,\"d\":182,\"shape\":\"harm\",\"sheet\":3,\"seed\":37,\"ks\":[3,4],\"amp\":0.15000000000000002,\"hr\":0,\"style\":\"flat\",\"fill\":\"#EBA28F\",\"float\":true},{\"id\":\"bub-9\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Smart cities\",\"label\":\"Smart cities\",\"x\":1235,\"y\":2173,\"d\":169,\"shape\":\"harm\",\"sheet\":26,\"seed\":233,\"ks\":[4,6],\"amp\":0.08,\"hr\":0,\"style\":\"flat\",\"fill\":\"#E7B3C6\",\"float\":true},{\"id\":\"bub-10\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Climate resilience\",\"label\":\"Climate resilience\",\"x\":778,\"y\":1484,\"d\":157,\"shape\":\"harm\",\"sheet\":19,\"seed\":353,\"ks\":[2,3],\"amp\":0.11399999999999999,\"hr\":0.1428,\"style\":\"flat\",\"fill\":\"#A3B1E8\",\"float\":true},{\"id\":\"bub-11\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 Walkability\",\"label\":\"Walkability\",\"x\":438,\"y\":2249,\"d\":139,\"shape\":\"harm\",\"sheet\":9,\"seed\":311,\"ks\":[3,5],\"amp\":0.1,\"hr\":0,\"style\":\"flat\",\"fill\":\"#E1E6A6\",\"float\":true},{\"id\":\"bub-12\",\"type\":\"bubble\",\"name\":\"Topic \u00b7 TOD\",\"label\":\"TOD\",\"x\":797,\"y\":2264,\"d\":127,\"shape\":\"harm\",\"sheet\":13,\"seed\":83,\"ks\":[2,3],\"amp\":0.11399999999999999,\"hr\":110.4264,\"style\":\"flat\",\"fill\":\"#F2C3AE\",\"float\":true},{\"id\":\"foot-p3\",\"type\":\"footer\",\"name\":\"Footer\",\"x\":0,\"y\":5539,\"w\":1440,\"h\":110,\"links\":[\"Email\",\"LinkedIn\",\"GitHub\",\"Message\"],\"note\":\"\u00a9 Oct 2026 Lia Wun\"},{\"id\":\"nav-p3\",\"type\":\"nav\",\"name\":\"Nav bar (sticky)\",\"x\":0,\"y\":0,\"w\":1440,\"h\":96,\"links\":[\"Home\",\"About\",\"Projects\",\"Blog\",\"Contact\"],\"active\":\"Projects\"}]", "lia-H-p3": "5649", "lia-chrome1-p3": "1", "lia-chrome2-p3": "1", "lia-chrome3-p3": "1", "lia-chrome4-p3": "1", "lia-chrome5-p3": "1", "lia-chrome6-p3": "1", "lia-chrome7-p3": "1", "lia-chrome8-p3": "1", "lia-chrome9-p3": "1", "lia-chrome10-p3": "1", "lia-chrome11-p3": "1", "lia-chrome12-p3": "1", "lia-chrome13-p3": "1", "lia-chrome14-p3": "1", "lia-chrome15-p3": "1", "lia-chrome16-p3": "1", "lia-chrome17-p3": "1", "lia-chrome18-p3": "1", "lia-chrome19-p3": "1", "lia-chrome20-p3": "1", "lia-chrome21-p3": "1", "lia-chrome22-p3": "1", "lia-chrome23-p3": "1", "lia-chrome24-p3": "1", "lia-chrome25-p3": "1", "lia-chrome26-p3": "1", "lia-chrome27-p3": "1", "lia-chrome28-p3": "1", "lia-chrome29-p3": "1", "lia-chrome30-p3": "1", "lia-chrome31-p3": "1", "lia-chrome32-p3": "1", "lia-chrome33-p3": "1", "lia-chrome34-p3": "1", "lia-chrome35-p3": "1", "lia-chrome36-p3": "1", "lia-chrome37-p3": "1", "lia-chrome38-p3": "1", "lia-chrome39-p3": "1", "lia-chrome40-p3": "1", "lia-chrome41-p3": "1", "lia-chrome42-p3": "1", "lia-chrome43-p3": "1", "lia-chrome44-p3": "1", "lia-chrome45-p3": "1", "lia-chrome46-p3": "1", "lia-chrome47-p3": "1", "lia-chrome48-p3": "1", "lia-chrome49-p3": "1", "lia-chrome50-p3": "1", "lia-chrome51-p3": "1", "lia-chrome52-p3": "1", "lia-chrome53-p3": "1", "lia-chrome54-p3": "1", "lia-chrome55-p3": "1", "lia-chrome56-p3": "1", "lia-chrome57-p3": "1", "lia-chrome58-p3": "1", "lia-chrome59-p3": "1", "lia-chrome60-p3": "1", "lia-chrome61-p3": "1", "lia-chrome62-p3": "1", "lia-chrome63-p3": "1", "lia-chrome64-p3": "1", "lia-chrome65-p3": "1", "lia-chrome66-p3": "1", "lia-chrome67-p3": "1", "lia-chrome68-p3": "1", "lia-chrome69-p3": "1", "lia-chrome70-p3": "1", "lia-chrome71-p3": "1", "lia-chrome72-p3": "1", "lia-chrome73-p3": "1", "lia-chrome74-p3": "1", "lia-chrome75-p3": "1", "lia-chrome76-p3": "1", "lia-chrome77-p3": "1", "lia-chrome78-p3": "1", "lia-chrome79-p3": "1", "lia-dawn-p3": "1", "lia-space300-p3": "1", "lia-apple-p3": "1", "lia-pageblog-layout-v1": "[{\"id\":\"pbblob\",\"type\":\"blob\",\"name\":\"Title blob\",\"shape\":\"harm\",\"seed\":59,\"ks\":[2,3,4],\"amp\":0.1,\"hr\":0,\"x\":300,\"y\":230,\"w\":400,\"r\":0,\"fill\":\"g:dawn\",\"reveal\":true,\"morph\":true,\"follow\":false},{\"id\":\"pbtitle\",\"type\":\"title\",\"name\":\"Blog title\",\"x\":90,\"y\":300,\"size\":68,\"lh\":1.1,\"lines\":[\"BLOG\"],\"fill\":\"#EDEDE8\",\"revealFill\":\"#1D1C18\",\"font\":\"display\",\"weight\":400},{\"id\":\"pbrule\",\"type\":\"line\",\"name\":\"Rule top\",\"x\":1302,\"y\":130,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"pbnum\",\"type\":\"text\",\"name\":\"Index number\",\"x\":1350,\"y\":212,\"text\":\"04\",\"size\":64,\"weight\":400,\"font\":\"ui\",\"fill\":\"#1D1C18\",\"anchor\":\"end\",\"r\":0},{\"id\":\"pblabel\",\"type\":\"text\",\"name\":\"Posts label\",\"x\":90,\"y\":372,\"text\":\"LATEST POSTS\",\"size\":14,\"weight\":500,\"font\":\"ui\",\"fill\":\"#8C8B83\",\"anchor\":\"start\",\"r\":0},{\"id\":\"pbline0\",\"type\":\"line\",\"name\":\"Divider\",\"x\":90,\"y\":396,\"w\":1260,\"stroke\":\"#D9D6CE\",\"sw\":1.5},{\"id\":\"pbdate1\",\"type\":\"text\",\"name\":\"Post 1 \u00b7 date\",\"x\":1350,\"y\":478,\"text\":\"SEP 2026\",\"size\":15,\"weight\":500,\"font\":\"ui\",\"fill\":\"#8C8B83\",\"anchor\":\"end\",\"r\":0},{\"id\":\"pbpost1\",\"type\":\"milestone\",\"name\":\"Post 1\",\"x\":90,\"y\":436,\"w\":1074,\"year\":\"\",\"swap\":true,\"when\":\"\",\"title\":\"I just graduated from UNSW and am officially a Transport Engineer!\",\"body\":[],\"dot\":null,\"nobal\":true},{\"id\":\"pbline1\",\"type\":\"line\",\"name\":\"Divider\",\"x\":90,\"y\":616,\"w\":1260,\"stroke\":\"#D9D6CE\",\"sw\":1.5},{\"id\":\"pbdate2\",\"type\":\"text\",\"name\":\"Post 2 \u00b7 date\",\"x\":1350,\"y\":698,\"text\":\"MAY 2026\",\"size\":15,\"weight\":500,\"font\":\"ui\",\"fill\":\"#8C8B83\",\"anchor\":\"end\",\"r\":0},{\"id\":\"pbpost2\",\"type\":\"milestone\",\"name\":\"Post 2\",\"x\":90,\"y\":656,\"w\":920,\"year\":\"\",\"swap\":true,\"when\":\"\",\"title\":\"Hey there! I just made my first personal website \ud83c\udf89\",\"body\":[],\"dot\":null,\"nobal\":true},{\"id\":\"pbline2\",\"type\":\"line\",\"name\":\"Divider\",\"x\":90,\"y\":836,\"w\":1260,\"stroke\":\"#D9D6CE\",\"sw\":1.5},{\"id\":\"pbdrop\",\"type\":\"blob\",\"name\":\"Blob \u00b7 lilac\",\"shape\":\"harm\",\"seed\":97,\"ks\":[2,3],\"amp\":0.1425,\"hr\":20,\"x\":1240,\"y\":420,\"w\":240,\"r\":0,\"fill\":\"g:lilac\",\"reveal\":false,\"morph\":true,\"follow\":false},{\"id\":\"foot-pb\",\"type\":\"footer\",\"name\":\"Footer\",\"x\":0,\"y\":981,\"w\":1440,\"h\":110,\"links\":[\"Email\",\"LinkedIn\",\"GitHub\",\"Message\"],\"note\":\"\u00a9 Oct 2026 Lia Wun\"},{\"id\":\"nav-pb\",\"type\":\"nav\",\"name\":\"Nav bar (sticky)\",\"x\":0,\"y\":0,\"w\":1440,\"h\":96,\"links\":[\"Home\",\"About\",\"Projects\",\"Blog\",\"Contact\"],\"active\":\"Blog\"}]", "lia-H-pb": "1091", "lia-chrome1-pb": "1", "lia-chrome2-pb": "1", "lia-chrome3-pb": "1", "lia-chrome4-pb": "1", "lia-chrome5-pb": "1", "lia-chrome6-pb": "1", "lia-chrome7-pb": "1", "lia-chrome8-pb": "1", "lia-chrome9-pb": "1", "lia-chrome10-pb": "1", "lia-chrome11-pb": "1", "lia-chrome12-pb": "1", "lia-chrome13-pb": "1", "lia-chrome14-pb": "1", "lia-chrome15-pb": "1", "lia-chrome16-pb": "1", "lia-chrome17-pb": "1", "lia-chrome18-pb": "1", "lia-chrome19-pb": "1", "lia-chrome20-pb": "1", "lia-chrome21-pb": "1", "lia-chrome22-pb": "1", "lia-chrome23-pb": "1", "lia-chrome24-pb": "1", "lia-chrome25-pb": "1", "lia-chrome26-pb": "1", "lia-chrome27-pb": "1", "lia-chrome28-pb": "1", "lia-chrome29-pb": "1", "lia-chrome30-pb": "1", "lia-chrome31-pb": "1", "lia-chrome32-pb": "1", "lia-chrome33-pb": "1", "lia-chrome34-pb": "1", "lia-chrome35-pb": "1", "lia-chrome36-pb": "1", "lia-chrome37-pb": "1", "lia-chrome38-pb": "1", "lia-chrome39-pb": "1", "lia-chrome40-pb": "1", "lia-chrome41-pb": "1", "lia-chrome42-pb": "1", "lia-chrome43-pb": "1", "lia-chrome44-pb": "1", "lia-chrome45-pb": "1", "lia-chrome46-pb": "1", "lia-chrome47-pb": "1", "lia-chrome48-pb": "1", "lia-chrome49-pb": "1", "lia-chrome50-pb": "1", "lia-chrome51-pb": "1", "lia-chrome52-pb": "1", "lia-chrome53-pb": "1", "lia-chrome54-pb": "1", "lia-chrome55-pb": "1", "lia-chrome56-pb": "1", "lia-chrome57-pb": "1", "lia-chrome58-pb": "1", "lia-chrome59-pb": "1", "lia-chrome60-pb": "1", "lia-chrome61-pb": "1", "lia-chrome62-pb": "1", "lia-chrome63-pb": "1", "lia-chrome64-pb": "1", "lia-chrome65-pb": "1", "lia-chrome66-pb": "1", "lia-chrome67-pb": "1", "lia-chrome68-pb": "1", "lia-chrome69-pb": "1", "lia-chrome70-pb": "1", "lia-chrome71-pb": "1", "lia-chrome72-pb": "1", "lia-chrome73-pb": "1", "lia-chrome74-pb": "1", "lia-chrome75-pb": "1", "lia-chrome76-pb": "1", "lia-chrome77-pb": "1", "lia-chrome78-pb": "1", "lia-chrome79-pb": "1", "lia-dawn-pb": "1", "lia-space300-pb": "1", "lia-apple-pb": "1", "lia-page4-layout-v1": "[{\"id\":\"p4lines\",\"type\":\"contours\",\"name\":\"Contour lines\",\"x\":-85,\"y\":-72,\"w\":1440,\"h\":1800,\"seed\":4242,\"rings\":9,\"stroke\":\"#D8D5E6\"},{\"id\":\"p5big\",\"type\":\"blob\",\"name\":\"Blob \u00b7 big pebble\",\"shape\":\"harm\",\"seed\":23,\"ks\":[2,3],\"amp\":0.125,\"hr\":0,\"x\":890,\"y\":470,\"w\":1240,\"r\":-12,\"fill\":\"g:lilac\",\"reveal\":false,\"morph\":true,\"follow\":false},{\"id\":\"p5star\",\"type\":\"blob\",\"name\":\"Blob \u00b7 star\",\"shape\":\"arms\",\"seed\":4102,\"lobes\":4,\"x\":60,\"y\":905,\"w\":280,\"r\":10,\"fill\":\"g:lilac\",\"reveal\":false,\"morph\":true,\"follow\":false},{\"id\":\"p5arms\",\"type\":\"blob\",\"name\":\"Blob \u00b7 arms\",\"shape\":\"arms\",\"seed\":4400,\"lobes\":5,\"x\":1045,\"y\":1413,\"w\":560,\"r\":8,\"fill\":\"g:lagoon\",\"reveal\":false,\"morph\":true,\"follow\":false},{\"id\":\"p5drop\",\"type\":\"blob\",\"name\":\"Droplet\",\"shape\":\"drop\",\"seed\":4401,\"x\":770,\"y\":1273,\"w\":120,\"r\":0,\"fill\":\"#E39A88\",\"reveal\":false,\"morph\":true,\"follow\":false},{\"id\":\"p4title\",\"type\":\"title\",\"name\":\"Contact title\",\"x\":330,\"y\":500,\"size\":68,\"lh\":1.1,\"lines\":[\"contact me\"],\"fill\":\"#1D1C18\",\"revealFill\":\"#1D1C18\",\"font\":\"display\",\"weight\":400},{\"id\":\"p4rule\",\"type\":\"line\",\"name\":\"Rule\",\"x\":1302,\"y\":120,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"p4num\",\"type\":\"text\",\"name\":\"Index number\",\"x\":1350,\"y\":200,\"text\":\"05\",\"size\":64,\"weight\":400,\"font\":\"ui\",\"fill\":\"#1D1C18\",\"anchor\":\"end\",\"r\":0},{\"id\":\"p4note\",\"type\":\"milestone\",\"name\":\"Note\",\"x\":90,\"y\":700,\"w\":330,\"year\":\"\",\"when\":\"Say hello\",\"title\":\"\",\"body\":[\"Questions, projects or a coffee chat.\",\"I'd love to hear from you.\"],\"dot\":null},{\"id\":\"p4form\",\"type\":\"form\",\"name\":\"Contact form\",\"x\":1010,\"y\":560,\"w\":340,\"fields\":[\"name\",\"email address\",\"message\"],\"button\":\"send\",\"accent\":\"#C7B8EA\"},{\"id\":\"p4rule2\",\"type\":\"line\",\"name\":\"Rule 2\",\"x\":90,\"y\":1096,\"w\":48,\"stroke\":\"#1D1C18\",\"sw\":4},{\"id\":\"p4find\",\"type\":\"text\",\"name\":\"Find me title\",\"x\":90,\"y\":1176,\"text\":\"Find me\",\"size\":68,\"weight\":400,\"font\":\"display\",\"fill\":\"#1D1C18\",\"anchor\":\"start\",\"r\":0},{\"id\":\"p4links\",\"type\":\"meta\",\"name\":\"Links\",\"x\":90,\"y\":1253,\"size\":21,\"gap\":74,\"items\":[[\"Email\",\"tszyeewun_au@outlook.com\"],[\"LinkedIn\",\"linkedin.com/in/tszyeewun\"],[\"GitHub\",\"github.com/tszyeewun\"],[\"Resume\",\"Download PDF\"],[\"Based\",\"Sydney, NSW\"]],\"fill\":\"#1D1C18\",\"labelFill\":\"#8C8B83\",\"anchor\":\"start\"},{\"id\":\"foot-p4\",\"type\":\"footer\",\"name\":\"Footer\",\"x\":0,\"y\":1727,\"w\":1440,\"h\":110,\"links\":[\"Email\",\"LinkedIn\",\"GitHub\",\"Message\"],\"note\":\"\u00a9 Oct 2026 Lia Wun\"},{\"id\":\"nav-p4\",\"type\":\"nav\",\"name\":\"Nav bar (sticky)\",\"x\":0,\"y\":0,\"w\":1440,\"h\":96,\"links\":[\"Home\",\"About\",\"Projects\",\"Blog\",\"Contact\"],\"active\":\"Contact\"}]", "lia-H-p4": "1837", "lia-chrome1-p4": "1", "lia-chrome2-p4": "1", "lia-chrome3-p4": "1", "lia-chrome4-p4": "1", "lia-chrome5-p4": "1", "lia-chrome6-p4": "1", "lia-chrome7-p4": "1", "lia-chrome8-p4": "1", "lia-chrome9-p4": "1", "lia-chrome10-p4": "1", "lia-chrome11-p4": "1", "lia-chrome12-p4": "1", "lia-chrome13-p4": "1", "lia-chrome14-p4": "1", "lia-chrome15-p4": "1", "lia-chrome16-p4": "1", "lia-chrome17-p4": "1", "lia-chrome18-p4": "1", "lia-chrome19-p4": "1", "lia-chrome20-p4": "1", "lia-chrome21-p4": "1", "lia-chrome22-p4": "1", "lia-chrome23-p4": "1", "lia-chrome24-p4": "1", "lia-chrome25-p4": "1", "lia-chrome26-p4": "1", "lia-chrome27-p4": "1", "lia-chrome28-p4": "1", "lia-chrome29-p4": "1", "lia-chrome30-p4": "1", "lia-chrome31-p4": "1", "lia-chrome32-p4": "1", "lia-chrome33-p4": "1", "lia-chrome34-p4": "1", "lia-chrome35-p4": "1", "lia-chrome36-p4": "1", "lia-chrome37-p4": "1", "lia-chrome38-p4": "1", "lia-chrome39-p4": "1", "lia-chrome40-p4": "1", "lia-chrome41-p4": "1", "lia-chrome42-p4": "1", "lia-chrome43-p4": "1", "lia-chrome44-p4": "1", "lia-chrome45-p4": "1", "lia-chrome46-p4": "1", "lia-chrome47-p4": "1", "lia-chrome48-p4": "1", "lia-chrome49-p4": "1", "lia-chrome50-p4": "1", "lia-chrome51-p4": "1", "lia-chrome52-p4": "1", "lia-chrome53-p4": "1", "lia-chrome54-p4": "1", "lia-chrome55-p4": "1", "lia-chrome56-p4": "1", "lia-chrome57-p4": "1", "lia-chrome58-p4": "1", "lia-chrome59-p4": "1", "lia-chrome60-p4": "1", "lia-chrome61-p4": "1", "lia-chrome62-p4": "1", "lia-chrome63-p4": "1", "lia-chrome64-p4": "1", "lia-chrome65-p4": "1", "lia-chrome66-p4": "1", "lia-chrome67-p4": "1", "lia-chrome68-p4": "1", "lia-chrome69-p4": "1", "lia-chrome70-p4": "1", "lia-chrome71-p4": "1", "lia-chrome72-p4": "1", "lia-chrome73-p4": "1", "lia-chrome74-p4": "1", "lia-chrome75-p4": "1", "lia-chrome76-p4": "1", "lia-chrome77-p4": "1", "lia-chrome78-p4": "1", "lia-chrome79-p4": "1", "lia-dawn-p4": "1", "lia-space300-p4": "1", "lia-apple-p4": "1", "lia-roadfit-p2": "1", "lia-labels200-p2": "1"};return{getItem:k=>k in m?m[k]:null,setItem:(k,v)=>{m[k]=String(v)},removeItem:k=>{delete m[k]}}})();
 (() => {
 const NS = "http://www.w3.org/2000/svg";
 // "Dawn" palette — sampled from Lia's reference: pink-purple sky gradient (main), lime/teal land and water (accents)
@@ -196,6 +196,13 @@ function fix47(k,v){if(k!=="p3")return v;const f=id=>v.find(e=>e.id===id);const 
     if(map)Object.assign(map,{x:120,y:y+G+210,w:1200,h:525,frame:false,fade:false,...P});y=y+G+210+525});
   const ai=f("p3athIntro"),ci=f("p3cmbIntro");if(ai)ai.when="02 · Greece";if(ci)ci.when="03 · Sri Lanka";
   v.filter(e=>e.type==="footer").forEach(ft=>ft.y=PAGES.p3.H-110);return v}
+
+// Oct 2026 · Arup type scale
+function fix50(k,v){v.forEach(e=>{
+  if(e.type==="text"&&e.font==="display"&&e.size>=60){e.size=68;e.weight=400}
+  if(e.type==="title"&&e.id!=="title"){e.size=68;e.lh=1.1}
+  if(e.type==="milestone"&&e.fontSize){e.fontSize=e.fontSize>=19?20:16}
+  if(e.type==="milestone"&&e.tsize)delete e.tsize});return v}
 // Oct 2026 · page 1: layout from Lia's screenshots
 function p1v3(v){if(v.some(e=>e.id==="p1aboutBlob"))return v;
   const f=id=>v.find(e=>e.id===id),drop=new Set(["btn","introCta1","introBlob","p1projLabel"]);
@@ -857,6 +864,8 @@ function loadPage(k){const v=loadRaw(k);let done=false;try{done=__LS.getItem("li
   if(!c46){fix46(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome46-"+k,"1")}catch(_){}}
   let c48=false;try{c48=__LS.getItem("lia-chrome49-"+k)==="1"}catch(_){}
   if(!c48&&k==="p3"){v.forEach(e=>{if(e.id==="p3cmbMap")Object.assign(e,CMB_PIC);if(e.id==="p3athMap")Object.assign(e,ATH_PIC)});try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome49-"+k,"1")}catch(_){}}
+  let c50=false;try{c50=__LS.getItem("lia-chrome50-"+k)==="1"}catch(_){}
+  if(!c50){fix50(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome50-"+k,"1")}catch(_){}}
   let c47=false;try{c47=__LS.getItem("lia-chrome47-"+k)==="1"}catch(_){}
   if(!c47){fix47(k,v);try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-chrome47-"+k,"1")}catch(_){}}
   return v}
@@ -866,11 +875,46 @@ function loadRaw(k){try{const s=__LS.getItem(PAGES[k].store);if(s){const v=JSON.
   // a fresh page 2 already has every change below baked in
   if(k==="p2")try{["19","20","21","22","23","24"].forEach(n=>__LS.setItem("lia-chrome"+n+"-"+k,"1"))}catch(_){}
   return d}
+// cloud sync: which pages already had a saved layout on this device before this load
+const HADLOCAL={};Object.keys(PAGES).forEach(k=>{try{HADLOCAL[k]=!!__LS.getItem(PAGES[k].store)}catch(_){HADLOCAL[k]=false}});
+let BOOTING=true;
+Object.keys(PAGES).forEach(k=>{try{const h=+__LS.getItem("lia-H-"+k);if(h>0)PAGES[k].H=h}catch(_){}});
 Object.keys(PAGES).forEach(k=>{const v=loadPage(k);const n=v.findIndex(e=>e.type==="nav");if(n>=0)v.push(v.splice(n,1)[0]);state[k]={els:v,hist:[]}});
-let sel=null, showGrid=false, preview=false;
+let sel=null, showGrid=true, preview=false;
 const P=()=>PAGES[cur], S=()=>state[cur];
 let els=S().els;
-function save(){S().els=els;try{__LS.setItem(P().store,JSON.stringify(els))}catch(_){toast("Browser storage is full. Use smaller photos.")}}
+function save(){S().els=els;try{__LS.setItem(P().store,JSON.stringify(els))}catch(_){toast("Browser storage is full. Use smaller photos.")}
+  if(!BOOTING){setStamp(cur,Date.now());cloudPush(cur)}}
+/* ---------- cloud sync (db capability): every saved page is copied to layouts/<page> so Claude can read it,
+   and a newer copy in the cloud (from another device, or a fix from Claude) is loaded here ---------- */
+let CLOUD=null;const CID=Math.random().toString(36).slice(2),cloudT={},cloudBusy={};
+function stamp(k){try{return +__LS.getItem("lia-saved-"+k)||0}catch(_){return 0}}
+function setStamp(k,t){try{__LS.setItem("lia-saved-"+k,String(t))}catch(_){}}
+function badge(t){let b=document.getElementById("syncBadge");if(!b){b=document.createElement("div");b.id="syncBadge";
+  b.style.cssText="position:fixed;left:12px;bottom:10px;z-index:50;font:12px Arial,sans-serif;color:#4A4942;background:#fff;border:1px solid #E4DFEA;border-radius:12px;padding:4px 10px;pointer-events:none";document.body.appendChild(b)}
+  b.textContent="\u2601 "+t}
+function packEls(v){return JSON.stringify(v.map(e=>typeof e.src==="string"&&e.src.startsWith("data:")&&e.src.length>4000?Object.assign({},e,{src:"__local__"}):e))}
+function cloudPush(k){if(!CLOUD)return;clearTimeout(cloudT[k]);cloudT[k]=setTimeout(async()=>{
+  if(cloudBusy[k]){cloudPush(k);return}cloudBusy[k]=true;
+  try{await CLOUD.doc("layouts/"+k).set({page:k,label:PAGES[k].label,H:PAGES[k].H,els:packEls(state[k].els),savedAt:stamp(k)||Date.now(),by:CID});
+    badge("Synced "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}))}
+  catch(err){badge("Sync paused");console.warn("sync",err)}finally{cloudBusy[k]=false}},1500)}
+function cloudAdopt(k,d){let v;try{v=JSON.parse(d.els)}catch(_){return}if(!Array.isArray(v)||!v.length)return;
+  const old=state[k].els;v.forEach(e=>{if(e.src==="__local__"){const o=old.find(x=>x.id===e.id);e.src=o?o.src:null}});
+  state[k].els=v;if(+d.H>0)PAGES[k].H=+d.H;
+  try{__LS.setItem(PAGES[k].store,JSON.stringify(v));__LS.setItem("lia-H-"+k,PAGES[k].H)}catch(_){}
+  setStamp(k,+d.savedAt||Date.now());if(k===cur){els=state[k].els;if(sel&&!byId(sel))sel=null;renderAll()}
+  badge("Loaded from cloud "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}))}
+async function cloudStart(){if(!window.claude||!window.claude.use){badge("Sync off (local only)");return}
+  let db=null;try{db=await window.claude.use("db")}catch(_){}if(!db){badge("Sync off (local only)");return}
+  CLOUD=db;badge("Syncing\u2026");
+  for(const k of Object.keys(PAGES)){const ref=db.doc("layouts/"+k);let snap=null;try{snap=await ref.get()}catch(err){badge("Sync paused");console.warn(err);return}
+    const d=snap&&snap.exists?snap.data():null;
+    if(d&&(+d.savedAt||0)>stamp(k))cloudAdopt(k,d);
+    else if(!d&&HADLOCAL[k]){if(!stamp(k))setStamp(k,Date.now());cloudPush(k)}
+    else if(d&&stamp(k)>(+d.savedAt||0))cloudPush(k);
+    ref.onSnapshot(sn=>{if(!sn.exists)return;const x=sn.data();if(!x||x.by===CID)return;if((+x.savedAt||0)>stamp(k))cloudAdopt(k,x)},err=>console.warn("sync",err))}
+  badge("Synced")}
 function snap(){const h=S().hist;h.push(JSON.stringify(els));if(h.length>80)h.shift()}
 function undo(){const h=S().hist;if(!h.length)return toast("Nothing to undo");els=JSON.parse(h.pop());S().els=els;if(sel&&!byId(sel))sel=null;renderAll();save()}
 const byId=id=>els.find(e=>e.id===id);
@@ -878,19 +922,20 @@ const uid=p=>p+Math.random().toString(36).slice(2,7);
 
 /* ---------- rendering ---------- */
 const svg=document.getElementById("svg"), board=document.getElementById("board"), app=document.getElementById("app");
-const SERIF='"Bodoni Moda","Didot","Times New Roman",serif', SANS='"IBM Plex Sans",system-ui,sans-serif', MONO='"IBM Plex Mono",ui-monospace,monospace';
+// type: Arup style. Titles Spectral (tight tracking), everything else Arial
+const SERIF='"Spectral",Georgia,"Times New Roman",serif', SANS='Arial,Helvetica,sans-serif', MONO=SANS, TRACK="-0.07em";
 const APPLE=SANS; // name kept from an earlier version; = body sans
 const fontOf=f=>f==="display"?SERIF:SANS;
 function mk(tag,attrs={},parent){const n=document.createElementNS(NS,tag);for(const k in attrs)if(attrs[k]!=null)n.setAttribute(k,attrs[k]);if(parent)parent.appendChild(n);return n}
 let T=0, cursor={x:0,y:0,on:false}, off={};
-function blobT(e){const o=(preview&&e.follow&&off[e.id])||{x:0,y:0};return`translate(${e.x+o.x},${e.y+o.y}) rotate(${e.r||0}) scale(${e.w/200})`}
+function blobT(e){const o=(preview&&e.follow&&off[e.id])||{x:0,y:0};return`translate(${e.x+o.x},${e.y+o.y}) scale(${e.sx||1},${e.sy||1}) rotate(${e.r||0}) scale(${e.w/200})`}
 function drawTitle(e,g,fill,clip){
-  const t=mk("text",{x:e.x,y:e.y,"font-family":fontOf(e.font),"font-size":e.size,"font-weight":e.weight||400,fill,"clip-path":clip,"letter-spacing":"-0.01em"},g);
+  const t=mk("text",{x:e.x,y:e.y,"font-family":fontOf(e.font),"font-size":e.size,"font-weight":e.weight||400,fill,"clip-path":clip,"letter-spacing":TRACK},g);
   e.lines.forEach((ln,i)=>{const s=mk("tspan",{x:e.x,dy:i?e.size*e.lh:0},t);s.textContent=ln});return t}
 const escH=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
 
 // page template: every page keeps the same side margins as the nav bar and footer (120 from each edge)
-const ML=120,MR_=120;
+const ML=90,MR_=90; // Apple: 90 side margins at 1440, content 1260
 function enforceMargins(W){const L=ML,R=W-MR_,LEFTZONE=300,RIGHTZONE=W-240;
   els.forEach(e=>{if(typeof e.x!=="number"||e.deco)return;
     if(e.type==="text"||e.type==="meta"){const a=e.anchor||"start";if(a==="start"&&e.x<LEFTZONE)e.x=L;else if(a==="end"&&e.x>RIGHTZONE)e.x=R;return}
@@ -918,7 +963,7 @@ function __drawEl(e,g0,defs,navLater){let g=g0;
       if(e.taper){const gg=mk("g",{mask},g);const g2=mk("g",{mask:edgeMask},gg);mk("path",{d:rd,fill:paint(e.fill),opacity:e.opacity??1},g2)}
       else mk("path",{d:catmull(bandPts(e,T),false),fill:"none",stroke:paint(e.fill),"stroke-width":e.w,"stroke-linecap":"round","stroke-linejoin":"round",mask},g)}
     else if(e.type==="title"){const t0=drawTitle(e,g,e.fill);const bb=t0.getBBox();t0.remove();mk("rect",{x:bb.x,y:bb.y,width:bb.width,height:bb.height,fill:"transparent"},g);drawTitle(e,g,e.fill);drawTitle(e,g,e.revealFill,"url(#reveal)")}
-    else if(e.type==="text"){const big=e.size>=40;const t=mk("text",{x:e.x,y:e.y,"font-family":fontOf(e.font),"font-size":e.size,"font-weight":e.weight,"letter-spacing":big?"-0.01em":null,fill:e.fill,"text-anchor":e.anchor,transform:e.r?`rotate(${e.r} ${e.x} ${e.y})`:null},g);t.textContent=e.text}
+    else if(e.type==="text"){const big=e.size>=40;const t=mk("text",{x:e.x,y:e.y,"font-family":fontOf(e.font),"font-size":e.size,"font-weight":e.weight,"letter-spacing":big&&e.font==="display"?TRACK:null,fill:e.fill,"text-anchor":e.anchor,transform:e.r?`rotate(${e.r} ${e.x} ${e.y})`:null},g);t.textContent=e.text}
     else if(e.type==="meta"){e.items.forEach(([l,v],i)=>{const y=e.y+i*e.gap;
       const a=mk("text",{x:e.x,y,"font-family":fontOf("ui"),"font-size":e.size*0.82,fill:e.labelFill,"text-anchor":e.anchor},g);a.textContent=l;
       const b=mk("text",{x:e.x,y:y+e.size*1.4,"font-family":fontOf("ui"),"font-size":e.size,"font-weight":500,fill:e.fill,"text-anchor":e.anchor},g);b.textContent=v})}
@@ -958,11 +1003,15 @@ function render(){NODES={};
   const gf=mk("filter",{id:"bubGlow",x:"-20%",y:"-20%",width:"140%",height:"140%"},defs);mk("feGaussianBlur",{stdDeviation:7},gf);
   const cp=mk("clipPath",{id:"reveal"},defs);
   els.filter(e=>e.type==="blob"&&e.reveal).forEach(e=>mk("path",{d:blobPath(e,T),transform:blobT(e)},cp));
-  if(showGrid&&!preview){const gg=mk("g",{"pointer-events":"none"},svg);const m=120,cols=12,gut=24,cw=(W-2*m-gut*(cols-1))/cols;
-    for(let i=0;i<cols;i++)mk("rect",{x:m+i*(cw+gut),y:0,width:cw,height:H,fill:"rgba(43,89,195,.05)"},gg);
-    mk("line",{x1:W/2,y1:0,x2:W/2,y2:H,stroke:"rgba(43,89,195,.25)","stroke-dasharray":"6 6"},gg);
-    for(let y=900;y<H;y+=900)mk("line",{x1:0,y1:y,x2:W,y2:y,stroke:"rgba(43,89,195,.35)","stroke-dasharray":"2 6"},gg)}
-  if(!preview&&W===1440){const gm=mk("g",{"pointer-events":"none"},svg);[ML,W-MR_].forEach(x=>mk("line",{x1:x,y1:0,x2:x,y2:H,stroke:"rgba(220,80,120,.45)","stroke-width":1.5,"stroke-dasharray":"8 8"},gm))}
+  if(showGrid&&!preview){const gg=mk("g",{"pointer-events":"none"},svg);
+    for(let x=0;x<=W;x+=50)mk("line",{x1:x,y1:0,x2:x,y2:H,stroke:x%300===0?"rgba(43,89,195,.28)":"rgba(43,89,195,.10)","stroke-width":x%300===0?1.2:.8},gg);
+    for(let y=0;y<=H;y+=50){const big=y%300===0;mk("line",{x1:0,y1:y,x2:W,y2:y,stroke:big?"rgba(43,89,195,.32)":"rgba(43,89,195,.10)","stroke-width":big?1.2:.8},gg);
+      if(big&&y){const t=mk("text",{x:6,y:y-5,"font-family":MONO,"font-size":13,fill:"rgba(43,89,195,.75)"},gg);t.textContent=y}}
+    [120,W-120].forEach(x=>mk("line",{x1:x,y1:0,x2:x,y2:H,stroke:"rgba(220,80,120,.6)","stroke-width":1.5},gg))}
+  if(!preview&&W===1440){const gm=mk("g",{"pointer-events":"none"},svg);[ML,W-MR_].forEach(x=>mk("line",{x1:x,y1:0,x2:x,y2:H,stroke:"rgba(220,80,120,.45)","stroke-width":1.5,"stroke-dasharray":"8 8"},gm));
+    // centre line (x = 720)
+    mk("line",{x1:W/2,y1:0,x2:W/2,y2:H,stroke:"rgba(43,89,195,.55)","stroke-width":1.5,"stroke-dasharray":"14 6 3 6"},gm);
+    for(let y=200;y<H;y+=900){const t=mk("text",{x:W/2+6,y,"font-family":SANS,"font-size":13,fill:"rgba(43,89,195,.8)"},gm);t.textContent="centre 720"}}
   const navLater=[];
   if(preview&&!window.NAVSVG){const main=document.getElementById("main"),sc=board.clientHeight/H;navOff=Math.max(0,Math.min(H-120,(main.scrollTop-board.offsetTop)/sc))}
   // layers: pebble blobs at the bottom, text always on top (also for anything added later)
@@ -1008,19 +1057,19 @@ function drawNav(e,g){
   const y=e.y+(preview?navOff:0),h=e.h||96;
   mk("rect",{x:e.x,y,width:e.w,height:h,fill:"#FFFFFF","fill-opacity":0.95},g);
   mk("rect",{x:e.x,y:y+h-1,width:e.w,height:1,fill:"#E4DFEA"},g);
-  const items=[...e.links,darkMode?"Light":"Dark"],m=120,slot=(e.w-2*m)/items.length;
+  const items=[...e.links,darkMode?"Light":"Dark"],m=ML,slot=(e.w-2*m)/items.length;
   items.forEach((t,i)=>{const cx=e.x+m+slot*(i+0.5);
     if(t==="Dark"||t==="Light"){const w=92;mk("rect",{x:cx-w/2,y:y+h/2-17,width:w,height:34,rx:17,fill:INK,"data-nav":"Dark",style:preview?"cursor:pointer":null},g);
       mk("circle",{cx:cx-w/2+18,cy:y+h/2,r:7,fill:darkMode?"#F6C9B4":"#C7B8EA","pointer-events":"none"},g);
       const tt=mk("text",{x:cx+9,y:y+h/2+5,"text-anchor":"middle","font-family":APPLE,"font-size":14,"font-weight":500,fill:"#FFFFFF","pointer-events":"none"},g);tt.textContent=t}
-    else{const on=t===e.active;const tt=mk("text",{x:cx,y:y+h/2+5,"text-anchor":"middle","font-family":APPLE,"font-size":15,"font-weight":on?600:400,fill:on?INK:"#8C8B83","data-nav":t,style:preview?"cursor:pointer":null},g);tt.textContent=t;
+    else{const on=t===e.active;const tt=mk("text",{x:cx,y:y+h/2+5,"text-anchor":"middle","font-family":APPLE,"font-size":20,"font-weight":on?600:400,fill:on?INK:"#8C8B83","data-nav":t,style:preview?"cursor:pointer":null},g);tt.textContent=t;
       if(on)mk("rect",{x:cx-t.length*4.2,y:y+h/2+13,width:t.length*8.4,height:2,fill:"url(#gr-dawn)"},g)}})
 }
 function drawFooter(e,g){
   mk("rect",{x:e.x,y:e.y,width:e.w,height:e.h||110,fill:"#FFFFFF"},g);
-  mk("rect",{x:e.x+120,y:e.y,width:e.w-240,height:1,fill:"#D9D3E2"},g);
-  let x=e.x+120;e.links.forEach(t=>{const tt=mk("text",{x,y:e.y+62,"font-family":MONO,"font-size":13,"letter-spacing":"0.08em",fill:INK},g);tt.textContent=t.toUpperCase();x+=t.length*9+48});
-  const n=mk("text",{x:e.x+e.w-120,y:e.y+62,"text-anchor":"end","font-family":fontOf("ui"),"font-size":13,fill:"#8C8B83"},g);n.textContent=e.note}
+  mk("rect",{x:e.x+ML,y:e.y,width:e.w-2*ML,height:1,fill:"#D9D3E2"},g);
+  let x=e.x+ML;e.links.forEach(t=>{const tt=mk("text",{x,y:e.y+62,"font-family":MONO,"font-size":14,fill:INK},g);tt.textContent=t.toUpperCase();x+=t.length*9+48});
+  const n=mk("text",{x:e.x+e.w-ML,y:e.y+62,"text-anchor":"end","font-family":fontOf("ui"),"font-size":13,fill:"#8C8B83"},g);n.textContent=e.note}
 // dark mode: swap the page's neutral colours after drawing
 const DARKMAP={"#ffffff":"#17161C","#1d1c18":"#EEEAF4","#ededE8":"#2A2832","#edede8":"#2A2832","#4a4942":"#BEB8CB","#8c8b83":"#A39DB0","#9a968a":"#8E889B","#9a94a8":"#5D5868","#b9b8b0":"#7A7486","#dedbcf":"#34313C","#dad5cb":"#34313C","#dcd3ec":"#3A3644","#e4dfea":"#2E2B36","#d9d3e2":"#2E2B36","#e9e8e2":"#26242C","#d6d5cd":"#34313C","#6d6c64":"#A39DB0","#7d7590":"#B9B0CC","#bdbbb2":"#4A4654"};
 function darkify(root){root.querySelectorAll("[fill],[stroke]").forEach(n=>["fill","stroke"].forEach(a=>{const v=n.getAttribute(a);if(v&&DARKMAP[v.toLowerCase()])n.setAttribute(a,DARKMAP[v.toLowerCase()])}))}
@@ -1058,8 +1107,10 @@ function drawPoster(e,g,defs){
   const cid="pc-"+e.id,cp=mk("clipPath",{id:cid},defs);mk("rect",{x:e.x,y:e.y,width:e.w,height:e.edge?e.h-45:e.h},cp);
   const body=mk("g",{"clip-path":`url(#${cid})`},g);
   mk("rect",{x:e.x,y:e.y,width:e.w,height:e.h,fill:e.sea},body);
-  const sc=Math.max(e.w/POSTER.W,e.h/POSTER.H),ox=e.x+(e.w-POSTER.W*sc)/2,oy=e.y+(e.h-POSTER.H*sc)/2;
-  mk("path",{d:POSTER.d,transform:`translate(${ox},${oy}) scale(${sc})`,fill:paint(e.land),stroke:e.lines,"stroke-width":1.1/sc,"stroke-linejoin":"round"},body);
+  // the picture stretches with its box: bw/bh = the box size it was first drawn at (cover fit there)
+  if(e.bw==null){e.bw=e.w;e.bh=e.h}
+  const base=Math.max(e.bw/POSTER.W,e.bh/POSTER.H),scx=base*e.w/e.bw,scy=base*e.h/e.bh,ox=e.x+(e.w-POSTER.W*scx)/2,oy=e.y+(e.h-POSTER.H*scy)/2;
+  mk("path",{d:POSTER.d,transform:`translate(${ox},${oy}) scale(${scx},${scy})`,fill:paint(e.land),stroke:e.lines,"stroke-width":1.1,"vector-effect":"non-scaling-stroke","stroke-linejoin":"round"},body);
   if(e.edge){ // soft organic bottom edge into the white page
     const pts=[];const R=rng(31);const n=14;for(let i=0;i<=n;i++){const x=e.x+i/n*e.w;pts.push([x,e.y+e.h-70-R()*90-Math.sin(i*0.9)*30])}
     let d=`M${e.x-10},${e.y+e.h+10}L${e.x-10},${pts[0][1]}`;
@@ -1176,13 +1227,13 @@ function drawWindow(e,g,defs){
 function drawMilestone(e,g){
   const fo=mk("foreignObject",{x:e.x,y:e.y,width:e.w,height:10},g);
   const align=e.dot&&e.dot[0]>e.x+e.w/2?"right":"left";
-  const div=document.createElement("div");div.className="ms";if(e.fontSize)div.style.fontSize=e.fontSize+"px";div.style.textAlign=align;div.setAttribute("xmlns","http://www.w3.org/1999/xhtml");
+  const div=document.createElement("div");div.className="ms";if(e.fontSize){div.style.fontSize=e.fontSize+"px";div.style.lineHeight=e.fontSize>=20?"1.3":"1.4"}div.style.textAlign=align;div.setAttribute("xmlns","http://www.w3.org/1999/xhtml");
   if(e.minH)div.style.minHeight=e.minH+"px";
   if(e.tint){const T=TINTS[(e.tintI||0)%TINTS.length];div.style.cssText+=";border-radius:22px;padding:26px 28px;box-sizing:border-box;background:"+(darkMode?"rgba(255,255,255,.06)":`linear-gradient(135deg,${T[0]} 0%,${T[1]} 100%)`)}
   if(e.glass){div.style.cssText+=";background:"+(darkMode?"rgba(30,28,36,.72)":"rgba(255,255,255,.78)")+";border:1px solid rgba(255,255,255,"+(darkMode?".15":".9")+");border-radius:16px;padding:18px 20px;box-shadow:0 10px 30px rgba(29,28,24,.12)"}
   div.innerHTML=(e.swap
     // event first: big title, then small place · time, then a short description
-    ?(e.title?`<div class="yr" style="font-size:${e.tsize||42}px;line-height:1.08;margin:0 0 10px;text-wrap:${e.nobal?"wrap":"balance"}">${escH(e.title)}</div>`:"")+(e.when?`<div class="when" style="margin:0 0 10px">${escH(e.when)}</div>`:"")
+    ?(e.title?`<div class="yr" style="font-size:20px;line-height:1.3;margin:0 0 10px;text-wrap:${e.nobal?"wrap":"balance"}">${escH(e.title)}</div>`:"")+(e.when?`<div class="when" style="margin:0 0 10px">${escH(e.when)}</div>`:"")
     :(e.year?`<div class="yr">${escH(e.year)}</div>`:"")+(e.when?`<div class="when">${escH(e.when)}</div>`:"")+(e.title?`<div class="tt">${escH(e.title)}</div>`:""))+(e.body||[]).map(p=>`<p>${escH(p)}</p>`).join("");
   fo.appendChild(div);
   const h=Math.max(20,div.offsetHeight||200);fo.setAttribute("height",h+4);
@@ -1211,7 +1262,23 @@ function drawSelection(){
   h.dataset.bx=b.x;h.dataset.by=b.y;
   if(e.type==="band")e.pts.forEach((p,i)=>{mk("circle",{cx:p[0],cy:p[1],r:12,fill:"#fff",stroke:"#2B59C3","stroke-width":3,"data-handle":"node","data-i":i,style:"cursor:grab","pointer-events":"all"},svg)});
   if(e.type==="milestone"&&e.dot)mk("circle",{cx:e.dot[0],cy:e.dot[1],r:14,fill:"rgba(43,89,195,.15)",stroke:"#2B59C3","stroke-width":3,"data-handle":"dot",style:"cursor:grab","pointer-events":"all"},svg);
-}
+  if(e.type==="blob"){const cx=b.x+b.width/2,cy=b.y+b.height/2;
+    [["sx",b.x-pad,cy,"ew-resize"],["sx",b.x+b.width+pad,cy,"ew-resize"],["sy",cx,b.y-pad,"ns-resize"],["sy",cx,b.y+b.height+pad,"ns-resize"]].forEach(([hd,x,y,cur])=>{
+      const r=mk("rect",{x:x-8,y:y-8,width:16,height:16,rx:8,fill:"#2B59C3",stroke:"#fff","stroke-width":2,"data-handle":hd,style:"cursor:"+cur,"pointer-events":"all"},svg);r.dataset.cx=e.x;r.dataset.cy=e.y})}
+  if(e.type==="shape"||e.type==="poster"){const x0=e.x,y0=e.y,x1=e.x+e.w,y1=e.y+e.h,cx=(x0+x1)/2,cy=(y0+y1)/2;
+    [["ew","l",x0,cy,"ew-resize"],["ew","r",x1,cy,"ew-resize"],["ns","t",cx,y0,"ns-resize"],["ns","b",cx,y1,"ns-resize"]].forEach(([hd,side,x,y,cur])=>{
+      const r=mk("rect",{x:x-(hd==="ew"?7:22),y:y-(hd==="ew"?22:7),width:hd==="ew"?14:44,height:hd==="ew"?44:14,rx:7,fill:"#2B59C3",stroke:"#fff","stroke-width":2,"data-handle":hd,style:"cursor:"+cur,"pointer-events":"all"},svg);r.dataset.side=side})}
+  measureGaps(e,b)}
+// distance from the selected element to the nearest thing above and below (blobs, nav and footer ignored)
+function measureGaps(e,b){const top=visTop(e.id)??b.y,bot=visBottom(e.id)??(b.y+b.height);let up=null,dn=null;
+  els.forEach(o=>{if(o.id===e.id||["blob","nav","footer"].includes(o.type))return;if(!svg.querySelector(`g[data-id="${o.id}"]`))return;
+    const ct=visTop(o.id),cb=visBottom(o.id);if(ct==null||cb==null||cb<=ct)return;
+    if(cb<=top+1&&(!up||cb>up.v))up={v:cb,n:o.name||o.id};if(ct>=bot-1&&(!dn||ct<dn.v))dn={v:ct,n:o.name||o.id}});
+  const m=mk("g",{"pointer-events":"none"},svg),x=Math.max(30,b.x-28);
+  const tag=(y,txt)=>{const w=txt.length*8.4+16;mk("rect",{x:x-w/2,y:y-13,width:w,height:24,rx:12,fill:"#E2483D"},m);const t=mk("text",{x,y:y+5,"text-anchor":"middle","font-family":MONO,"font-size":14,"font-weight":700,fill:"#fff"},m);t.textContent=txt};
+  if(up){mk("line",{x1:x,y1:up.v,x2:x,y2:top,stroke:"#E2483D","stroke-width":2,"stroke-dasharray":"6 5"},m);tag((up.v+top)/2,"\u2191 "+Math.round(top-up.v))}
+  if(dn){mk("line",{x1:x,y1:bot,x2:x,y2:dn.v,stroke:"#E2483D","stroke-width":2,"stroke-dasharray":"6 5"},m);tag((bot+dn.v)/2,"\u2193 "+Math.round(dn.v-bot))}
+  const info=mk("text",{x:b.x,y:b.y-14,"font-family":MONO,"font-size":13,fill:"#2B59C3"},m);info.textContent=`x ${Math.round(b.x)}  y ${Math.round(b.y)}  w ${Math.round(b.width)}  h ${Math.round(b.height)}`}
 
 /* ---------- size key per type ---------- */
 const sizeKey=e=>({blob:"w",title:"size",text:"size",meta:"size",line:"w",button:"d",image:"w",band:"w",window:"w",milestone:"w",bubble:"d",map:"w",poster:"w",contours:"rings",form:"w",nav:"w",footer:"w",shape:"w",typer:"size",cta:"w",social:"y"})[e.type];
@@ -1226,6 +1293,8 @@ svg.addEventListener("pointerdown",ev=>{
   if(hd){const e=byId(sel);snap();
     if(hd==="size")drag={mode:"resize",id:sel,bx:+ev.target.dataset.bx,by:+ev.target.dataset.by,start:Math.hypot(p.x-ev.target.dataset.bx,p.y-ev.target.dataset.by),orig:JSON.parse(JSON.stringify(e))};
     else if(hd==="node")drag={mode:"node",id:sel,i:+ev.target.dataset.i};
+    else if(hd==="ew"||hd==="ns"){if(e.type==="poster"&&e.bw==null){e.bw=e.w;e.bh=e.h}drag={mode:hd,side:ev.target.dataset.side,id:sel,px:p.x,py:p.y,orig:JSON.parse(JSON.stringify(e))}}
+    else if(hd==="sx"||hd==="sy"){const c=+ev.target.dataset[hd==="sx"?"cx":"cy"],v=hd==="sx"?p.x:p.y;drag={mode:hd,id:sel,c,start:Math.max(4,Math.abs(v-c)),orig:JSON.parse(JSON.stringify(e))}}
     else drag={mode:"dot",id:sel};
     svg.setPointerCapture(ev.pointerId);return}
   const g=ev.target.closest("g[data-id]");
@@ -1239,17 +1308,22 @@ svg.addEventListener("pointermove",ev=>{
   if(preview){cursor={x:p.x,y:p.y,on:true};const l=ev.target.dataset&&ev.target.dataset.lga||null;
     if(l!==hoverLGA){hoverLGA=l;if(!raf){hs={};if(l)hs[l]=1.07;render()}}updateGlass(ev);return}
   if(!drag)return;const e=byId(drag.id);
-  const sn=v=>showGrid?Math.round(v/8)*8:Math.round(v);
+  const sn=v=>showGrid?Math.round(v/10)*10:Math.round(v);
   if(drag.mode==="move"){let dx=p.x-drag.px,dy=p.y-drag.py;
     if(e.type==="band")e.pts=drag.orig.pts.map(q=>[sn(q[0]+dx),sn(q[1]+dy)]);
     else{e.x=sn(drag.orig.x+dx);e.y=sn(drag.orig.y+dy)}
     drag.moved=true}
   else if(drag.mode==="node")e.pts[drag.i]=[sn(p.x),sn(p.y)];
   else if(drag.mode==="dot")e.dot=[sn(p.x),sn(p.y)];
+  else if(drag.mode==="ew"){const o=drag.orig,d=p.x-drag.px;
+    if(drag.side==="r")e.w=Math.max(40,sn(o.w+d));else{const nx=Math.min(o.x+o.w-40,sn(o.x+d));e.x=nx;e.w=o.x+o.w-nx}}
+  else if(drag.mode==="ns"){const o=drag.orig,d=p.y-drag.py;
+    if(drag.side==="b")e.h=Math.max(40,sn(o.h+d));else{const ny=Math.min(o.y+o.h-40,sn(o.y+d));e.y=ny;e.h=o.y+o.h-ny}}
+  else if(drag.mode==="sx"||drag.mode==="sy"){const v=drag.mode==="sx"?p.x:p.y,k=Math.max(0.15,Math.min(6,Math.abs(v-drag.c)/drag.start));e[drag.mode]=Math.round((drag.orig[drag.mode]||1)*k*100)/100}
   else{const k=sizeKey(e);const ratio=Math.max(0.1,Math.hypot(p.x-drag.bx,p.y-drag.by)/drag.start);
     e[k]=Math.max(4,Math.round(drag.orig[k]*ratio));
     if(e.type==="meta")e.gap=Math.round(drag.orig.gap*ratio);
-    if(e.type==="window"||e.type==="shape")e.h=Math.round(drag.orig.h*ratio)}
+    if(e.type==="window"||e.type==="shape"||e.type==="poster")e.h=Math.round(drag.orig.h*ratio)}
   render();
 });
 svg.addEventListener("pointerup",()=>{if(!drag)return;if(drag.mode==="move"&&!drag.moved)S().hist.pop();drag=null;save();renderAll()});
@@ -1391,7 +1465,7 @@ function renderInspector(){
     h+=colorField("fill","Colour",e.fill||Y);
     if(e.shape==="blob"||e.shape==="clover")h+=`<div class="actions" style="margin-bottom:8px"><button class="btn" id="reshape">New shape</button></div>`;
     h+=field("Float",`<input type="checkbox" id="f-float" data-k="float" ${e.float?"checked":""}> <span class="hint">in preview</span>`)}
-  if(e.type==="shape"){h+=field("Height",num("h",e.h))+colorField("fill","Colour",e.fill)+field("Soft edges",num("soft",e.soft||0))+field("Fade top",`<input type="checkbox" id="f-fadeTop" data-k="fadeTop" ${e.fadeTop?"checked":""}>`)+field("Fade sides",`<input type="checkbox" id="f-fadeSides" data-k="fadeSides" ${e.fadeSides?"checked":""}>`)+`<p class="hint">Your hand-drawn road. Change Width and Height to stretch it.</p>`}
+  if(e.type==="shape"){h+=field("Height",num("h",e.h))+colorField("fill","Colour",e.fill)+field("Soft edges",num("soft",e.soft||0))+field("Fade top",`<input type="checkbox" id="f-fadeTop" data-k="fadeTop" ${e.fadeTop?"checked":""}>`)+field("Fade sides",`<input type="checkbox" id="f-fadeSides" data-k="fadeSides" ${e.fadeSides?"checked":""}>`)+`<p class="hint">Your hand-drawn road. Drag the blue side handles (or type Width / Height) to squeeze or stretch it.</p>`}
   if(e.type==="cloud"){h+=field("Height",num("h",e.h))+field("Words",`<textarea id="f-words" data-k="words">${esc((e.words||[]).map(w=>w[0]+" | "+w[1]).join("\n"))}</textarea>`)+field("Fill box",`<input type="checkbox" id="f-fit" data-k="fit" ${e.fit?"checked":""}>`)+`<p class="hint">One per line: word | size. Bigger size = more important. Fill box stretches the cloud to the box width.</p>`}
   if(e.type==="contours"){h+=field("Height",num("h",e.h))+field("Colour",`<input type="color" id="f-stroke" data-k="stroke" value="${e.stroke}">`)+`<div class="actions" style="margin-bottom:8px"><button class="btn" id="reshape">New lines</button></div>`}
   if(e.type==="form"){h+=field("Fields",`<textarea id="f-fields" data-k="fields">${esc(e.fields.join("\n"))}</textarea>`)+field("Button",`<input type="text" id="f-button" data-k="button" value="${esc(e.button)}">`)+colorField("accent","Button dot",e.accent)}
@@ -1435,7 +1509,8 @@ function renderInspector(){
   if(e.type==="button")h+=colorField("fill","Circle",e.fill)+colorField("iconFill","Arrow",e.iconFill);
   h+=`</section><section><p class="h">Arrange</p><div class="actions">
     <button class="btn" id="front">To front</button><button class="btn" id="fwd">Forward</button><button class="btn" id="back">Back</button>
-    <button class="btn" id="dup">Duplicate</button><button class="btn" id="del">Delete</button></div></section>`;
+    <button class="btn" id="dup">Duplicate</button><button class="btn" id="del">Delete</button>
+    <button class="btn" id="centreX">Centre left–right 左右居中</button>${e.type==="shape"?`<button class="btn" id="fitRoad">Fit labels to road 标签跟路</button><span style="display:inline-flex;gap:6px;align-items:center;margin-top:6px">Label gap 标签间距 <input type="number" id="labGap" value="100" style="width:70px"> <button class="btn" id="spaceLab">Apply 应用</button></span>`:""}</div></section>`;
   insp.innerHTML=h;
   insp.querySelectorAll("select[data-k]").forEach(s=>s.value=String(e[s.dataset.k]));
   insp.querySelectorAll("[data-k]").forEach(inp=>{
@@ -1459,6 +1534,9 @@ function renderInspector(){
   on("delPt",()=>{if(e.pts.length<=2)return toast("A ribbon needs at least 2 points");snap();e.pts.pop();save();renderAll()});
   on("addPhoto",()=>document.getElementById("photoFile").click());
   on("clearPhoto",()=>{snap();e.src=null;save();renderAll()});
+  on("centreX",()=>{snap();centreX(e);save();renderAll()});
+  on("spaceLab",()=>{const g=+document.getElementById("labGap").value||100;snap();spaceLabels(g);save();renderAll();toast("Labels now "+g+" apart")});
+  on("fitRoad",()=>{snap();fitRoadLabels(e);save();renderAll();toast("Labels moved to the road")});
   on("front",()=>{snap();els.splice(els.indexOf(e),1);els.push(e);save();renderAll()});
   on("fwd",()=>{snap();const i=els.indexOf(e);if(i<els.length-1){els.splice(i,1);els.splice(i+1,0,e)}save();renderAll()});
   on("back",()=>{snap();const i=els.indexOf(e);if(i>0){els.splice(i,1);els.splice(i-1,0,e)}save();renderAll()});
@@ -1561,8 +1639,192 @@ document.getElementById("import").onclick=()=>{
 
 function toast(t){const d=document.createElement("div");d.className="toast";d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2400)}
 
+/* ---------- vertical rhythm: every section title sits 300 below the end of the section above ---------- */
+const SGAP=300;
+const DEL_LABELS=["p1aboutLabel","p1eduLabel","p1skillsLabel","topicsLabel"];
+function cvK(){const r=svg.getBoundingClientRect();return {k:r.height/P().H,top:r.top}}
+function bb(id){const g=svg.querySelector(`g[data-id="${id}"]`);if(!g)return null;try{const b=g.getBBox();return {top:b.y,bottom:b.y+b.height}}catch(_){return null}}
+function visTop(id){const e=els.find(x=>x.id===id);if(!e)return null;
+  if(e.type==="text")return e.y-e.size*0.72;
+  if(e.type==="title")return e.y-e.size*0.72;
+  if(e.type==="line")return e.y-(e.sw||4)/2;
+  if(e.type==="milestone"){const fo=svg.querySelector(`g[data-id="${id}"] foreignObject`);const d=fo&&fo.firstChild;const f=d&&d.firstElementChild;
+    if(f){const {k,top}=cvK();return (f.getBoundingClientRect().top-top)/k}return e.y}
+  const b=bb(id);return b?b.top:e.y}
+function visBottom(id){const e=els.find(x=>x.id===id);if(!e)return null;
+  if(e.type==="text"||e.type==="title")return e.y+(e.type==="title"?(e.lines.length-1)*e.size*(e.lh||1):0)+e.size*0.2;
+  if(e.type==="milestone"){const fo=svg.querySelector(`g[data-id="${id}"] foreignObject`);const d=fo&&fo.firstChild;if(!d)return e.y;const {k,top}=cvK();
+    if(e.tint||e.glass)return (d.getBoundingClientRect().bottom-top)/k;
+    const last=d.lastElementChild;if(!last)return (d.getBoundingClientRect().bottom-top)/k;
+    const r=document.createRange();r.selectNodeContents(last);const rs=[...r.getClientRects()];const bt=rs.length?Math.max(...rs.map(x=>x.bottom)):last.getBoundingClientRect().bottom;return (bt-top)/k}
+  if(e.type==="map"&&e.h)return e.y+e.h;
+  if(e.type==="poster")return e.y+e.h;
+  if(e.type==="image")return e.y+e.w*e.ratio;
+  if(e.type==="window")return e.y+e.h;
+  const b=bb(id);return b?b.bottom:e.y}
+function shiftBelow(limit,dy,keep){if(!dy)return;els.forEach(e=>{if(e.type==="nav"||e.type==="footer"||(keep&&keep.includes(e.id))||typeof e.y!=="number")return;
+    if(e.y>limit){e.y+=dy;if(e.dot)e.dot=[e.dot[0],e.dot[1]+dy]}});
+  PAGES[cur].H+=dy;els.filter(e=>e.type==="footer").forEach(f=>f.y=PAGES[cur].H-110)}
+function rule(anchorBottom,groupIds,gap){const tops=groupIds.map(visTop).filter(v=>v!=null);if(!tops.length||anchorBottom==null)return;
+  const dy=Math.round(anchorBottom+gap-Math.min(...tops));shiftBelow(anchorBottom,dy);renderAll()}
+function maxBottom(ids){const v=ids.map(visBottom).filter(x=>x!=null);return v.length?Math.max(...v):null}
+function applySpacing(){
+  for(let i=els.length-1;i>=0;i--)if(DEL_LABELS.includes(els[i].id))els.splice(i,1);
+  if(cur==="p1"){const pt=els.find(e=>e.id==="introPortrait"),cr=els.find(e=>e.id==="introCredit");if(pt&&cr){cr.anchor="end";cr.x=pt.x+pt.w}}
+  renderAll();
+  if(cur==="p1"){
+    // Hi, I'm Lia: its current gap below the hero + 300
+    const heroB=visBottom("title");shiftBelow(heroB,SGAP);renderAll();
+    rule(visBottom("introCredit"),["p1aboutTitle","p1about"],SGAP);
+    rule(visBottom("p1about"),["p1eduTitle"],SGAP);
+    rule(maxBottom(["p1edu1","p1edu2"]),["p1projTitle"],SGAP);
+    rule(visBottom("hlKilImg0"),["p1skillsTitle"],SGAP);
+  }
+  if(cur==="p2"){
+    const road=els.find(e=>e.id==="liaRoadImg"||e.id==="liaRoad");
+    if(road){const tb=visBottom("p2title"),rt=road.y,dy=Math.round(tb+SGAP-rt);
+      els.forEach(e=>{if(["p2title","p2blob","p2rule","p2num"].includes(e.id)||e.type==="nav"||e.type==="footer"||typeof e.y!=="number")return;if(e.y>tb){e.y+=dy;if(e.dot)e.dot=[e.dot[0],e.dot[1]+dy]}});
+      PAGES.p2.H+=dy;els.filter(e=>e.type==="footer").forEach(f=>f.y=PAGES.p2.H-110);renderAll();
+      const rb=road.type==="image"?road.y+road.w*road.ratio:road.y+road.h;rule(rb,["p2aboutHead"],SGAP)}
+  }
+  if(cur==="p3"){
+    rule(visBottom("p3poster"),["topicsTitle"],SGAP);
+    const bubs=els.filter(e=>e.type==="bubble").map(e=>e.id);
+    rule(maxBottom(bubs),["p3sydRule","p3sydTitle","p3sydIntro"],SGAP);
+    rule(visBottom("p3sydMap"),["p3athRule","p3athTitle","p3athIntro"],SGAP);
+    rule(visBottom("p3athMap"),["p3cmbRule","p3cmbTitle","p3cmbIntro"],SGAP);
+  }
+  layoutBoard();render();try{__LS.setItem("lia-H-"+cur,PAGES[cur].H)}catch(_){}}
+
+/* ---------- centre an element left–right (only moves it) ---------- */
+function centreX(e){if(e.type==="nav"||e.type==="footer")return;const W=P().W;
+  if(e.type==="shape"||e.type==="poster"||e.type==="map"||e.type==="window"||e.type==="milestone"||e.type==="image"&&e.w){e.x=Math.round(W/2-e.w/2);return}
+  const g=svg.querySelector(`g[data-id="${e.id}"]`);if(!g)return;let b;try{b=g.getBBox()}catch(_){return}
+  const dx=Math.round(W/2-(b.x+b.width/2));if(e.type==="band")e.pts=e.pts.map(q=>[q[0]+dx,q[1]]);else e.x+=dx;if(e.dot)e.dot=[e.dot[0]+dx,e.dot[1]]}
+/* ---------- move the road's labels so they follow the road's size and position (sizes never change) ----------
+   ref = the road box the labels were placed for. Dots stay on the same spot of the road; each label keeps its
+   distance to its dot vertically; photo windows / side blobs move up or down with the road */
+const ROAD_REF0={x:70,y:412,w:1300,h:3600,anchor:"tGenesis",ax:659,ay:742};
+function roadRef(r){if(r.ref)return r.ref;const a=byId(ROAD_REF0.anchor);const R=ROAD_REF0;
+  if(a&&a.dot)return {x:a.dot[0]-(R.ax-R.x),y:a.dot[1]-(R.ay-R.y),w:R.w,h:R.h};return {x:R.x,y:R.y,w:R.w,h:R.h}}
+function fitRoadLabels(r){const ref=roadRef(r);
+  const mx=x=>r.x+(x-ref.x)/ref.w*r.w, my=y=>r.y+(y-ref.y)/ref.h*r.h;
+  els.forEach(e=>{if(e===r||e.type==="nav"||e.type==="footer"||typeof e.y!=="number")return;
+    if(e.type==="milestone"&&e.dot){const nx=Math.round(mx(e.dot[0])),ny=Math.round(my(e.dot[1]));e.y+=ny-e.dot[1];e.dot=[nx,ny];return}
+    const tied=/^(win-|lobe-|p2drop)/.test(e.id);if(!tied)return;
+    if(e.type==="window"){const cy=e.y+e.h/2,cx=e.x+e.w/2;e.y=Math.round(my(cy)-e.h/2);if(e.x>=300&&e.x+e.w<=1200)e.x=Math.round(mx(cx)-e.w/2);return}
+    e.y=Math.round(my(e.y))});
+  r.ref={x:r.x,y:r.y,w:r.w,h:r.h}}
+/* ---------- equal vertical spacing for the road's labels ----------
+   first label keeps its Y; every next label box starts GAP below the bottom of the one above; its dot slides along to stay on the road;
+   the photo window beside a label moves with it. Font and picture sizes never change */
+function roadXAt(r,Y,near){const g=svg.querySelector(`g[data-id="${r.id}"]`);if(!g)return null;const ps=g.querySelectorAll("path");const path=ps[ps.length-1];if(!path||!path.isPointInFill)return null;
+  const sx=r.w/LIA_ROAD.vw,sy=r.h/LIA_ROAD.vh,ly=(Y-r.y)/sy;const runs=[];let a=null;
+  for(let X=r.x-4;X<=r.x+r.w+4;X+=3){let inn=false;try{inn=path.isPointInFill(new DOMPoint((X-r.x)/sx,ly))}catch(_){}
+    if(inn&&a==null)a=X;if(!inn&&a!=null){runs.push([a,X]);a=null}}
+  if(a!=null)runs.push([a,r.x+r.w]);if(!runs.length)return null;
+  let best=null,bd=1e9;runs.forEach(([u,v])=>{const c=(u+v)/2,d=Math.abs(c-near);if(d<bd){bd=d;best=c}});return Math.round(best)}
+function spaceLabels(gap){const r=els.find(e=>e.type==="shape");renderAll();
+  const ms=els.filter(e=>e.type==="milestone"&&e.dot).sort((a,b)=>a.y-b.y);if(!ms.length)return;
+  const wins=els.filter(e=>e.type==="window");const pair=new Map();
+  wins.forEach(w=>{const c=w.y+w.h/2;let best=null,bd=1e9;ms.forEach(m=>{const d=Math.abs(m.dot[1]-c);if(d<bd){bd=d;best=m}});if(best&&bd<200)pair.set(w,best)});
+  const dys=new Map();let ny=ms[0].y;
+  // gap = from the bottom of one label box to the top of the next
+  const hOf=m=>{const fo=svg.querySelector(`g[data-id="${m.id}"] foreignObject`);return fo?+fo.getAttribute("height"):100};
+  const hs=new Map(ms.map(m=>[m,hOf(m)]));
+  ms.forEach((m,i)=>{if(i){const pm=ms[i-1];ny=pm.y+hs.get(pm)+gap}const dy=ny-m.y;dys.set(m,dy);m.y=ny;const dyy=m.dot[1]+dy;const nx=r?roadXAt(r,dyy,m.dot[0]):null;m.dot=[nx!=null?nx:m.dot[0],dyy]});
+  pair.forEach((m,w)=>{w.y+=dys.get(m)});
+  if(r)r.ref={x:r.x,y:r.y,w:r.w,h:r.h}}
+/* ---------- Apple rhythm (measured on apple.com/au/mac at 1440 wide) ----------
+   side margin 90 · column gutter 20 · section gap 288 (end of a section -> next title)
+   title -> its content 48 · rows inside a section 144 · maps keep their size, only move */
+const AP={M:90,R:1350,GUT:20,SEC:288,HEAD:48,ROW:144,END:144};
+function apTop(id){const e=els.find(x=>x.id===id);if(!e)return null;if(["map","poster","image","window"].includes(e.type))return e.y;if(e.type==="logo")return e.y;return visTop(id)}
+function apBot(id){const e=els.find(x=>x.id===id);if(!e)return null;if(e.type==="logo")return e.y+e.h;return visBottom(id)}
+function apHoriz(){
+  els.forEach(e=>{if(typeof e.x!=="number"||e.type==="nav"||e.type==="footer")return;
+    if(e.type==="line"){const w=e.w||0;if(Math.abs(e.x-120)<8&&Math.abs(w-1200)<8){e.x=AP.M;e.w=1260}else if(Math.abs(e.x+w-1320)<8)e.x+=30;else if(Math.abs(e.x-120)<8)e.x=AP.M;return}
+    if(e.type==="map"){if(Math.abs(e.x-120)<8)e.x=AP.M;return}
+    if((e.type==="image"||e.type==="window")&&Math.abs(e.w-564)<4){const right=e.x>300;if(e.type==="window"&&e.h)e.h=Math.round(e.h*620/e.w);e.w=620;e.x=right?AP.R-620:AP.M}
+    if((e.type==="button"||e.type==="cta")&&Math.abs(e.x-120)<8)e.x=AP.M;
+    if(e.type==="text"&&(e.anchor==="end")&&Math.abs(e.x-1320)<8)e.x=AP.R;
+    if(e.type==="meta"&&Math.abs(e.x-1320)<8)e.x=AP.R});
+  if(cur==="p1"){const a=byId("p1edu1"),b=byId("p1edu2");if(a&&b){a.x=AP.M;a.w=620;b.x=AP.M+620+AP.GUT;b.w=620}
+    els.filter(e=>e.type==="logo").forEach(e=>{const c=Math.max(0,Math.min(3,Math.round((e.x-600)/200)));e.x=AP.R-(4-c)*176-(3-c)*AP.GUT+Math.round((176-e.w)/2);});
+    const pt=byId("introPortrait"),cr=byId("introCredit");if(pt){pt.x=AP.R-pt.w;if(cr){cr.anchor="end";cr.x=AP.R}}
+}
+}
+function apBands(bands){
+  renderAll();
+  const ids=new Set(bands.flatMap(b=>b.ids));
+  const rng_=bands.map(b=>{const t=b.ids.map(apTop).filter(v=>v!=null),bt=b.ids.map(apBot).filter(v=>v!=null);return t.length?{t:Math.min(...t),b:Math.max(...bt)}:null});
+  const owner={};
+  els.forEach(e=>{if(ids.has(e.id)||e.type==="nav"||e.type==="footer"||typeof e.y!=="number")return;const q=bb(e.id);if(!q)return;const c=(q.top+q.bottom)/2;
+    let best=-1,bd=1e9;rng_.forEach((r,i)=>{if(!r)return;const d=c<r.t?r.t-c:c>r.b?c-r.b:0;if(d<bd){bd=d;best=i}});owner[e.id]=best});
+  bands.forEach((band,i)=>{if(band.fixed||!rng_[i])return;
+    const ref=(band.after||bands[i-1].ids).map(apBot).filter(v=>v!=null);const top=band.ids.map(apTop).filter(v=>v!=null);if(!ref.length||!top.length)return;
+    const dy=Math.round(Math.max(...ref)+band.gap-Math.min(...top));if(!dy)return;
+    els.forEach(e=>{if(band.ids.includes(e.id)||owner[e.id]===i){e.y+=dy;if(e.dot)e.dot=[e.dot[0],e.dot[1]+dy]}});renderAll()});
+  const last=bands[bands.length-1].ids.map(apBot).filter(v=>v!=null);
+  if(last.length){PAGES[cur].H=Math.round(Math.max(...last)+AP.END+110);els.filter(e=>e.type==="footer").forEach(f=>f.y=PAGES[cur].H-110)}}
+function applyApple(){
+  // remember where the text sat so its blob can follow it sideways
+  [["hlPedBlob","hlPed"],["hlBlkBlob","hlBlk"],["hlWinBlob","hlWin"],["hlKilBlob","hlKil"],["p1aboutBlob","p1aboutTitle"]].forEach(([bi,ti])=>{const B=byId(bi),t=byId(ti);if(B&&t)B._tx=t.x});
+  apHoriz();renderAll();
+  // enforceMargins (run by render) has now moved the 120 / 1320 edges to 90 / 1350
+  [["hlPedBlob","hlPed"],["hlBlkBlob","hlBlk"],["hlWinBlob","hlWin"],["hlKilBlob","hlKil"],["p1aboutBlob","p1aboutTitle"]].forEach(([bi,ti])=>{const B=byId(bi),t=byId(ti);if(B&&t&&B._tx!=null){B.x+=t.x-B._tx;delete B._tx}});
+  const has=id=>!!byId(id),pick=a=>a.filter(has);
+  if(cur==="p1"){
+    // stacked pictures in a row: 20 apart
+    [["hlPedNet","hlPedChart"],["hlWinImg0","hlWinImg1"]].forEach(([a,b])=>{const A=byId(a),B=byId(b);if(A&&B){renderAll();B.y=Math.round(apBot(a)+AP.GUT)}});
+    const rows=[0,1,2,3,4].map(i=>pick(["p1skt"+i])).filter(r=>r.length);
+    const logoRow=id=>{const t=byId(id);return els.filter(e=>e.type==="logo"&&Math.abs(e.y-(t.y-14))<60).map(e=>e.id)};
+    const B=[{ids:pick(["title","meta","num"]),fixed:true},
+      {ids:pick(["introHi","introPortrait","introCredit"]),gap:AP.SEC},
+      {ids:pick(["introType"]),after:["introHi"],gap:24},
+      {ids:pick(["introText"]),gap:18},
+      {ids:pick(["introMeta"]),gap:18},
+      {ids:pick(["introSocial"]),gap:18},
+      {ids:pick(["introRule"]),gap:32},
+      {ids:pick(["p1aboutTitle","p1about"]),after:pick(["introRule","introCredit","introPortrait"]),gap:AP.SEC},
+      {ids:pick(["p1eduTitle"]),gap:AP.SEC},
+      {ids:pick(["p1edu1","p1edu2"]),gap:AP.HEAD},
+      {ids:pick(["p1projTitle"]),gap:AP.SEC},
+      // each project row counts its blob as part of the card, so blobs never cover a title or a picture
+      {ids:pick(["hlPedBlob","hlPed","hlPedNet","hlPedChart"]),gap:AP.HEAD},
+      {ids:pick(["hlBlkBlob","hlBlk","hlBlkImg0"]),gap:AP.GUT},
+      {ids:pick(["hlWinBlob","hlWin","hlWinImg0","hlWinImg1"]),gap:AP.GUT},
+      {ids:pick(["hlKilBlob","hlKil","hlKilImg0"]),gap:AP.GUT},
+      {ids:pick(["p1skillsTitle"]),after:pick(["hlKil","hlKilImg0"]),gap:AP.SEC}];
+    rows.forEach((r,i)=>B.push({ids:[...r,...logoRow(r[0])],gap:i?AP.GUT:AP.HEAD}));
+    apBands(B.filter(b=>b.ids.length))}
+  if(cur==="p2"){const road=has("liaRoadImg")?"liaRoadImg":"liaRoad";
+    apBands([{ids:pick(["p2title"]),fixed:true},{ids:[road],gap:AP.HEAD},{ids:pick(["p2aboutHead"]),gap:AP.SEC},{ids:pick(["p2cloud"]),gap:AP.HEAD}])}
+  if(cur==="p3"){const bubs=els.filter(e=>e.type==="bubble").map(e=>e.id);
+    apBands([{ids:pick(["p3poster","p3title","p3intro","p3btn"]),fixed:true},{ids:pick(["topicsTitle"]),after:["p3poster"],gap:AP.SEC},{ids:bubs,gap:AP.HEAD},
+      {ids:pick(["p3sydRule","p3sydTitle","p3sydIntro"]),gap:AP.SEC},{ids:pick(["p3sydMap"]),gap:AP.HEAD},
+      {ids:pick(["p3athRule","p3athTitle","p3athIntro"]),gap:AP.SEC},{ids:pick(["p3athMap"]),gap:AP.HEAD},
+      {ids:pick(["p3cmbRule","p3cmbTitle","p3cmbIntro"]),gap:AP.SEC},{ids:pick(["p3cmbMap"]),gap:AP.HEAD}])}
+  if(cur==="pb")apBands([{ids:pick(["pbtitle"]),fixed:true},{ids:pick(["pblabel"]),gap:AP.HEAD},
+      {ids:pick(["pbline0","pbpost1","pbdate1","pbline1","pbpost2","pbdate2","pbline2"]),gap:AP.GUT}]);
+  if(cur==="p4")apBands([{ids:pick(["p4title","p4form","p4note"]),fixed:true},{ids:pick(["p4rule2","p4find"]),gap:AP.SEC},{ids:pick(["p4links"]),gap:AP.HEAD}]);
+  layoutBoard();render();try{__LS.setItem("lia-H-"+cur,PAGES[cur].H)}catch(_){}}
 renderAll();
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>render());
+// one-time: bring saved layouts in line with the website (300 spacing, small labels removed)
+(async()=>{if(document.fonts&&document.fonts.ready)await document.fonts.ready;const back=cur;let did=false;
+  for(const k of ["p1","p2","p3"]){let f=false;try{f=__LS.getItem("lia-space300-"+k)==="1"}catch(_){}if(f)continue;
+    cur=k;els=S().els;sel=null;applySpacing();save();did=true;try{__LS.setItem("lia-space300-"+k,"1")}catch(_){}}
+  for(const k of ["p1","p2","p3","pb","p4"]){let f=false;try{f=__LS.getItem("lia-apple-"+k)==="1"}catch(_){}if(f)continue;
+    cur=k;els=S().els;sel=null;renderAll();applyApple();save();did=true;try{__LS.setItem("lia-apple-"+k,"1")}catch(_){}}
+  {let f=false;try{f=__LS.getItem("lia-roadfit-p2")==="1"}catch(_){}
+   if(!f){cur="p2";els=S().els;sel=null;renderAll();const r=els.find(e=>e.type==="shape");
+     if(r){const ref=roadRef(r);r.ref=ref;r.x=Math.round(P().W/2-r.w/2);fitRoadLabels(r);save();did=true}
+     try{__LS.setItem("lia-roadfit-p2","1")}catch(_){}}}
+  {let f=false;try{f=__LS.getItem("lia-labels200-p2")==="1"}catch(_){}
+   if(!f){cur="p2";els=S().els;sel=null;spaceLabels(200);save();did=true;try{__LS.setItem("lia-labels200-p2","1")}catch(_){}}}
+  if(did){cur=back;els=S().els;renderAll()}else render();
+  // migrations above that changed a page count as this device's newest edit
+  BOOTING=false})();
 
 /* ================= live site ================= */
 const SITE_URL={Home:"index.html",About:"about.html",Projects:"projects.html",Blog:"blog.html",Contact:"contact.html"};
@@ -1739,67 +2001,13 @@ function regionCards(){if(document.getElementById("rcard"))return;const card=doc
     const a=e.target.closest&&e.target.closest(".lgapic.has");if(a&&a.dataset.region==="cmb"){const pn=a.parentNode.querySelector(".rpin");show("cmb",a.dataset.area,pn?pn.querySelector("circle:nth-child(2)"):a)}});
   svg.addEventListener("pointerout",e=>{const t=e.target.closest&&e.target.closest(".rpin,.lgapic.has");if(t&&!(e.relatedTarget&&card.contains(e.relatedTarget)))hide()});
   document.getElementById("main").addEventListener("scroll",()=>{if(card.classList.contains("on")){card.classList.remove("on");cur=null}},{passive:true})}
-const ROAD_IMG={"x": 75, "y": 789, "w": 1289, "h": 3573, "src": "img/road-about.webp"};window.ROAD_IMG=ROAD_IMG;
+const ROAD_IMG={"x": 333, "y": 607, "w": 774, "h": 1789, "src": "img/road-about-v2.webp"};window.ROAD_IMG=ROAD_IMG;
 
-/* ---------- vertical rhythm: every section title sits 300 below the end of the section above ---------- */
-const SGAP=300;
-const DEL_LABELS=["p1aboutLabel","p1eduLabel","p1skillsLabel","topicsLabel"];
-function cvK(){const r=svg.getBoundingClientRect();return {k:r.height/P().H,top:r.top}}
-function bb(id){const g=svg.querySelector(`g[data-id="${id}"]`);if(!g)return null;try{const b=g.getBBox();return {top:b.y,bottom:b.y+b.height}}catch(_){return null}}
-function visTop(id){const e=els.find(x=>x.id===id);if(!e)return null;
-  if(e.type==="text")return e.y-e.size*0.72;
-  if(e.type==="title")return e.y-e.size*0.72;
-  if(e.type==="line")return e.y-(e.sw||4)/2;
-  if(e.type==="milestone"){const fo=svg.querySelector(`g[data-id="${id}"] foreignObject`);const d=fo&&fo.firstChild;const f=d&&d.firstElementChild;
-    if(f){const {k,top}=cvK();return (f.getBoundingClientRect().top-top)/k}return e.y}
-  const b=bb(id);return b?b.top:e.y}
-function visBottom(id){const e=els.find(x=>x.id===id);if(!e)return null;
-  if(e.type==="text"||e.type==="title")return e.y+(e.type==="title"?(e.lines.length-1)*e.size*(e.lh||1):0)+e.size*0.2;
-  if(e.type==="milestone"){const fo=svg.querySelector(`g[data-id="${id}"] foreignObject`);const d=fo&&fo.firstChild;if(!d)return e.y;const {k,top}=cvK();
-    if(e.tint||e.glass)return (d.getBoundingClientRect().bottom-top)/k;
-    const last=d.lastElementChild;if(!last)return (d.getBoundingClientRect().bottom-top)/k;
-    const r=document.createRange();r.selectNodeContents(last);const rs=[...r.getClientRects()];const bt=rs.length?Math.max(...rs.map(x=>x.bottom)):last.getBoundingClientRect().bottom;return (bt-top)/k}
-  if(e.type==="map"&&e.h)return e.y+e.h;
-  if(e.type==="poster")return e.y+e.h;
-  if(e.type==="image")return e.y+e.w*e.ratio;
-  if(e.type==="window")return e.y+e.h;
-  const b=bb(id);return b?b.bottom:e.y}
-function shiftBelow(limit,dy,keep){if(!dy)return;els.forEach(e=>{if(e.type==="nav"||e.type==="footer"||(keep&&keep.includes(e.id))||typeof e.y!=="number")return;
-    if(e.y>limit){e.y+=dy;if(e.dot)e.dot=[e.dot[0],e.dot[1]+dy]}});
-  PAGES[cur].H+=dy;els.filter(e=>e.type==="footer").forEach(f=>f.y=PAGES[cur].H-110)}
-function rule(anchorBottom,groupIds,gap){const tops=groupIds.map(visTop).filter(v=>v!=null);if(!tops.length||anchorBottom==null)return;
-  const dy=Math.round(anchorBottom+gap-Math.min(...tops));shiftBelow(anchorBottom,dy);renderAll()}
-function maxBottom(ids){const v=ids.map(visBottom).filter(x=>x!=null);return v.length?Math.max(...v):null}
-function applySpacing(){
-  for(let i=els.length-1;i>=0;i--)if(DEL_LABELS.includes(els[i].id))els.splice(i,1);
-  if(cur==="p1"){const pt=els.find(e=>e.id==="introPortrait"),cr=els.find(e=>e.id==="introCredit");if(pt&&cr){cr.anchor="end";cr.x=pt.x+pt.w}}
-  renderAll();
-  if(cur==="p1"){
-    // Hi, I'm Lia: its current gap below the hero + 300
-    const heroB=visBottom("title");shiftBelow(heroB,SGAP);renderAll();
-    rule(visBottom("introCredit"),["p1aboutTitle","p1about"],SGAP);
-    rule(visBottom("p1about"),["p1eduTitle"],SGAP);
-    rule(maxBottom(["p1edu1","p1edu2"]),["p1projTitle"],SGAP);
-    rule(visBottom("hlKilImg0"),["p1skillsTitle"],SGAP);
-  }
-  if(cur==="p2"){
-    const road=els.find(e=>e.id==="liaRoadImg"||e.id==="liaRoad");
-    if(road){const tb=visBottom("p2title"),rt=road.y,dy=Math.round(tb+SGAP-rt);
-      els.forEach(e=>{if(["p2title","p2blob","p2rule","p2num"].includes(e.id)||e.type==="nav"||e.type==="footer"||typeof e.y!=="number")return;if(e.y>tb){e.y+=dy;if(e.dot)e.dot=[e.dot[0],e.dot[1]+dy]}});
-      PAGES.p2.H+=dy;els.filter(e=>e.type==="footer").forEach(f=>f.y=PAGES.p2.H-110);renderAll();
-      const rb=road.type==="image"?road.y+road.w*road.ratio:road.y+road.h;rule(rb,["p2aboutHead"],SGAP)}
-  }
-  if(cur==="p3"){
-    rule(visBottom("p3poster"),["topicsTitle"],SGAP);
-    const bubs=els.filter(e=>e.type==="bubble").map(e=>e.id);
-    rule(maxBottom(bubs),["p3sydRule","p3sydTitle","p3sydIntro"],SGAP);
-    rule(visBottom("p3sydMap"),["p3athRule","p3athTitle","p3athIntro"],SGAP);
-    rule(visBottom("p3athMap"),["p3cmbRule","p3cmbTitle","p3cmbIntro"],SGAP);
-  }
-  layoutBoard();render()}
+/* spacing helpers (visTop, visBottom, DEL_LABELS, applySpacing) now come from the editor itself */
 window.__site={visBottom,visTop,get els(){return els},P,REGIONS,get cur(){return cur},drawMap,mk,svg};
 (function startSite(){
   cur=window.SITE_PAGE&&PAGES[window.SITE_PAGE]?window.SITE_PAGE:"p1";
+  S().els.forEach(e=>{if(e.src==="__local__"){const d=PAGES[cur].def().find(x=>x.id===e.id);e.src=d?d.src:(e.id==="introPortrait"?PORTRAIT:null)}}); // pictures kept only in the editor's browser
   S().els=S().els.filter(e=>!(e.type==="window"&&!e.src&&!e.bg)); // hide empty photo placeholders
   if(window.ROAD_IMG&&cur==="p2"){const i=S().els.findIndex(e=>e.id==="liaRoad");if(i>=0)S().els[i]={id:"liaRoadImg",type:"image",name:"Road (picture)",deco:true,src:ROAD_IMG.src,x:ROAD_IMG.x,y:ROAD_IMG.y,w:ROAD_IMG.w,ratio:ROAD_IMG.h/ROAD_IMG.w,r:0}}
   els=S().els;sel=null;
@@ -1810,7 +2018,7 @@ window.__site={visBottom,visTop,get els(){return els},P,REGIONS,get cur(){return
     nv.addEventListener("pointerdown",ev=>{const n=ev.target.dataset&&ev.target.dataset.nav;if(!n)return;
       if(n==="Dark"){darkMode=!darkMode;board.classList.toggle("dark",darkMode);saveDark();render();return}
       if(SITE_URL[n]&&NAVPAGE[n]!==cur)location.href=SITE_URL[n]})}
-  if(MOBILE_Q.matches){for(let i=els.length-1;i>=0;i--)if(DEL_LABELS.includes(els[i].id))els.splice(i,1);buildMobile();}else{renderAll();if(!preview)togglePreview();applySpacing();buildOverlays();clipUnderNav();regionCards();}
+  if(MOBILE_Q.matches){for(let i=els.length-1;i>=0;i--)if(DEL_LABELS.includes(els[i].id))els.splice(i,1);buildMobile();}else{renderAll();if(!preview)togglePreview();buildOverlays();clipUnderNav();regionCards();}
   let wasM=MOBILE_Q.matches;MOBILE_Q.addEventListener("change",q=>{if(q.matches!==wasM)location.reload()});
 })();
 })();
