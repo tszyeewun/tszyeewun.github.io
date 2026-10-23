@@ -3,54 +3,126 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lia Wun · City Planner & Traffic Engineer</title>
-<meta name="description" content="Lia Wun (Tsz Yee Wun) — city planner and traffic engineer in Sydney. Transport, GIS and spatial analysis, urban design and AI.">
+<title>Lia Wun · AI Founder, City Planner & Traffic Engineer</title>
+<meta name="description" content="Lia Wun — AI founder, city planner, traffic engineer and GIS & data analyst in Sydney.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,700;1,400&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=202610142247">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div class="app" id="app">
-  <header>
-    <h1>Lia Wun · V2.0</h1>
-    <div class="pages" id="pages" role="tablist" aria-label="Pages"></div>
-    <span class="sp"></span>
-    <button class="btn" id="undo" title="Undo (Ctrl/⌘+Z)">Undo</button>
-    <button class="btn on" id="grid">Grid</button>
-    <button class="btn" id="darkBtn">Dark page</button>
-    <button class="btn" id="reset">Reset page</button>
-    <button class="btn" id="import">Import</button>
-    <button class="btn" id="exportBtn">Export for AI</button>
-    <button class="btn primary" id="previewBtn">Preview</button>
-  </header>
 
-  <aside class="left">
-    <section>
-      <p class="h">素材库 Asset library</p>
-      <div class="assets" id="assets"></div>
-      <p class="hint" style="margin-top:10px">Click an asset to add it to the page you are on. Upload your own art (PNG / SVG) with the last tile.</p>
-      <input type="file" id="file" accept="image/png,image/svg+xml,image/jpeg,image/webp" hidden>
-      <input type="file" id="photoFile" accept="image/png,image/jpeg,image/webp" hidden>
-    </section>
-    <section>
-      <p class="h">图层 Layers <span style="text-transform:none;letter-spacing:0">(top first)</span></p><p class="hint" style="margin:0 0 6px">Click a name here to pick something hidden under another item.</p>
-      <div class="layers" id="layers"></div>
-    </section>
-  </aside>
-
-  <main id="main">
-    <div class="board" id="board">
-      <svg id="svg" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg"></svg>
-      <span class="dim" id="dim"></span>
-      <div class="glass" id="glass" aria-hidden="true"></div>
+<!-- ===== Navigation (same on every page) ===== -->
+<header class="nav">
+  <nav class="nav-inner" aria-label="Main">
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link is-current" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About Me</a>
+      <a class="nav-link" href="projects.html">Projects</a>
+      <a class="nav-link" href="blog.html">Blog</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <button class="nav-dark" type="button" aria-label="Dark mode">Dark</button>
     </div>
-  </main>
+    <button class="mobile-menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h16M4 15h16"/></svg>
+    </button>
+  </nav>
+</header>
 
-  <aside class="right" id="inspector"></aside>
+<main>
+
+<!-- ===== 1. Hero ===== -->
+<section class="hero">
+  <h1 class="hero-h">Hi, I'm Lia.</h1>
+  <p class="hero-s">
+    <span class="typer" data-lines='["AI Founder","City Planner","Traffic Engineer","GIS &amp; Data Analyst"]'>AI Founder | City Planner | Traffic Engineer | GIS &amp; Data Analyst</span><span class="caret" aria-hidden="true"></span>
+  </p>
+  <p class="hero-place">Sydney, NSW</p>
+  <img class="hero-img" src="img/hero-coffee.png" alt="Pixel coffee cup with a smiling face, surrounded by pixel hearts and stars">
+</section>
+
+<!-- ===== 2. In progress ===== -->
+<section class="progress">
+  <img class="progress-bg" src="img/sydney-skyline.png" alt="" aria-hidden="true">
+  <div class="progress-shade" aria-hidden="true"></div>
+  <div class="progress-box">
+    <p class="progress-eyebrow">// in progress</p>
+    <h2 class="progress-h">Plan smarter, move faster.</h2>
+  </div>
+</section>
+
+<!-- ===== 3. Project highlights ===== -->
+<div class="highlights">
+  <section class="split">
+    <img class="split-img fit-contain" src="img/pedlight-network.jpg" alt="PedLight-SAC SUMO network of two intersections on Anzac Parade">
+    <div class="split-text">
+      <h3 class="split-h">PedLight-SAC</h3>
+      <p>Reinforcement learning for traffic signal control with vehicle–pedestrian balance. Trained on two intersections along Anzac Parade in SUMO, and compared with SCATS.</p>
+      <a href="#">Explore</a>
+    </div>
+  </section>
+
+  <section class="split split-rev dark">
+    <div class="split-text">
+      <h3 class="split-h">Mapping Equity</h3>
+      <p>Mapping of amenity equity in Blacktown. Ran hot spot analysis against population density and IRSAD, revealing underserved areas.</p>
+      <a href="#">Explore</a>
+    </div>
+    <img class="split-img" src="img/blacktown.jpg" alt="Amenity equity hot spot map of Blacktown">
+  </section>
+
+  <section class="split">
+    <img class="split-img" src="img/killara-legend.jpg" alt="East Killara urban design plan">
+    <div class="split-text">
+      <h3 class="split-h">Reconnecting Homes</h3>
+      <p>Urban design for East Killara. Improving transport accessibility, walkability, open space and greenery to revitalise the neighbourhood.</p>
+      <a href="#">Explore</a>
+    </div>
+  </section>
+
+  <section class="split split-rev dark">
+    <div class="split-text">
+      <h3 class="split-h">Bridging Community</h3>
+      <p>Flood-resilient urban design for Windsor. A connected rooftop community serves everyday life and provides vertical evacuation during floods.</p>
+      <a href="#">Explore</a>
+    </div>
+    <div class="split-img split-stack">
+      <img src="img/windsor-section.jpg" alt="Windsor flood section showing private line, common space and public axis at 1 in 20, 1 in 100 and 1 in 500 flood levels">
+      <img src="img/windsor-people.jpg" alt="Windsor rooftop community and flood evacuation sketches">
+    </div>
+  </section>
 </div>
 
-<script>window.SITE_PAGE="p1";window.SITE_V="202610142247";</script>
-<script src="assets/site.js?v=202610142247"></script>
+<!-- ===== 4. Swipe strip (placeholder, to be finished) ===== -->
+<section class="strip">
+  <div class="strip-row">
+    <a class="strip-card" href="#">
+      <img src="img/placeholder-1.png" alt="Pixel pattern placeholder">
+      <span class="strip-cap"><span class="strip-pill">Hi Lia</span><b>Hi Lia</b><span>Hi Lia, Hi Lia.</span></span>
+    </a>
+    <a class="strip-card" href="#">
+      <img src="img/placeholder-2.png" alt="Pixel pattern placeholder">
+      <span class="strip-cap"><span class="strip-pill">Hi Lia</span><b>Hi Lia</b><span>Hi Lia Hi Lia.</span></span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer (same on every page) ===== -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-left">
+      <span>Copyright © 2026 Lia. All rights reserved.</span>
+      <a href="#">Privacy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Hi Lia</a>
+      <a href="#">Site Map</a>
+    </div>
+    <span class="foot-place">Sydney, Australia</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
