@@ -170,20 +170,14 @@ html.dark .a-dot.on span{background:#f5f5f7}
 
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px; padding: 28px 7% 0">
-<div></div>
+<div style="display: flex; justify-content: center; padding: 28px 7% 0">
 <div class="a-dots" style="height: 56px; padding: 0 22px; border-radius: 999px; background: rgba(232, 232, 237, 0.9); display: flex; align-items: center; gap: 4px">
-<button type="button" class="a-dot on" aria-label="Go to slide 1 of 6" style="height: 44px; padding: 0 6px; border: none; background: transparent; display: flex; align-items: center; cursor: pointer"><span></span></button>
+<button type="button" class="a-dot on" aria-current="true" aria-label="Go to slide 1 of 6" style="height: 44px; padding: 0 6px; border: none; background: transparent; display: flex; align-items: center; cursor: pointer"><span></span></button>
 <button type="button" class="a-dot" aria-label="Go to slide 2 of 6" style="height: 44px; padding: 0 6px; border: none; background: transparent; display: flex; align-items: center; cursor: pointer"><span></span></button>
 <button type="button" class="a-dot" aria-label="Go to slide 3 of 6" style="height: 44px; padding: 0 6px; border: none; background: transparent; display: flex; align-items: center; cursor: pointer"><span></span></button>
 <button type="button" class="a-dot" aria-label="Go to slide 4 of 6" style="height: 44px; padding: 0 6px; border: none; background: transparent; display: flex; align-items: center; cursor: pointer"><span></span></button>
 <button type="button" class="a-dot" aria-label="Go to slide 5 of 6" style="height: 44px; padding: 0 6px; border: none; background: transparent; display: flex; align-items: center; cursor: pointer"><span></span></button>
 <button type="button" class="a-dot" aria-label="Go to slide 6 of 6" style="height: 44px; padding: 0 6px; border: none; background: transparent; display: flex; align-items: center; cursor: pointer"><span></span></button>
-
-</div>
-<div style="display: flex; justify-content: flex-end; gap: 14px">
-<button type="button" aria-label="Previous" class="a-prev" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: none; border-radius: 50%; background: #e8e8ed; color: #1d1d1f; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button>
-<button type="button" aria-label="Next" class="a-next" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: none; border-radius: 50%; background: #e8e8ed; color: #1d1d1f; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button>
 </div>
 </div>
 </section>
@@ -328,12 +322,10 @@ html.dark .a-dot.on span{background:#f5f5f7}
 <script>
 (function(){var row=document.getElementById('a-row');if(!row)return;
 function W(){return row.firstElementChild.offsetWidth+24}
-function step(d){row.scrollBy({left:d*W(),behavior:'smooth'})}
 var dots=document.querySelectorAll('.a-dot');
 dots.forEach(function(d,k){d.addEventListener('click',function(){row.scrollTo({left:k*W(),behavior:'smooth'})})});
 var raf=0;row.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;var k=Math.max(0,Math.min(dots.length-1,Math.round(row.scrollLeft/W())));dots.forEach(function(d,j){d.classList.toggle('on',j===k);if(j===k)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')})})},{passive:true});
-document.querySelector('.a-prev').addEventListener('click',function(){step(-1)});
-document.querySelector('.a-next').addEventListener('click',function(){step(1)});})();
+})();
 (function(){var svg=document.querySelector('.a-cloud-svg');if(!svg)return;
 svg.addEventListener('pointerover',function(e){var g=e.target.closest&&e.target.closest('g');if(g&&g.parentNode===svg&&g!==svg.lastElementChild)svg.appendChild(g)});})();
 </script>
