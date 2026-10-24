@@ -29,8 +29,13 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
  .s-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:16px !important}
 }
 
-.rpin{position:absolute;width:36px;height:36px;margin:-18px 0 0 -18px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer}
-.rpin:focus-visible{outline:2px solid #1d5fd0;outline-offset:2px}
+.rpin{position:absolute;width:0;height:0;padding:0;border:0;background:none;cursor:pointer;font:inherit}
+.rpin .pt{position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#fff;border:2.2px solid #e2483d;box-sizing:border-box;display:grid;place-items:center;box-shadow:0 2px 6px rgba(42,35,64,.16);transition:transform .15s;transform-origin:50% 50%}
+.rpin .pt i{width:4px;height:4px;border-radius:50%;background:#e2483d}
+.rpin .pt b{position:absolute;left:19px;top:-2px;font:700 11px/16px "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.04em;color:#1d1c18;white-space:nowrap;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff}
+.rpin:hover .pt,.rpin:focus-visible .pt,.rpin.on .pt{transform:scale(1.25)}
+.rpin:focus-visible{outline:none}
+.rpin:focus-visible .pt{box-shadow:0 0 0 3px rgba(29,95,208,.35)}
 .rcard{position:absolute;z-index:30;width:min(320px,calc(100% - 20px));max-height:420px;overflow:auto;background:#fff;color:#1d1c18;border-radius:18px;box-shadow:0 14px 34px rgba(42,35,64,.16);padding:18px 20px;box-sizing:border-box;text-align:left;opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s;pointer-events:none}
 .rcard.on{opacity:1;transform:none;pointer-events:auto}
 .rcard img{display:block;width:100%;border-radius:10px;margin-bottom:12px;background:#fff}
@@ -43,7 +48,7 @@ html.dark .rcard .tag,html.dark .rcard p{color:#a1a1a6}
 </style>
 </head>
 <body>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=IBM+Plex+Mono:wght@500;700&display=swap">
 
 
 <div style="font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif; color: #1d1d1f; background: #f5f5f7; -webkit-font-smoothing: antialiased">
@@ -108,7 +113,7 @@ html.dark .rcard .tag,html.dark .rcard p{color:#a1a1a6}
 <section style="background: #f5f5f7; padding: 72px 0 56px">
 <h2 class="p-h2" style="margin: 0; padding: 0 7%; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; color: #1d1d1f">Kolonaki, Athens</h2>
 <div class="s-wrap" style="margin-top: 40px; padding: 12px 7% 0">
-<div class="rmap" style="position: relative"><img class="p-fig" src="img/projects/athens.png" alt="Map of Athens with Kolonaki highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #b4a3d6; box-sizing: border-box; border-radius: 28px; display: block"><button type="button" class="rpin" data-region="ath" aria-label="Kolonaki: show project" style="left: 51.38%; top: 50.05%"></button></div>
+<div class="rmap" style="position: relative"><img class="p-fig" src="img/projects/athens-map.png" alt="Map of Athens with Kolonaki highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #b4a3d6; box-sizing: border-box; border-radius: 28px; display: block"><button type="button" class="rpin" data-region="ath" aria-label="Kolonaki: show project" style="left: 51.38%; top: 50.05%"><span class="pt"><i></i><b>Kolonaki</b></span></button></div>
 <p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73"><span style="font-weight: 400">Hover over a pin to see its projects.</span></p>
 </div>
 </section>
@@ -116,7 +121,7 @@ html.dark .rcard .tag,html.dark .rcard p{color:#a1a1a6}
 <section style="background: #f5f5f7; padding: 72px 0 56px">
 <h2 class="p-h2" style="margin: 0; padding: 0 7%; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; color: #1d1d1f">Slave Island, Colombo</h2>
 <div class="s-wrap" style="margin-top: 40px; padding: 12px 7% 0">
-<div class="rmap" style="position: relative"><img class="p-fig" src="img/projects/colombo.png" alt="Map of Colombo with Slave Island highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #d8957e; box-sizing: border-box; border-radius: 28px; display: block"><button type="button" class="rpin" data-region="cmb" aria-label="Slave Island: show project" style="left: 49.98%; top: 49.95%"></button></div>
+<div class="rmap" style="position: relative"><img class="p-fig" src="img/projects/colombo-map.png" alt="Map of Colombo with Slave Island highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #d8957e; box-sizing: border-box; border-radius: 28px; display: block"><button type="button" class="rpin" data-region="cmb" aria-label="Slave Island: show project" style="left: 49.98%; top: 49.95%"><span class="pt"><i></i><b>Slave Island</b></span></button></div>
 <p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73"><span style="font-weight: 400">Hover over a pin to see its projects.</span></p>
 </div>
 </section>
@@ -217,18 +222,18 @@ document.querySelectorAll('.rpin').forEach(function(pin){
   card.className='rcard';card.setAttribute('role','dialog');
   card.innerHTML=CARDS[pin.dataset.region].map(function(q){return '<div class="card"><img src="'+q.img+'" alt=""><span class="tag">'+esc(q.s)+' · '+esc(q.tag)+'</span><h3>'+esc(q.t)+'</h3><p>'+esc(q.d)+'</p></div>'}).join('');
   wrap.appendChild(card);
-  function place(){var W=wrap.clientWidth,H=wrap.clientHeight,x=pin.offsetLeft,y=pin.offsetTop,w=card.offsetWidth,h=card.offsetHeight,g=22,pad=10,
-    cx=x+g+w<=W-pad?x+g:(x-g-w>=pad?x-g-w:Math.max(pad,Math.min(x-w/2,W-pad-w))),cy=Math.max(pad,Math.min(y-h/2,Math.max(pad,H-pad-h)));
-    if(cx===x+g||cx===x-g-w){}else cy=y+g;card.style.left=cx+'px';card.style.top=cy+'px'}
-  var shownAt=0;function show(){clearTimeout(ht);if(!card.classList.contains('on'))shownAt=Date.now();card.classList.add('on');place()}
-  function hide(){clearTimeout(ht);ht=setTimeout(function(){card.classList.remove('on')},280)}
+  function place(){var W=wrap.clientWidth,H=wrap.clientHeight,x=pin.offsetLeft,y=pin.offsetTop,g0=0,w=card.offsetWidth,h=card.offsetHeight,g=22,pad=10,
+    gr=(pin.querySelector('b').offsetWidth+19)*1.25+20,side=x+gr+w<=W-pad?1:(x-g-w>=pad?-1:0),
+    cx=side>0?x+gr:side<0?x-g-w:Math.max(pad,Math.min(x-w/2,W-pad-w)),cy=side?Math.max(pad,Math.min(y-h/2,Math.max(pad,H-pad-h))):y+g;card.style.left=cx+'px';card.style.top=cy+'px'}
+  var shownAt=0;function show(){clearTimeout(ht);pin.classList.add('on');if(!card.classList.contains('on'))shownAt=Date.now();card.classList.add('on');place()}
+  function hide(){clearTimeout(ht);ht=setTimeout(function(){card.classList.remove('on');pin.classList.remove('on')},280)}
   card.querySelectorAll('img').forEach(function(im){im.addEventListener('load',function(){if(card.classList.contains('on'))place()})});
   pin.addEventListener('pointerenter',show);pin.addEventListener('pointerleave',hide);
   pin.addEventListener('focus',show);pin.addEventListener('blur',hide);
-  pin.addEventListener('click',function(e){e.stopPropagation();if(card.classList.contains('on')&&Date.now()-shownAt>400)card.classList.remove('on');else show()});
+  pin.addEventListener('click',function(e){e.stopPropagation();if(card.classList.contains('on')&&Date.now()-shownAt>400){card.classList.remove('on');pin.classList.remove('on')}else show()});
   card.addEventListener('pointerenter',function(){clearTimeout(ht)});card.addEventListener('pointerleave',hide);
-  document.addEventListener('click',function(e){if(!card.contains(e.target))card.classList.remove('on')});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')card.classList.remove('on')});
+  document.addEventListener('click',function(e){if(!card.contains(e.target)){card.classList.remove('on');pin.classList.remove('on')}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){card.classList.remove('on');pin.classList.remove('on')}});
   window.addEventListener('resize',function(){if(card.classList.contains('on'))place()});
 });
 var row=document.getElementById('p-row-b');if(!row)return;
