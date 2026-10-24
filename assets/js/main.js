@@ -40,3 +40,23 @@
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 })();
+
+/* Dark mode: the nav button toggles html.dark and remembers the choice */
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.nav-dark');
+  function label() {
+    if (!btn) return;
+    var dark = root.classList.contains('dark');
+    btn.textContent = dark ? 'Light' : 'Dark';
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  label();
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var dark = root.classList.toggle('dark');
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+    label();
+  });
+})();
