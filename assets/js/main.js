@@ -60,3 +60,31 @@
     label();
   });
 })();
+
+/* Email links: open the mail app and also copy the address,
+   so it still works for people who use webmail (no mail app set up). */
+(function () {
+  var links = document.querySelectorAll('a[href^="mailto:"]');
+  if (!links.length) return;
+  var toast;
+  function show(msg) {
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.setAttribute('role', 'status');
+      toast.style.cssText = 'position:fixed;left:50%;bottom:32px;transform:translateX(-50%);z-index:50;padding:12px 20px;border-radius:999px;background:#1d1d1f;color:#fff;font-size:15px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:opacity .3s;opacity:0;pointer-events:none';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    clearTimeout(show.t);
+    show.t = setTimeout(function () { toast.style.opacity = '0'; }, 2600);
+  }
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function () {
+      var addr = a.getAttribute('href').replace('mailto:', '').split('?')[0];
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(addr).then(function () { show('Email copied: ' + addr); }, function () {});
+      }
+    });
+  });
+})();
