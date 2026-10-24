@@ -88,6 +88,15 @@ a:hover{color:var(--blue-dark);text-decoration:underline}
 }
 @media (prefers-reduced-motion:reduce){.caret{animation:none}}
 
+/* ---------- Email chooser ---------- */
+.mail-menu{position:fixed;z-index:60;min-width:220px;padding:8px;border-radius:16px;background:#fff;box-shadow:0 12px 40px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.06);font-size:15px}
+.mail-menu[hidden]{display:none}
+.mail-menu-head{margin:4px 10px 6px;font-size:12px;color:var(--muted)}
+.mail-menu-item{display:block;padding:10px 12px;border-radius:10px;color:var(--ink) !important;text-decoration:none !important}
+.mail-menu-item:hover,.mail-menu-item:focus{background:#f0f0f3;outline:none}
+html.dark .mail-menu{background:#1c1c1e;border-color:rgba(255,255,255,.1)}
+html.dark .mail-menu-item:hover,html.dark .mail-menu-item:focus{background:#2c2c2e}
+
 /* ---------- Dark mode (html.dark, toggled by the nav button) ---------- */
 html.dark{color-scheme:dark;--ink:#f5f5f7;--grey:#c7c7cc;--muted:#a1a1a6;--bg-grey:#111112;--blue:#4f8ff7;--blue-dark:#7aaaff}
 html.dark body{background:#000 !important;color:#f5f5f7}

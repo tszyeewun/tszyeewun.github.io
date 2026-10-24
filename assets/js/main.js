@@ -61,30 +61,68 @@
   });
 })();
 
-/* Email links: open the mail app and also copy the address,
-   so it still works for people who use webmail (no mail app set up). */
+/* Email links: show a small chooser so visitors can write in Gmail, Outlook
+   or their mail app, each opening a new email with Lia's address filled in. */
 (function () {
   var links = document.querySelectorAll('a[href^="mailto:"]');
   if (!links.length) return;
-  var toast;
-  function show(msg) {
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.setAttribute('role', 'status');
-      toast.style.cssText = 'position:fixed;left:50%;bottom:32px;transform:translateX(-50%);z-index:50;padding:12px 20px;border-radius:999px;background:#1d1d1f;color:#fff;font-size:15px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:opacity .3s;opacity:0;pointer-events:none';
-      document.body.appendChild(toast);
-    }
-    toast.textContent = msg;
-    toast.style.opacity = '1';
-    clearTimeout(show.t);
-    show.t = setTimeout(function () { toast.style.opacity = '0'; }, 2600);
+  var menu, current;
+  function close() { if (menu) { menu.hidden = true; current = null; } }
+  function build() {
+    menu = document.createElement('div');
+    menu.className = 'mail-menu';
+    menu.setAttribute('role', 'menu');
+    menu.hidden = true;
+    document.body.appendChild(menu);
+    document.addEventListener('click', function (e) {
+      if (menu.hidden || menu.contains(e.target)) return;
+      if (current && current.contains(e.target)) return;
+      close();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    window.addEventListener('resize', close);
+  }
+  function item(label, href, onClick) {
+    var a = document.createElement('a');
+    a.className = 'mail-menu-item';
+    a.setAttribute('role', 'menuitem');
+    a.textContent = label;
+    a.href = href || '#';
+    if (/^https?:/.test(a.href)) { a.target = '_blank'; a.rel = 'noopener'; }
+    a.addEventListener('click', function (e) { if (onClick) { e.preventDefault(); onClick(); } else close(); });
+    return a;
+  }
+  function open(link) {
+    if (!menu) build();
+    var addr = link.getAttribute('href').replace('mailto:', '').split('?')[0];
+    var to = encodeURIComponent(addr);
+    menu.innerHTML = '';
+    var head = document.createElement('p');
+    head.className = 'mail-menu-head';
+    head.textContent = 'Write to ' + addr;
+    menu.appendChild(head);
+    menu.appendChild(item('Gmail', 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to));
+    menu.appendChild(item('Outlook', 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to));
+    menu.appendChild(item('Mail app', 'mailto:' + addr));
+    var copy = item('Copy address', null, function () {
+      var done = function () { copy.textContent = 'Copied ✓'; setTimeout(close, 900); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(done, done); else done();
+    });
+    menu.appendChild(copy);
+    menu.hidden = false;
+    current = link;
+    var r = link.getBoundingClientRect(), mw = menu.offsetWidth, mh = menu.offsetHeight;
+    var left = Math.min(Math.max(12, r.left + r.width / 2 - mw / 2), window.innerWidth - mw - 12);
+    var top = r.bottom + 10;
+    if (top + mh > window.innerHeight - 12) top = Math.max(12, r.top - mh - 10);
+    menu.style.left = left + 'px';
+    menu.style.top = top + 'px';
+    menu.querySelector('.mail-menu-item').focus();
   }
   Array.prototype.forEach.call(links, function (a) {
-    a.addEventListener('click', function () {
-      var addr = a.getAttribute('href').replace('mailto:', '').split('?')[0];
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(addr).then(function () { show('Email copied: ' + addr); }, function () {});
-      }
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (current === a && !menu.hidden) close(); else open(a);
     });
   });
 })();
