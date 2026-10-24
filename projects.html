@@ -26,12 +26,26 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
  .p-top{padding-top:64px !important}
  .l-card{width:300px !important;height:440px !important}
  .s-wrap{padding-left:22px !important;padding-right:22px !important}
- .s-grid{grid-template-columns:repeat(1,minmax(0,1fr)) !important;gap:16px !important}
+ .s-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:16px !important}
 }
+
+.rpin{position:absolute;width:36px;height:36px;margin:-18px 0 0 -18px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer}
+.rpin:focus-visible{outline:2px solid #1d5fd0;outline-offset:2px}
+.rcard{position:absolute;z-index:30;width:min(320px,calc(100% - 20px));max-height:420px;overflow:auto;background:#fff;color:#1d1c18;border-radius:18px;box-shadow:0 14px 34px rgba(42,35,64,.16);padding:18px 20px;box-sizing:border-box;text-align:left;opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s;pointer-events:none}
+.rcard.on{opacity:1;transform:none;pointer-events:auto}
+.rcard img{display:block;width:100%;border-radius:10px;margin-bottom:12px;background:#fff}
+.rcard .tag{font:500 11px "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#8c8b83}
+.rcard h3{font-family:"Bodoni Moda","Didot","Times New Roman",serif;font-weight:500;font-size:19px;line-height:1.2;margin:6px 0 6px}
+.rcard p{margin:0;font-size:14px;line-height:1.5;color:#8c8b83}
+html.dark .rcard{background:#1c1c1e;color:#f5f5f7;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+html.dark .rcard .tag,html.dark .rcard p{color:#a1a1a6}
 
 </style>
 </head>
 <body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=IBM+Plex+Mono:wght@500&display=swap">
+
+
 <div style="font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif; color: #1d1d1f; background: #f5f5f7; -webkit-font-smoothing: antialiased">
 
 <header class="nav">
@@ -53,30 +67,30 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <section class="p-top" style="background: #f5f5f7; padding: 104px 0 56px">
 <h2 class="p-h2" style="margin: 0; padding: 0 7%; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; color: #1d1d1f">Topics</h2>
 <div class="s-wrap" style="margin-top: 40px; padding: 12px 7% 0">
-<div class="s-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
-<a class="s-card" href="#" style="position: relative; display: flex; align-items: center; gap: 20px; box-sizing: border-box; height: 150px; padding: 0 30px; border-radius: 28px; background: #ffffff; color: #1d1d1f">
-<svg aria-hidden="true" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#1d5fd0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #1d5fd0"><g transform="translate(24 0) scale(-1 1)"><path d="M2.5 16.5v-3.2c0-.8.5-1.4 1.2-1.6l2.8-.7 2.6-3.2c.4-.5 1-.8 1.6-.8h4.6c.6 0 1.2.3 1.6.8l2.8 3.3 1.5.4c.7.2 1.2.8 1.2 1.5v3.5h-2"></path><path d="M8.6 16.5h6.8"></path><path d="M4.6 16.5h-2"></path><circle cx="6.6" cy="16.8" r="2"></circle><circle cx="17.4" cy="16.8" r="2"></circle><path d="M8 11h11.2"></path><path d="M12.4 7.5V11"></path></g></svg>
-<p style="margin: 0; font-size: 38px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em"><span style="color: #1d5fd0">Transport</span></p>
+<div class="s-grid" style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px">
+<a class="s-card" href="#" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-sizing: border-box; height: 150px; padding: 0 12px; text-align: center; border-radius: 28px; background: #ffffff; color: #1d1d1f">
+<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1d5fd0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #1d5fd0"><g transform="translate(24 0) scale(-1 1)"><path d="M2.5 16.5v-3.2c0-.8.5-1.4 1.2-1.6l2.8-.7 2.6-3.2c.4-.5 1-.8 1.6-.8h4.6c.6 0 1.2.3 1.6.8l2.8 3.3 1.5.4c.7.2 1.2.8 1.2 1.5v3.5h-2"></path><path d="M8.6 16.5h6.8"></path><path d="M4.6 16.5h-2"></path><circle cx="6.6" cy="16.8" r="2"></circle><circle cx="17.4" cy="16.8" r="2"></circle><path d="M8 11h11.2"></path><path d="M12.4 7.5V11"></path></g></svg>
+<p style="margin: 0; font-size: 20px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap"><span style="color: #1d5fd0">Transport</span></p>
 </a>
-<a class="s-card" href="#" style="position: relative; display: flex; align-items: center; gap: 20px; box-sizing: border-box; height: 150px; padding: 0 30px; border-radius: 28px; background: #ffffff; color: #1d1d1f">
-<svg aria-hidden="true" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#e5332a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #e5332a"><path d="M12 3l9 4.5-9 4.5-9-4.5z"></path><path d="M3 12l9 4.5 9-4.5"></path><path d="M3 16.5l9 4.5 9-4.5"></path></svg>
-<p style="margin: 0; font-size: 38px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em"><span style="color: #e5332a">GIS</span></p>
+<a class="s-card" href="#" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-sizing: border-box; height: 150px; padding: 0 12px; text-align: center; border-radius: 28px; background: #ffffff; color: #1d1d1f">
+<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5332a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #e5332a"><path d="M12 3l9 4.5-9 4.5-9-4.5z"></path><path d="M3 12l9 4.5 9-4.5"></path><path d="M3 16.5l9 4.5 9-4.5"></path></svg>
+<p style="margin: 0; font-size: 20px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap"><span style="color: #e5332a">GIS</span></p>
 </a>
-<a class="s-card" href="#" style="position: relative; display: flex; align-items: center; gap: 20px; box-sizing: border-box; height: 150px; padding: 0 30px; border-radius: 28px; background: #ffffff; color: #1d1d1f">
-<svg aria-hidden="true" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#7b3fe4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #7b3fe4"><circle cx="12" cy="12" r="2.4"></circle><circle cx="4.5" cy="5" r="1.6"></circle><circle cx="19.5" cy="5" r="1.6"></circle><circle cx="4.5" cy="19" r="1.6"></circle><circle cx="19.5" cy="19" r="1.6"></circle><path d="M6 6.4l4.2 4M18 6.4l-4.2 4M6 17.6l4.2-4M18 17.6l-4.2-4"></path></svg>
-<p style="margin: 0; font-size: 38px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em"><span style="color: #7b3fe4">Smart City</span></p>
+<a class="s-card" href="#" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-sizing: border-box; height: 150px; padding: 0 12px; text-align: center; border-radius: 28px; background: #ffffff; color: #1d1d1f">
+<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#7b3fe4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #7b3fe4"><circle cx="12" cy="12" r="2.4"></circle><circle cx="4.5" cy="5" r="1.6"></circle><circle cx="19.5" cy="5" r="1.6"></circle><circle cx="4.5" cy="19" r="1.6"></circle><circle cx="19.5" cy="19" r="1.6"></circle><path d="M6 6.4l4.2 4M18 6.4l-4.2 4M6 17.6l4.2-4M18 17.6l-4.2-4"></path></svg>
+<p style="margin: 0; font-size: 20px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap"><span style="color: #7b3fe4">Smart City</span></p>
 </a>
-<a class="s-card" href="#" style="position: relative; display: flex; align-items: center; gap: 20px; box-sizing: border-box; height: 150px; padding: 0 30px; border-radius: 28px; background: #ffffff; color: #1d1d1f">
-<svg aria-hidden="true" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#2e9b4a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #2e9b4a"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"></path><path d="M5 19l8-8"></path></svg>
-<p style="margin: 0; font-size: 38px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em"><span style="color: #2e9b4a">Sustainability</span></p>
+<a class="s-card" href="#" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-sizing: border-box; height: 150px; padding: 0 12px; text-align: center; border-radius: 28px; background: #ffffff; color: #1d1d1f">
+<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#2e9b4a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #2e9b4a"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"></path><path d="M5 19l8-8"></path></svg>
+<p style="margin: 0; font-size: 20px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap"><span style="color: #2e9b4a">Sustainability</span></p>
 </a>
-<a class="s-card" href="#" style="position: relative; display: flex; align-items: center; gap: 20px; box-sizing: border-box; height: 150px; padding: 0 30px; border-radius: 28px; background: #ffffff; color: #1d1d1f">
-<svg aria-hidden="true" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#1d5fd0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #1d5fd0"><path d="M12 4v16M7 20h10"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3 3 0 0 0 6 0z"></path><path d="M19 7l-3 6a3 3 0 0 0 6 0z"></path></svg>
-<p style="margin: 0; font-size: 38px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em"><span style="color: #1d5fd0">Equity</span></p>
+<a class="s-card" href="#" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-sizing: border-box; height: 150px; padding: 0 12px; text-align: center; border-radius: 28px; background: #ffffff; color: #1d1d1f">
+<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1d5fd0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #1d5fd0"><path d="M12 4v16M7 20h10"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3 3 0 0 0 6 0z"></path><path d="M19 7l-3 6a3 3 0 0 0 6 0z"></path></svg>
+<p style="margin: 0; font-size: 20px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap"><span style="color: #1d5fd0">Equity</span></p>
 </a>
-<a class="s-card" href="#" style="position: relative; display: flex; align-items: center; gap: 20px; box-sizing: border-box; height: 150px; padding: 0 30px; border-radius: 28px; background: #ffffff; color: #1d1d1f">
-<svg aria-hidden="true" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #1d1d1f"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 12h18M12 3v18"></path><path d="M15 6.5h3v2h-3zM6 15h3v3H6z"></path></svg>
-<p style="margin: 0; font-size: 38px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em"><span style="color: #1d1d1f">Planning</span></p>
+<a class="s-card" href="#" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-sizing: border-box; height: 150px; padding: 0 12px; text-align: center; border-radius: 28px; background: #ffffff; color: #1d1d1f">
+<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; color: #1d1d1f"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 12h18M12 3v18"></path><path d="M15 6.5h3v2h-3zM6 15h3v3H6z"></path></svg>
+<p style="margin: 0; font-size: 20px; line-height: 1.1; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap"><span style="color: #1d1d1f">Planning</span></p>
 </a>
 </div>
 </div>
@@ -87,23 +101,23 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <h2 class="p-h2" style="margin: 0; padding: 0 7%; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; color: #1d1d1f">Sydney, NSW</h2>
 <div class="s-wrap" style="margin-top: 40px; padding: 12px 7% 0">
 <iframe class="p-fig" src="maps/sydney-map.html?embed=1" title="Interactive map of Sydney councils with Lia’s projects" loading="lazy" style="width: 100%; aspect-ratio: 1842 / 805; border: 0; border-radius: 28px; display: block; background: transparent"></iframe>
-<p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73">Hover over a council to see its projects.<br>Click a pin to open the project.</p>
+<p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73"><span style="font-weight: normal">Hover over a pin to see its projects.</span><br></p>
 </div>
 </section>
 
 <section style="background: #f5f5f7; padding: 72px 0 56px">
 <h2 class="p-h2" style="margin: 0; padding: 0 7%; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; color: #1d1d1f">Kolonaki, Athens</h2>
 <div class="s-wrap" style="margin-top: 40px; padding: 12px 7% 0">
-<img class="p-fig" src="img/projects/athens.png" alt="Map of Athens with Kolonaki highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #b4a3d6; box-sizing: border-box; border-radius: 28px; display: block">
-<p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73">Click a pin to open the project.</p>
+<div class="rmap" style="position: relative"><img class="p-fig" src="img/projects/athens.png" alt="Map of Athens with Kolonaki highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #b4a3d6; box-sizing: border-box; border-radius: 28px; display: block"><button type="button" class="rpin" data-region="ath" aria-label="Kolonaki: show project" style="left: 51.38%; top: 50.05%"></button></div>
+<p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73"><span style="font-weight: 400">Hover over a pin to see its projects.</span></p>
 </div>
 </section>
 
 <section style="background: #f5f5f7; padding: 72px 0 56px">
 <h2 class="p-h2" style="margin: 0; padding: 0 7%; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; color: #1d1d1f">Slave Island, Colombo</h2>
 <div class="s-wrap" style="margin-top: 40px; padding: 12px 7% 0">
-<img class="p-fig" src="img/projects/colombo.png" alt="Map of Colombo with Slave Island highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #d8957e; box-sizing: border-box; border-radius: 28px; display: block">
-<p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73">Click a pin to open the project.</p>
+<div class="rmap" style="position: relative"><img class="p-fig" src="img/projects/colombo.png" alt="Map of Colombo with Slave Island highlighted" style="width: 100%; aspect-ratio: 1842 / 805; object-fit: cover; border: 2px solid #d8957e; box-sizing: border-box; border-radius: 28px; display: block"><button type="button" class="rpin" data-region="cmb" aria-label="Slave Island: show project" style="left: 49.98%; top: 49.95%"></button></div>
+<p style="margin: 28px 20px 0; font-size: 17px; line-height: 1.5; font-weight: 600; color: #6e6e73"><span style="font-weight: 400">Hover over a pin to see its projects.</span></p>
 </div>
 </section>
 
@@ -117,7 +131,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <p style="margin: 8px 0 0; font-size: 17px; line-height: 1.35; font-weight: 600">Hi Lia Hi Lia Hi Lia.</p>
 <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.45; color: #6e6e73">Hi Lia Hi Lia Hi Lia Hi Lia.</p>
 </div>
-<img src="img/placeholder-1.png" alt="Pixel pattern placeholder" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
+<img src="img/placeholder-1.png" alt="Placeholder pattern" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
 <span style="position: absolute; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.08); color: #1d1d1f"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></span>
 </a>
 <a class="l-card" href="#" style="position: relative; flex: none; width: 400px; height: 500px; box-sizing: border-box; border-radius: 28px; overflow: hidden; background: #000000; color: #f5f5f7; display: flex; flex-direction: column">
@@ -127,7 +141,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <p style="margin: 8px 0 0; font-size: 17px; line-height: 1.35; font-weight: 600">Hi Lia Hi Lia Hi Lia.</p>
 <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.45; color: #a1a1a6">Hi Lia Hi Lia Hi Lia Hi Lia.</p>
 </div>
-<img src="img/placeholder-2.png" alt="Pixel pattern placeholder" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
+<img src="img/placeholder-2.png" alt="Placeholder pattern" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
 <span style="position: absolute; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.18); color: #f5f5f7"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></span>
 </a>
 <a class="l-card" href="#" style="position: relative; flex: none; width: 400px; height: 500px; box-sizing: border-box; border-radius: 28px; overflow: hidden; background: #ffffff; color: #1d1d1f; display: flex; flex-direction: column">
@@ -137,7 +151,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <p style="margin: 8px 0 0; font-size: 17px; line-height: 1.35; font-weight: 600">Hi Lia Hi Lia Hi Lia.</p>
 <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.45; color: #6e6e73">Hi Lia Hi Lia Hi Lia Hi Lia.</p>
 </div>
-<img src="img/placeholder-1.png" alt="Pixel pattern placeholder" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
+<img src="img/placeholder-1.png" alt="Placeholder pattern" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
 <span style="position: absolute; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.08); color: #1d1d1f"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></span>
 </a>
 <a class="l-card" href="#" style="position: relative; flex: none; width: 400px; height: 500px; box-sizing: border-box; border-radius: 28px; overflow: hidden; background: #000000; color: #f5f5f7; display: flex; flex-direction: column">
@@ -147,7 +161,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <p style="margin: 8px 0 0; font-size: 17px; line-height: 1.35; font-weight: 600">Hi Lia Hi Lia Hi Lia.</p>
 <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.45; color: #a1a1a6">Hi Lia Hi Lia Hi Lia Hi Lia.</p>
 </div>
-<img src="img/placeholder-2.png" alt="Pixel pattern placeholder" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
+<img src="img/placeholder-2.png" alt="Placeholder pattern" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
 <span style="position: absolute; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.18); color: #f5f5f7"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></span>
 </a>
 <a class="l-card" href="#" style="position: relative; flex: none; width: 400px; height: 500px; box-sizing: border-box; border-radius: 28px; overflow: hidden; background: #ffffff; color: #1d1d1f; display: flex; flex-direction: column">
@@ -157,7 +171,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <p style="margin: 8px 0 0; font-size: 17px; line-height: 1.35; font-weight: 600">Hi Lia Hi Lia Hi Lia.</p>
 <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.45; color: #6e6e73">Hi Lia Hi Lia Hi Lia Hi Lia.</p>
 </div>
-<img src="img/placeholder-1.png" alt="Pixel pattern placeholder" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
+<img src="img/placeholder-1.png" alt="Placeholder pattern" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
 <span style="position: absolute; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.08); color: #1d1d1f"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></span>
 </a>
 <a class="l-card" href="#" style="position: relative; flex: none; width: 400px; height: 500px; box-sizing: border-box; border-radius: 28px; overflow: hidden; background: #000000; color: #f5f5f7; display: flex; flex-direction: column">
@@ -167,7 +181,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <p style="margin: 8px 0 0; font-size: 17px; line-height: 1.35; font-weight: 600">Hi Lia Hi Lia Hi Lia.</p>
 <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.45; color: #a1a1a6">Hi Lia Hi Lia Hi Lia Hi Lia.</p>
 </div>
-<img src="img/placeholder-2.png" alt="Pixel pattern placeholder" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
+<img src="img/placeholder-2.png" alt="Placeholder pattern" style="margin-top: auto; width: 100%; height: 250px; object-fit: cover; display: block">
 <span style="position: absolute; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.18); color: #f5f5f7"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></span>
 </a>
 </div>
@@ -193,9 +207,34 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 </div>
 <script src="assets/js/main.js?v=20261025c"></script>
 <script>
-(function(){var row=document.getElementById('p-row-b');if(!row)return;
+(function(){
+var CARDS={
+ ath:[{t:"Mapping the City: Kolonaki, Athens",s:"Kolonaki",tag:"Urban design · 2025",d:"Mapping Kolonaki's public domain: Vasilissis Sofias and Michalakopoulou, a walkable street network and a dense figure-ground.",img:"img/projects/athens-figure-ground.jpg"}],
+ cmb:[{t:"Cooling Slave Island: Urban Heat and Sustainable Design Strategies for Colombo",s:"Slave Island",tag:"Urban heat · Design · 2026",d:"How density, hard surfaces and lost tree cover heat Slave Island, and which design moves cool it.",img:"img/projects/colombo-before-after.jpg"}]};
+var esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+document.querySelectorAll('.rpin').forEach(function(pin){
+  var wrap=pin.parentNode,card=document.createElement('div'),ht=null;
+  card.className='rcard';card.setAttribute('role','dialog');
+  card.innerHTML=CARDS[pin.dataset.region].map(function(q){return '<div class="card"><img src="'+q.img+'" alt=""><span class="tag">'+esc(q.s)+' · '+esc(q.tag)+'</span><h3>'+esc(q.t)+'</h3><p>'+esc(q.d)+'</p></div>'}).join('');
+  wrap.appendChild(card);
+  function place(){var W=wrap.clientWidth,H=wrap.clientHeight,x=pin.offsetLeft,y=pin.offsetTop,w=card.offsetWidth,h=card.offsetHeight,g=22,pad=10,
+    cx=x+g+w<=W-pad?x+g:(x-g-w>=pad?x-g-w:Math.max(pad,Math.min(x-w/2,W-pad-w))),cy=Math.max(pad,Math.min(y-h/2,Math.max(pad,H-pad-h)));
+    if(cx===x+g||cx===x-g-w){}else cy=y+g;card.style.left=cx+'px';card.style.top=cy+'px'}
+  var shownAt=0;function show(){clearTimeout(ht);if(!card.classList.contains('on'))shownAt=Date.now();card.classList.add('on');place()}
+  function hide(){clearTimeout(ht);ht=setTimeout(function(){card.classList.remove('on')},280)}
+  card.querySelectorAll('img').forEach(function(im){im.addEventListener('load',function(){if(card.classList.contains('on'))place()})});
+  pin.addEventListener('pointerenter',show);pin.addEventListener('pointerleave',hide);
+  pin.addEventListener('focus',show);pin.addEventListener('blur',hide);
+  pin.addEventListener('click',function(e){e.stopPropagation();if(card.classList.contains('on')&&Date.now()-shownAt>400)card.classList.remove('on');else show()});
+  card.addEventListener('pointerenter',function(){clearTimeout(ht)});card.addEventListener('pointerleave',hide);
+  document.addEventListener('click',function(e){if(!card.contains(e.target))card.classList.remove('on')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')card.classList.remove('on')});
+  window.addEventListener('resize',function(){if(card.classList.contains('on'))place()});
+});
+var row=document.getElementById('p-row-b');if(!row)return;
 document.querySelector('.p-prev').addEventListener('click',function(){row.scrollBy({left:-424,behavior:'smooth'})});
-document.querySelector('.p-next').addEventListener('click',function(){row.scrollBy({left:424,behavior:'smooth'})});})();
+document.querySelector('.p-next').addEventListener('click',function(){row.scrollBy({left:424,behavior:'smooth'})});
+})();
 </script>
 </body>
 </html>
