@@ -26,10 +26,8 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
  .b-title{font-size:26px !important}
  .b-pair{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
  .b-half-title{font-size:24px !important}
- .b-half img{height:44px !important}
- .b-half svg{width:48px;height:48px}
 }
-
+@media (max-width:820px){.b-half img{height:44px !important}.b-half svg{width:48px;height:48px}}
 </style>
 </head>
 <body>
@@ -65,9 +63,9 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <div class="b-text" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px 40px">
 <p style="margin: 0; font-size: 17px; line-height: 1.3; font-weight: 500">24 Oct 2026</p>
 <h2 class="b-title" style="margin: 12px 0 0; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -0.005em">Click around, play with it.</h2>
-<p style="margin: 16px 0 0; font-size: 17px; line-height: 1.45">Website update! I added three interactive maps to my Projects page: Sydney, Athens and Colombo. Hover over the map, click the pins and have a play. 👉 <a href="projects.html">See the Projects page</a></p>
+<p style="margin: 16px 0 0; font-size: 17px; line-height: 1.45">Website update! I added three interactive maps to my Projects page: Sydney, Athens and Colombo. Hover over the map, click the pins and have a play. 👉 <a href="projects.html">Check out the Maps</a></p>
 </div>
-<img class="b-media b-media-first" src="img/blog/sydney-map.jpg" alt="Map of Sydney councils with project pins" style="width: 100%; height: 100%; min-height: 320px; object-fit: cover; object-position: 50% 75%; contain: size; display: block">
+<a class="b-media-first" href="projects.html" aria-label="Open the Projects page maps" style="display: block; min-width: 0"><img class="b-media" src="img/blog/sydney-map.jpg" alt="Map of Sydney councils with project pins" style="width: 100%; height: 100%; min-height: 320px; object-fit: cover; object-position: 50% 75%; contain: size; display: block"></a>
 </article>
 
 <article class="b-card" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 320px; border-radius: 28px; overflow: hidden; background: #000000; color: #ffffff">
@@ -85,7 +83,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 <h2 class="b-title" style="margin: 12px 0 0; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -0.005em">How much parking do Sydney apartments really need?</h2>
 <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.45">My first published article! I dug into the data on apartment parking in Sydney, and the numbers tell an interesting story. 👉 <a href="https://genesistraffic.com.au/how-much-parking-do-sydney-apartments-really-need/">Read the article</a></p>
 </div>
-<img class="b-media b-media-first" src="img/blog/parking-stats.png" alt="Parking statistics for Sydney apartments: 1/3 of apartment households have mismatched parking; renters are 2× more likely to be car-free; 10× higher odds of owning two or more cars with an extra parking space; 46% difference between parking estimates for one building" style="width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block">
+<a class="b-media-first" href="https://genesistraffic.com.au/how-much-parking-do-sydney-apartments-really-need/" aria-label="Read the parking article" style="display: block; min-width: 0"><img class="b-media" src="img/blog/parking-stats.png" alt="Parking statistics for Sydney apartments: 1/3 of apartment households have mismatched parking; renters are 2× more likely to be car-free; 10× higher odds of owning two or more cars with an extra parking space; 46% difference between parking estimates for one building" style="width: 100%; height: 100%; min-height: 320px; object-fit: cover; contain: size; display: block"></a>
 </article>
 
 <div class="b-pair" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px">
