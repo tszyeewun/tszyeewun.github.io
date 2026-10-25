@@ -24,7 +24,9 @@
   var STEP = 70, HOLD = 1600;
   var i = 0, n = 0, deleting = false;
   el.textContent = '';
-  if (colors[0]) el.style.color = colors[0];
+  var caret = el.nextElementSibling && el.nextElementSibling.classList.contains('caret') ? el.nextElementSibling : null;
+  function paint(c) { if (!c) return; el.style.color = c; if (caret) caret.style.color = c; }
+  paint(colors[0]);
 
   function tick() {
     var line = lines[i];
@@ -35,7 +37,7 @@
     } else {
       n--;
       el.textContent = line.slice(0, n);
-      if (n === 0) { deleting = false; i = (i + 1) % lines.length; if (colors[i]) el.style.color = colors[i]; }
+      if (n === 0) { deleting = false; i = (i + 1) % lines.length; paint(colors[i]); }
     }
     setTimeout(tick, STEP);
   }
