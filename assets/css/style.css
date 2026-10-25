@@ -21,7 +21,7 @@ a:hover{color:var(--blue-dark);text-decoration:underline}
 .mobile-menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;border:none;background:transparent;color:var(--ink);cursor:pointer}
 
 /* ---------- 1. Hero ---------- */
-.hero{background:#fff;padding:16px 0 0;text-align:center;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+.hero{background:#fff;padding:32px 0 0;text-align:center;display:flex;flex-direction:column;align-items:center;overflow:hidden}
 .hero-h{margin:0;font-size:88px;line-height:1.07;font-weight:600;letter-spacing:-.005em}
 .hero-s{margin:12px 0 0;font-size:32px;line-height:1.14;font-weight:400;min-height:1.14em;display:flex;align-items:center;justify-content:center}
 .caret{display:inline-block;width:3px;height:.95em;margin-left:6px;background:currentColor;animation:blink 1s steps(1) infinite}
