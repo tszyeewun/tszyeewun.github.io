@@ -82,8 +82,10 @@
   var els = Array.prototype.slice.call(document.querySelectorAll('.pix .pix-el'));
   if (!els.length) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var order = els.slice();
+  var cup = document.querySelector('.pix .pix-big');
+  var order = els.filter(function (e) { return e !== cup; });
   for (var i = order.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = order[i]; order[i] = order[j]; order[j] = t; }
+  if (cup) order.unshift(cup);
   var k = 0, timer = null, stopped = false, HOLD = 1000;
   function step() {
     if (stopped) return;
