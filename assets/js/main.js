@@ -84,7 +84,7 @@
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var order = els.slice();
   for (var i = order.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = order[i]; order[i] = order[j]; order[j] = t; }
-  var k = 0, timer = null, stopped = false, HOLD = 2600;
+  var k = 0, timer = null, stopped = false, HOLD = 1000;
   function step() {
     if (stopped) return;
     els.forEach(function (e) { e.classList.remove('is-wiggling'); });
