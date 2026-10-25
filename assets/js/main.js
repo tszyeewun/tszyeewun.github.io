@@ -8,11 +8,23 @@
   var lines;
   try { lines = JSON.parse(el.getAttribute('data-lines')); } catch (e) { return; }
   if (!lines || !lines.length) return;
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var colors = [];
+  try { colors = JSON.parse(el.getAttribute('data-colors') || '[]'); } catch (e) {}
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (colors.length) {
+      el.textContent = '';
+      lines.forEach(function (t, k) {
+        if (k) el.appendChild(document.createTextNode(' | '));
+        var s = document.createElement('span'); s.textContent = t; if (colors[k]) s.style.color = colors[k]; el.appendChild(s);
+      });
+    }
+    return;
+  }
 
   var STEP = 70, HOLD = 1600;
   var i = 0, n = 0, deleting = false;
   el.textContent = '';
+  if (colors[0]) el.style.color = colors[0];
 
   function tick() {
     var line = lines[i];
@@ -23,7 +35,7 @@
     } else {
       n--;
       el.textContent = line.slice(0, n);
-      if (n === 0) { deleting = false; i = (i + 1) % lines.length; }
+      if (n === 0) { deleting = false; i = (i + 1) % lines.length; if (colors[i]) el.style.color = colors[i]; }
     }
     setTimeout(tick, STEP);
   }
