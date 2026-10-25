@@ -37,6 +37,11 @@ a:hover{color:var(--blue-dark);text-decoration:underline}
 .progress-eyebrow{margin:0 0 30px;font-family:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:28px;line-height:1.1;font-weight:500;color:var(--mint)}
 .progress-h{margin:0;font-size:80px;line-height:1.16;font-weight:700;letter-spacing:-.015em;white-space:nowrap}
 
+/* ---------- 2. In progress (one picture under the hero) ---------- */
+.pix{position:relative;width:100%;margin-top:32px;background:#252424;color:#fff}
+.pix-img{width:100%;height:auto;aspect-ratio:2880/2918;display:block}
+.pix-box{position:absolute;top:62.37%;left:0;width:100%;padding:0 22px;display:flex;flex-direction:column;align-items:center;text-align:center}
+
 /* ---------- 3. Project highlights ---------- */
 .highlights{background:var(--bg-grey);padding:24px 24px 12px;margin-top:12px;display:flex;flex-direction:column;gap:24px}
 .split{background:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));min-height:560px}
@@ -77,6 +82,7 @@ a:hover{color:var(--blue-dark);text-decoration:underline}
   .hero-s{font-size:21px}
   .hero-img{height:320px}
   .progress-box{padding-top:160px}
+  .pix-box{top:58%}
   .progress-eyebrow{font-size:21px;margin-bottom:18px}
   .progress-h{font-size:40px;white-space:normal}
   .split{grid-template-columns:1fr;min-height:0}
