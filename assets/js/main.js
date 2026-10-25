@@ -75,17 +75,16 @@
   });
 })();
 
-/* Home pixel scene: one element wiggles at a time, in a random order that
-   repeats once all six have had a turn. The first time a visitor hovers any
+/* Home pixel scene: one element wiggles at a time, in a fixed order:
+   coffee, rocket, traffic light, books, cat, bus, then round again. The first time a visitor hovers any
    element, the auto wiggle stops for good and only hover wiggles remain. */
 (function () {
   var els = Array.prototype.slice.call(document.querySelectorAll('.pix .pix-el'));
   if (!els.length) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var cup = document.querySelector('.pix .pix-big');
-  var order = els.filter(function (e) { return e !== cup; });
-  for (var i = order.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = order[i]; order[i] = order[j]; order[j] = t; }
-  if (cup) order.unshift(cup);
+  var NAMES = ['coffee', 'rocket', 'traffic-light', 'books', 'cat', 'bus'];
+  var order = NAMES.map(function (n) { return els.filter(function (e) { return (e.getAttribute('src') || '').indexOf('/' + n + '.') >= 0; })[0]; }).filter(Boolean);
+  els.forEach(function (e) { if (order.indexOf(e) < 0) order.push(e); });
   var k = 0, timer = null, stopped = false, HOLD = 1000;
   function step() {
     if (stopped) return;
