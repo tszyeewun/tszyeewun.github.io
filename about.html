@@ -62,9 +62,7 @@ a{color:#1d5fd0;text-decoration:none}a:hover{color:#174ba6;text-decoration:under
 }
 .a-row{scrollbar-width:none;scroll-behavior:smooth}
 .a-row::-webkit-scrollbar{display:none}
-.a-cloud-svg text{transform-box:view-box;transform-origin:0 0;transition:transform .25s ease;cursor:default}
-.a-cloud-svg text:hover{transform:scale(1.15)}
-@media (prefers-reduced-motion:reduce){.a-cloud-svg text{transition:none}}
+.a-cloud-svg text{cursor:default}
 .a-dot span{display:block;width:8px;height:8px;border-radius:999px;background:#86868b;transition:width .3s,background .3s}
 .a-dot.on span{width:36px;background:#1d1d1f}
 html.dark .a-dot.on span{background:#f5f5f7}
@@ -342,6 +340,12 @@ var dots=document.querySelectorAll('.a-dot');
 dots.forEach(function(d,k){d.addEventListener('click',function(){row.scrollTo({left:k*W(),behavior:'smooth'})})});
 var raf=0;row.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;var k=Math.max(0,Math.min(dots.length-1,Math.round(row.scrollLeft/W())));dots.forEach(function(d,j){d.classList.toggle('on',j===k);if(j===k)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')})})},{passive:true});
 })();
+(function(){var svg=document.querySelector('.a-cloud-svg');if(!svg||svg.getAttribute('data-zoom'))return;svg.setAttribute('data-zoom','1');
+var calm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+Array.prototype.forEach.call(svg.querySelectorAll('text'),function(t){var s=1,goal=1,raf=0;
+function tick(){s+=(goal-s)*0.22;if(calm||Math.abs(goal-s)<0.002)s=goal;if(s===1)t.removeAttribute('transform');else t.setAttribute('transform','scale('+s.toFixed(4)+')');raf=s===goal?0:requestAnimationFrame(tick)}
+function go(g){goal=g;if(!raf)raf=requestAnimationFrame(tick)}
+t.addEventListener('pointerenter',function(){go(1.15)});t.addEventListener('pointerleave',function(){go(1)})})})();
 (function(){var svg=document.querySelector('.a-cloud-svg');if(!svg)return;
 svg.addEventListener('pointerover',function(e){var g=e.target.closest&&e.target.closest('g');if(g&&g.parentNode===svg&&g!==svg.lastElementChild)svg.appendChild(g)});})();
 </script>
