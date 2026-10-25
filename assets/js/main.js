@@ -74,3 +74,29 @@
     label();
   });
 })();
+
+/* Home pixel scene: one element wiggles at a time, in a random order that
+   repeats once all six have had a turn. The first time a visitor hovers any
+   element, the auto wiggle stops for good and only hover wiggles remain. */
+(function () {
+  var els = Array.prototype.slice.call(document.querySelectorAll('.pix .pix-el'));
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var order = els.slice();
+  for (var i = order.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = order[i]; order[i] = order[j]; order[j] = t; }
+  var k = 0, timer = null, stopped = false, HOLD = 2600;
+  function step() {
+    if (stopped) return;
+    els.forEach(function (e) { e.classList.remove('is-wiggling'); });
+    order[k].classList.add('is-wiggling');
+    k = (k + 1) % order.length;
+    timer = setTimeout(step, HOLD);
+  }
+  function stop() {
+    if (stopped) return;
+    stopped = true; clearTimeout(timer);
+    els.forEach(function (e) { e.classList.remove('is-wiggling'); });
+  }
+  els.forEach(function (e) { e.addEventListener('pointerenter', stop); });
+  step();
+})();
