@@ -101,3 +101,14 @@
   els.forEach(function (e) { e.addEventListener('pointerenter', stop); });
   step();
 })();
+
+/* Visit stats — set STATS_URL to the Cloudflare Worker address to switch counting on. */
+(function () {
+  var STATS_URL = '';
+  if (!STATS_URL) return;
+  window.LIA_STATS_URL = STATS_URL.replace(/\/$/, '');
+  var s = document.createElement('script');
+  s.src = 'assets/js/stats.js?v=1';
+  s.defer = true;
+  document.head.appendChild(s);
+})();
