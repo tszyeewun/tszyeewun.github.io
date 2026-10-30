@@ -104,7 +104,7 @@
 
 /* Visit stats — set STATS_URL to the Cloudflare Worker address to switch counting on. */
 (function () {
-  var STATS_URL = '';
+  var STATS_URL = 'https://lia-stats.tszyeewun-au-6be.workers.dev';
   if (!STATS_URL) return;
   window.LIA_STATS_URL = STATS_URL.replace(/\/$/, '');
   var s = document.createElement('script');
